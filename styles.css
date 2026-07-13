@@ -101,7 +101,8 @@ header {
 /* HERO SECTION */
 .hero {
     height: 75vh;
-    background: linear-gradient(rgba(17, 17, 17, 0.75), rgba(107, 17, 36, 0.65)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1470') no-repeat center center/cover;
+    background: linear-gradient(rgba(17, 17, 17, 0.75), rgba(107, 17, 36, 0.65)), 
+                url('images/imagen.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -423,5 +424,146 @@ footer {
         display: block;
         margin: 15px auto;
         max-width: 280px;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS PARA EL MENÚ DESPLEGABLE (DROPDOWN)
+   ========================================================================== */
+
+/* Contenedor principal de la pestaña */
+.dropdown {
+    position: relative;
+}
+
+/* Pequeña flecha indicadora al lado de "Carreras" */
+.arrow {
+    font-size: 0.8rem;
+    margin-left: 4px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+/* Caja oculta del menú desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--negro);
+    border-top: 3px solid var(--dorado);
+    list-style: none;
+    min-width: 220px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    z-index: 1100;
+}
+
+/* Alineación de los enlaces dentro del desplegable */
+.dropdown-menu li {
+    margin: 0 !important; /* Resetea el margen lateral del menú principal */
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: var(--blanco);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    text-align: left;
+}
+
+/* Efecto Hover en las opciones internas */
+.dropdown-menu a:hover {
+    background-color: var(--bordo);
+    color: var(--blanco) !important;
+}
+
+/* MOSTRAR MENÚ AL PASAR EL MOUSE (Escritorio) */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    .dropdown:hover .arrow {
+        transform: rotate(180deg);
+        color: var(--dorado);
+    }
+}
+
+/* ADAPTACIÓN PARA CELULARES (Responsive) */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        opacity: 1;
+        pointer-events: auto;
+        display: none;
+        background-color: #1a1a1a;
+        padding: 5px 0;
+        border-top: none;
+        border-left: 2px solid var(--dorado);
+        margin: 10px auto 0 auto;
+        width: 80%;
+    }
+
+    .dropdown-menu a {
+        text-align: center;
+        padding: 8px 20px;
+    }
+
+    /* Muestra el menú al tocar la pestaña en móviles */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS PARA LA SECCIÓN DEL MAPA
+   ========================================================================== */
+
+.map-section {
+    background-color: var(--gris-claro);
+    padding-bottom: 90px;
+}
+
+.map-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--blanco);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--bordo);
+}
+
+.map-wrapper iframe {
+    display: block;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Ajustes responsivos para pantallas más chicas */
+@media (max-width: 768px) {
+    .map-section {
+        padding: 60px 0;
+    }
+    
+    .map-wrapper {
+        padding: 8px;
+    }
+    
+    .map-wrapper iframe {
+        height: 320px; /* Reducimos la altura en celulares para que sea más cómodo navegar */
     }
 }
