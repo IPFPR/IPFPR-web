@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VARIABLES Y PALETA DE COLORES (Bordó, Blanco, Gris)
+   VARIABLES Y PALETA DE COLORES (Bordó, Blanco, Gris, Dorado)
    ========================================================================== */
 :root {
     --bordo: #6B1124;
@@ -12,7 +12,7 @@
     --gris-tarjeta: #F0F2F5;
     --gris-borde: #E2E8F0;
     --texto-muted: #555555;
-    --dorado-acento: #D4AF37; /* Usado exclusivamente como acento sutil */
+    --dorado-acento: #FFD701; /* Dorado institucional */
     
     --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
     --sombra-card-hover: 0 20px 30px -10px rgba(107, 17, 36, 0.2);
@@ -69,17 +69,19 @@ header {
     align-items: center;
 }
 
+/* LOGO DEL TERCIARIO (Sin ningún brillo ni filtro) */
 .logo-image {
     max-height: 55px;
     width: auto;
     display: block;
-    transition: var(--transicion);
+    transition: transform 0.3s ease;
 }
 
 .logo-image:hover {
-    opacity: 0.9;
+    transform: scale(1.03); /* Leve ampliación sutil sin brillo */
 }
 
+/* NAVEGACIÓN Y MENÚ */
 .nav-links {
     display: flex;
     list-style: none;
@@ -330,12 +332,14 @@ section {
     border-bottom: 1px solid var(--gris-borde);
 }
 
-.about-summary p {
+/* TEXTO DORADO BAJO "BIENVENIDOS A NUESTRA INSTITUCIÓN" */
+.about-summary p.gold-text {
     max-width: 850px;
     margin: 0 auto;
     font-size: 1.2rem;
-    color: #333333;
+    color: var(--dorado-acento);
     line-height: 1.8;
+    font-weight: 600;
 }
 
 /* CARRERAS */
