@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Parroquial Francisco de Paula Robles - Nivel Superior</title>
-    <!-- CSS Externo -->
+    <!-- CSS Externo Integrado -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <!-- ENCABEZADO / NAVBAR -->
     <header>
         <nav class="navbar container">
-            <a href="#" class="logo-container" aria-label="Inicio">
+            <a href="index.html" class="logo-container" aria-label="Inicio">
                 <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="logo-image">
             </a>
             
@@ -20,15 +20,16 @@
             <label for="menu-btn" class="burger-icon" aria-label="Abrir Menú">&#9776;</label>
 
             <ul class="nav-links">
-                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
                 
-                <!-- PESTAÑA CARRERAS CON DESPLEGABLE -->
+                <!-- PESTAÑA CARRERAS CON DESPLEGABLE CONECTADO -->
                 <li class="dropdown">
                     <a href="#carreras" class="dropdown-toggle">Carreras <span class="arrow">&#9662;</span></a>
                     <ul class="dropdown-menu">
+                        <!-- Enlace corregido a interfazanalista.html -->
                         <li><a href="interfazanalista.html">Análisis de Sistemas</a></li>
-                        <li><a href="#">Psicopedagogía</a></li>
-                        <li><a href="#">Educación Inicial</a></li>
+                        <li><a href="interfazpsicopedagogia.html">Psicopedagogía</a></li>
+                        <li><a href="interfazedicinicial.html">Educación Inicial</a></li>
                     </ul>
                 </li>
 
@@ -71,25 +72,28 @@
                 <div class="section-divider"></div>
                 
                 <div class="cards-grid">
+                    <!-- Tarjeta 1: Análisis de Sistemas (CONECTADA Y CORREGIDA) -->
                     <article class="card">
                         <div class="card-meta">Tecnicatura Superior</div>
                         <h3>Análisis de Sistemas</h3>
                         <p>Estudios avanzados enfocados en sistemas informáticos, desarrollo de software y gestión tecnológica con visión ética y profesional.</p>
-                        <a href="#" class="card-link">Explorar Carrera <span>&rarr;</span></a>
+                        <a href="interfazanalista.html" class="card-link">Explorar Carrera <span>&rarr;</span></a>
                     </article>
 
+                    <!-- Tarjeta 2: Psicopedagogía (CONECTADA) -->
                     <article class="card">
                         <div class="card-meta">Tecnicatura Superior</div>
                         <h3>Psicopedagogía</h3>
                         <p>Especialización en los procesos de aprendizaje y sus intervenciones. Preparación para equipos interdisciplinarios y práctica profesional.</p>
-                        <a href="#" class="card-link">Explorar Carrera <span>&rarr;</span></a>
+                        <a href="interfazpsicopedagogia.html" class="card-link">Explorar Carrera <span>&rarr;</span></a>
                     </article>
 
+                    <!-- Tarjeta 3: Educación Inicial (CONECTADA) -->
                     <article class="card">
                         <div class="card-meta">Profesorado</div>
                         <h3>Educación Inicial</h3>
                         <p>Formación docente integral orientada al desarrollo infantil, aprehensión de valores, innovación pedagógica y respeto por la diversidad.</p>
-                        <a href="#" class="card-link">Explorar Carrera <span>&rarr;</span></a>
+                        <a href="interfazedicinicial.html" class="card-link">Explorar Carrera <span>&rarr;</span></a>
                     </article>
                 </div>
             </div>
@@ -102,7 +106,7 @@
                 <div class="section-divider divider-light"></div>
                 <p>Las preinscripciones se encuentran abiertas. Consulta los requisitos de ingreso y comienza tu camino profesional junto a nosotros.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary btn-highlight">Ver Requisitos e Inscribirme</a>
+                    <a href="#contacto" class="btn-primary btn-highlight">Ver Requisitos e Inscribirme</a>
                 </div>
             </div>
         </section>
