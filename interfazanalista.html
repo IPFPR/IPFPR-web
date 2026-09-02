@@ -12,31 +12,16 @@
                 extend: {
                     colors: {
                         bordo: {
-                            50: '#fdf2f4',
-                            100: '#fbe6e9',
-                            500: '#9e1c38',
-                            700: '#7a1228',
-                            800: '#640d1f',
-                            900: '#4d0816',
-                            950: '#31030c',
+                            50: '#fdf2f4', 100: '#fbe6e9', 500: '#9e1c38',
+                            700: '#7a1228', 800: '#640d1f', 900: '#4d0816', 950: '#31030c'
                         },
                         oro: {
-                            100: '#fdf7e7',
-                            200: '#faecc4',
-                            400: '#dfb75c',
-                            500: '#c69225',
-                            600: '#a87515',
-                            700: '#84570d',
+                            100: '#fdf7e7', 200: '#faecc4', 400: '#dfb75c',
+                            500: '#c69225', 600: '#a87515', 700: '#84570d'
                         },
                         gris: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+                            600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a'
                         }
                     },
                     fontFamily: {
@@ -53,25 +38,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #fcebc2 0%, #dfb75c 50%, #a87515 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .bordo-gradient-bg {
-            background: linear-gradient(135deg, #4d0816 0%, #640d1f 50%, #7a1228 100%);
-        }
-        .card-gold-border {
-            border: 1px solid rgba(198, 146, 37, 0.25);
-            transition: all 0.3s ease;
-        }
-        .card-gold-border:hover {
-            border-color: rgba(198, 146, 37, 0.6);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -10px rgba(100, 13, 31, 0.15);
-        }
-    </style>
+    
+    <!-- CSS Externo compartido -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
 
@@ -93,19 +62,23 @@
     <!-- Navegación Principal -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-lg bordo-gradient-bg flex items-center justify-center text-oro-400 text-xl font-serif font-bold shadow-md border border-oro-500/40">
+            <!-- CONECTADO AL INDEX.HTML -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-lg bordo-gradient-bg flex items-center justify-center text-oro-400 text-xl font-serif font-bold shadow-md border border-oro-500/40 group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-code"></i>
                 </div>
                 <div>
-                    <h1 class="text-sm md:text-base font-bold text-bordo-900 leading-tight">Instituto Francisco de Paula Robles</h1>
+                    <h1 class="text-sm md:text-base font-bold text-bordo-900 leading-tight group-hover:text-bordo-700 transition-colors">Instituto Francisco de Paula Robles</h1>
                     <p class="text-xs text-oro-600 font-semibold uppercase tracking-wider">Nivel Terciario Superior</p>
                 </div>
-            </div>
+            </a>
 
             <!-- Menú Links -->
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
-                <a href="#inicio" class="hover:text-bordo-800 transition-colors">Inicio</a>
+                <!-- CONECTADO AL INDEX.HTML -->
+                <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+                </a>
                 <a href="#perfil" class="hover:text-bordo-800 transition-colors">Perfil & Campo</a>
                 <a href="#plan" class="hover:text-bordo-800 transition-colors">Plan de Estudios</a>
                 <a href="#docentes" class="hover:text-bordo-800 transition-colors">Cuerpo Docente</a>
@@ -121,7 +94,6 @@
 
     <!-- HERO SECTION -->
     <section id="inicio" class="relative bordo-gradient-bg text-white py-20 lg:py-28 overflow-hidden border-b-4 border-oro-500">
-        <!-- Textura de fondo -->
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c69225_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-oro-500/10 blur-3xl pointer-events-none"></div>
 
@@ -295,14 +267,25 @@
         </div>
     </section>
 
-    <!-- PLAN DE ESTUDIOS (3 AÑOS) -->
+    <!-- PLAN DE ESTUDIOS CON BOTÓN DE DESCARGA -->
     <section id="plan" class="py-20 bg-white border-y border-gris-200">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="text-bordo-800 font-bold uppercase tracking-wider text-xs bg-bordo-50 px-3 py-1 rounded-md border border-bordo-200">Malla Curricular</span>
                 <h2 class="text-3xl font-extrabold text-bordo-950 mt-3">Plan de Estudios Oficial</h2>
                 <p class="text-gris-600 text-sm mt-2">Estructura académica de 3 años con formación práctica progresiva (Res. 6790/19)</p>
-                <div class="w-16 h-1 bg-oro-500 mx-auto mt-4 rounded-full"></div>
+                <div class="w-16 h-1 bg-oro-500 mx-auto mt-4 mb-6 rounded-full"></div>
+
+                <!-- BOTÓN DE DESCARGA AUTOMÁTICA DEL PLAN DE ESTUDIOS -->
+                <div class="pt-2">
+                    <a href="docs/plan-de-estudio.pdf" 
+                       download="Plan_de_Estudio_Analisis_de_Sistemas.pdf" 
+                       class="inline-flex items-center gap-3 bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 hover:border-oro-400 font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm">
+                        <i class="fa-solid fa-file-arrow-down text-oro-400 text-base"></i>
+                        <span>Descargar Plan de Estudios Completo (.PDF)</span>
+                    </a>
+                    <p class="text-xs text-gris-600 mt-2">Descarga directa e inmediata del documento oficial</p>
+                </div>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
@@ -385,7 +368,6 @@
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <!-- Lista de Docentes Oficiales -->
                 <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
                     <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">AJ</div>
                     <div class="font-bold text-gris-800 text-sm">Aguiar Julio</div>
