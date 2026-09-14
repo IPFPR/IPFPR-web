@@ -1,189 +1,619 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profesorado de Educación Inicial | Instituto Robles</title>
-    <!-- CSS Externo Integrado -->
+    <title>Profesorado de Educación Inicial | Instituto Francisco de Paula Robles</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            50: '#fdf2f4', 100: '#fbe6e9', 500: '#9e1c38',
+                            700: '#7a1228', 800: '#640d1f', 900: '#4d0816', 950: '#31030c'
+                        },
+                        oro: {
+                            100: '#fdf7e7', 200: '#faecc4', 400: '#dfb75c',
+                            500: '#c69225', 600: '#a87515', 700: '#84570d'
+                        },
+                        gris: {
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+                            600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        serif: ['Cinzel', 'Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Externo compartido -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- ENCABEZADO / NAVBAR -->
-    <header>
-        <nav class="navbar container">
-            <a href="index.html" class="logo-container" aria-label="Inicio">
-                <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="logo-image">
+    <!-- Top Bar Institucional -->
+    <div class="bg-bordo-950 text-gris-300 text-xs py-2 px-6 border-b border-oro-600/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-school text-oro-400 mr-1.5"></i> Institutos Parroquiales de Dolores</span>
+                <span class="hidden sm:inline text-gris-600">|</span>
+                <span class="hidden sm:inline">DIPREGEP Oficial</span>
+            </div>
+            <div class="flex items-center gap-5">
+                <a href="tel:02245447466" class="hover:text-oro-400 transition-colors"><i class="fa-solid fa-phone mr-1"></i> (02245) 44-7466</a>
+                <a href="mailto:institutoparroquialadm@hotmail.com" class="hover:text-oro-400 transition-colors hidden md:inline"><i class="fa-solid fa-envelope mr-1"></i> institutoparroquialadm@hotmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-lg bordo-gradient-bg flex items-center justify-center text-oro-400 text-xl font-serif font-bold shadow-md border border-oro-500/40 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-shapes"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm md:text-base font-bold text-bordo-900 leading-tight group-hover:text-bordo-700 transition-colors">Instituto Francisco de Paula Robles</h1>
+                    <p class="text-xs text-oro-600 font-semibold uppercase tracking-wider">Nivel Terciario Superior</p>
+                </div>
             </a>
-            
-            <input type="checkbox" id="menu-btn" class="menu-toggle">
-            <label for="menu-btn" class="burger-icon" aria-label="Abrir Menú">&#9776;</label>
 
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                
-                <li class="dropdown">
-                    <a href="#carreras" class="dropdown-toggle">Carreras <span class="arrow">&#9662;</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="interfazanalista.html">Análisis de Sistemas</a></li>
-                        <li><a href="interfazpsicopedagogia.html">Psicopedagogía</a></li>
-                        <li><a href="interfazedinicial.html">Educación Inicial</a></li>
-                    </ul>
-                </li>
+            <!-- Menú Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
+                <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+                </a>
+                <a href="#perfil" class="hover:text-bordo-800 transition-colors">Perfil & Campo</a>
+                <a href="#plan" class="hover:text-bordo-800 transition-colors">Plan de Estudios</a>
+                <a href="#ubicacion" class="hover:text-bordo-800 transition-colors">Ubicación</a>
+                <a href="#contacto" class="hover:text-bordo-800 transition-colors">Contacto</a>
+            </nav>
 
-                <li><a href="#perfil">Perfil</a></li>
-                <li><a href="#plan">Plan de Estudios</a></li>
-                <li><a href="#preinscripciones" class="btn-nav">Preinscripción</a></li>
-            </ul>
-        </nav>
+            <a href="#inscripcion" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold shadow transition-all duration-200 hover:shadow-md flex items-center gap-2">
+                <span>Inscripción</span>
+                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
+            </a>
+        </div>
     </header>
 
-    <main>
-        <!-- HERO SECTION DE LA CARRERA -->
-        <section class="hero">
-            <div class="hero-content container">
-                <span class="hero-badge">Título Oficial - Profesorado</span>
-                <h1>Profesorado de Educación Inicial</h1>
-                <p>Formación docente integral orientada al desarrollo infantil, la innovación pedagógica, la aprehensión de valores y el respeto por la diversidad.</p>
-                <div class="hero-buttons">
-                    <a href="#plan" class="btn-primary">Ver Plan de Estudios</a>
-                    <a href="#preinscripciones" class="btn-secondary">Inscribirme</a>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bordo-gradient-bg text-white py-20 lg:py-28 overflow-hidden border-b-4 border-oro-500">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c69225_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-oro-500/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/30 border border-oro-400/40 text-oro-200 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-oro-400 animate-pulse"></span>
+                    Título Oficial - Profesorado
                 </div>
-            </div>
-        </section>
-
-        <!-- OBJETIVO INSTITUCIONAL -->
-        <section class="about-summary">
-            <div class="container">
-                <h2 class="section-title">Propósito de la Carrera</h2>
-                <div class="section-divider"></div>
-                <p class="gold-text">"Formar educadores comprometidos con la primera infancia, capaces de diseñar propuestas pedagógicas transformadoras que promuevan el desarrollo cognitivo, emocional y social de los niños en un marco de afecto y valores humanos."</p>
-            </div>
-        </section>
-
-        <!-- PERFIL PROFESIONAL / CAMPO LABORAL -->
-        <section id="perfil" class="carreras-section">
-            <div class="container">
-                <h2 class="section-title">Perfil Profesional y Campo Laboral</h2>
-                <div class="section-divider"></div>
                 
-                <div class="cards-grid">
-                    <article class="card">
-                        <div class="card-meta">Competencias</div>
-                        <h3>¿Qué hace un Profesor de Educación Inicial?</h3>
-                        <p>Planifica y conduce procesos de enseñanza para salas de 45 días a 5 años. Diseña estrategias didácticas lúdicas, coordina actividades de articulación pedagógica y acompaña el desarrollo integral del niño.</p>
-                    </article>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    Profesorado de <br>
+                    <span class="gold-gradient-text">Educación Inicial</span>
+                </h1>
 
-                    <article class="card">
-                        <div class="card-meta">Salida Laboral</div>
-                        <h3>¿Dónde trabaja el egresado?</h3>
-                        <p>Jardines Maternales y Jardines de Infantes (públicos y privados), centros de desarrollo infantil, instituciones socioeducativas, talleres pedagógicos y proyectos comunitarios de orientación educativa.</p>
-                    </article>
+                <p class="text-gris-200 text-base lg:text-lg max-w-2xl font-light leading-relaxed">
+                    Formación docente integral orientada al desarrollo infantil, la innovación pedagógica, la aprehensión de valores y el respeto por la diversidad.
+                </p>
+
+                <!-- Badges Técnicos -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                    <div class="bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-3 text-left">
+                        <div class="text-oro-400 text-xs uppercase font-medium">Título</div>
+                        <div class="text-white font-bold text-sm">Oficial Docente</div>
+                    </div>
+                    <div class="bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-3 text-left">
+                        <div class="text-oro-400 text-xs uppercase font-medium">Duración</div>
+                        <div class="text-white font-bold text-sm">4 Años</div>
+                    </div>
+                    <div class="bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-3 text-left col-span-2 sm:col-span-1">
+                        <div class="text-oro-400 text-xs uppercase font-medium">Prácticas</div>
+                        <div class="text-white font-bold text-sm">En Terreno desde 1° Año</div>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- PLAN DE ESTUDIOS -->
-        <section id="plan" class="about-summary">
-            <div class="container">
-                <h2 class="section-title">Plan de Estudios Oficial</h2>
-                <div class="section-divider"></div>
-                <p style="margin-bottom: 1.5rem; color: var(--gris-600);">Estructura académica de 4 años de duración con prácticas docentes en terreno desde el primer año.</p>
-
-                <!-- BOTÓN DE DESCARGA DEL PDF -->
-                <div style="margin-bottom: 2.5rem;">
-                    <a href="docs/plan-de-estudio-inicial.pdf" 
-                       download="Plan_de_Estudio_Educacion_Inicial.pdf" 
-                       class="btn-primary" 
-                       style="display: inline-block; padding: 0.85rem 1.8rem; text-decoration: none; background-color: var(--bordo, #4d0816); color: #ffffff; border-color: var(--bordo, #4d0816);">
-                        📄 Descargar Plan de Estudios Completo (.PDF)
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#plan" class="bg-oro-500 hover:bg-oro-600 text-bordo-950 font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check"></i> Ver Plan de Estudios
+                    </a>
+                    <a href="#objetivo" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-lg backdrop-blur-sm transition-all duration-200">
+                        Conocer Más
                     </a>
                 </div>
-                
-                <div class="cards-grid">
-                    <article class="card">
-                        <div class="card-meta">1° Año</div>
-                        <h3>Primer Año</h3>
-                        <p>• Pedagogía<br>• Didáctica General<br>• Psicología del Desarrollo I<br>• Filosofía de la Educación<br>• Práctica Docente I</p>
-                    </article>
+            </div>
 
-                    <article class="card">
-                        <div class="card-meta">2° Año</div>
-                        <h3>Segundo Año</h3>
-                        <p>• Didáctica de la Educación Inicial I<br>• Psicología del Desarrollo II<br>• Didáctica de la Lengua y Literatura<br>• Juego y Desarrollo Infantil<br>• Práctica Docente II</p>
-                    </article>
+            <!-- Tarjeta Lateral de Impacto -->
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-2xl p-8 shadow-2xl text-gris-800 border-2 border-oro-400/40 relative">
+                    <div class="absolute -top-3 right-6 bg-bordo-800 text-oro-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-oro-500/50">
+                        Carrera Docente
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-bordo-50 flex items-center justify-center text-bordo-800 text-2xl mb-5">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-bordo-900 mb-2">Compromiso con la Infancia</h3>
+                    <p class="text-gris-600 text-sm mb-6 leading-relaxed">
+                        Formamos profesionales capaces de acompañar las primeras etapas del aprendizaje, promoviendo el desarrollo emocional, cognitivo y social del niño.
+                    </p>
 
-                    <article class="card">
-                        <div class="card-meta">3° Año</div>
-                        <h3>Tercer Año</h3>
-                        <p>• Didáctica de la Matemática<br>• Didáctica de las Ciencias Sociales y Naturales<br>• Literatura Infantil<br>• Expresión Artística y Corporal<br>• Práctica Docente III</p>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-meta">4° Año</div>
-                        <h3>Cuarto Año</h3>
-                        <p>• Ateneos Pedagógicos<br>• Ética y Deontología Profesional<br>• Inclusión Educativa y Diversidad<br>• Gestión de Instituciones Educativas<br>• Residencia Pedagógica (Práctica IV)</p>
-                    </article>
+                    <div class="space-y-3.5 border-t border-gris-200 pt-5">
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Estrategias Didácticas Lúdicas
+                        </div>
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Inclusión Educativa y Diversidad
+                        </div>
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Articulación Pedagógica Maternal e Infantil
+                        </div>
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Residencias y Prácticas Profesionalizantes
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- DESTACADO PREINSCRIPCIONES -->
-        <section id="preinscripciones" class="info-highlight">
-            <div class="container">
-                <h2 class="section-title text-light">Sé Parte del Profesorado de Educación Inicial</h2>
-                <div class="section-divider divider-light"></div>
-                <p>Las preinscripciones para el ciclo 2026 están abiertas. Acércate a nuestra administración o escríbenos para solicitar información sobre requisitos y aranceles.</p>
-                <div class="hero-buttons">
-                    <a href="mailto:institutoparroquialadm@hotmail.com" class="btn-primary btn-highlight">Enviar Consulta por Email</a>
+    <!-- PROPÓSITO Y OBJETIVO INSTITUCIONAL -->
+    <section id="objetivo" class="py-16 bg-white border-b border-gris-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-block p-3 rounded-full bg-bordo-50 text-bordo-800 mb-4 border border-bordo-100">
+                <i class="fa-solid fa-quote-left text-xl text-oro-600"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-bordo-950 mb-6">Propósito de la Carrera</h2>
+            <blockquote class="text-lg md:text-xl text-gris-700 italic font-serif leading-relaxed max-w-3xl mx-auto">
+                "Formar educadores comprometidos con la primera infancia, capaces de diseñar propuestas pedagógicas transformadoras que promuevan el desarrollo cognitivo, emocional y social de los niños en un marco de afecto y valores humanos."
+            </blockquote>
+            <div class="mt-6 flex items-center justify-center gap-3">
+                <div class="h-0.5 w-12 bg-oro-400"></div>
+                <span class="text-xs font-bold text-bordo-900 uppercase tracking-widest">Instituto del Profesorado Francisco de Paula Robles</span>
+                <div class="h-0.5 w-12 bg-oro-400"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUÉ HACE / DÓNDE TRABAJA -->
+    <section id="perfil" class="py-20 bg-gris-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-oro-600 font-bold uppercase tracking-wider text-xs bg-oro-100 px-3 py-1 rounded-md border border-oro-200">Competencias & Inserción</span>
+                <h2 class="text-3xl font-extrabold text-bordo-950 mt-3">Perfil Profesional y Campo Laboral</h2>
+                <div class="w-16 h-1 bg-bordo-800 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tarjeta: ¿Qué hace? -->
+                <div class="bg-white rounded-2xl p-8 card-gold-border shadow-sm">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-xl shadow">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-bordo-900">¿Qué hace un Profesor de Educación Inicial?</h3>
+                            <p class="text-xs text-gris-600 font-medium">Habilidades y funciones principales</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-gris-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-bordo-50 text-bordo-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-bordo-200">1</span>
+                            <span>Planifica y conduce procesos de enseñanza para salas de 45 días a 5 años de edad.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-bordo-50 text-bordo-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-bordo-200">2</span>
+                            <span>Diseña estrategias didácticas lúdicas, dinámicas e innovadoras adaptadas a la primera infancia.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-bordo-50 text-bordo-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-bordo-200">3</span>
+                            <span>Coordina actividades de articulación pedagógica acompañando la contención emocional.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-bordo-50 text-bordo-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-bordo-200">4</span>
+                            <span>Promueve proyectos de integración e inclusión en la diversidad dentro del aula.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta: ¿Dónde trabaja? -->
+                <div class="bg-white rounded-2xl p-8 card-gold-border shadow-sm">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-oro-500 text-bordo-950 flex items-center justify-center text-xl shadow">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-bordo-900">¿Dónde trabaja el egresado?</h3>
+                            <p class="text-xs text-gris-600 font-medium">Ámbitos de inserción laboral</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-gris-700 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-oro-100 text-oro-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-oro-300"><i class="fa-solid fa-baby"></i></span>
+                            <span><strong>Jardines Maternales e Infantiles:</strong> Instituciones del ámbito público y privado.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-oro-100 text-oro-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-oro-300"><i class="fa-solid fa-house-chimney-window"></i></span>
+                            <span><strong>Centros de Desarrollo Infantil:</strong> Espacios dedicados a la atención socioeducativa temprana.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-oro-100 text-oro-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-oro-300"><i class="fa-solid fa-palette"></i></span>
+                            <span><strong>Talleres Pedagógicos & Artísticos:</strong> Proyectos recreativos y comunitarios de orientación educativa.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-oro-100 text-oro-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold border border-oro-300"><i class="fa-solid fa-users text-xs"></i></span>
+                            <span><strong>Proyectos Sanitarios y Comunitarios:</strong> Organizaciones vinculadas al desarrollo social infantil.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- SECCIÓN UBICACIÓN (MAPA) -->
-        <section id="ubicacion" class="map-section">
-            <div class="container">
-                <h2 class="section-title">Nuestra Ubicación</h2>
-                <div class="section-divider"></div>
-                
-                <div class="map-wrapper">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.2709212004655!2d-57.68364882425482!3d-36.31782297239016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a25e24391206d1%3A0x6bda69ee02f8295b!2sArist%C3%B3bulo%20del%20Valle%20350%2C%20B7160%20Dolores%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Mapa de ubicación del Instituto">
-                    </iframe>
+    <!-- PLAN DE ESTUDIOS CON BOTÓN DE DESCARGA -->
+    <section id="plan" class="py-20 bg-white border-y border-gris-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-bordo-800 font-bold uppercase tracking-wider text-xs bg-bordo-50 px-3 py-1 rounded-md border border-bordo-200">Malla Curricular</span>
+                <h2 class="text-3xl font-extrabold text-bordo-950 mt-3">Plan de Estudios Oficial</h2>
+                <p class="text-gris-600 text-sm mt-2">Estructura académica de 4 años con prácticas docentes en terreno desde el primer año</p>
+                <div class="w-16 h-1 bg-oro-500 mx-auto mt-4 mb-6 rounded-full"></div>
+
+                <!-- BOTÓN DE DESCARGA DEL PDF -->
+                <div class="pt-2">
+                    <a href="docs/plan-de-estudio-inicial.pdf" 
+                       download="Plan_de_Estudio_Educacion_Inicial.pdf" 
+                       class="inline-flex items-center gap-3 bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 hover:border-oro-400 font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm">
+                        <i class="fa-solid fa-file-arrow-down text-oro-400 text-base"></i>
+                        <span>Descargar Plan de Estudios Completo (.PDF)</span>
+                    </a>
+                    <p class="text-xs text-gris-600 mt-2">Descarga directa e inmediata del documento oficial</p>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-container container">
-            <div class="social-media-box">
-                <a href="https://www.facebook.com/francisco.depaularobles.9" target="_blank" class="social-icon facebook" title="Facebook Instituto Robles" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/franciscodepaularoblessuperior/" target="_blank" class="social-icon instagram" title="Instagram Instituto Robles" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=5492245410225&text=¡Hola!%20Me%20gustaría%20solicitar%20información." target="_blank" class="social-icon whatsapp" title="Contactar por WhatsApp" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-3.507c1.66.986 3.295 1.503 5.344 1.505 5.494 0 9.961-4.464 9.964-9.96.002-2.661-1.034-5.163-2.919-7.051C17.16 3.099 14.653 2.06 12.003 2.06c-5.497 0-9.966 4.467-9.969 9.965-.001 2.094.551 3.791 1.587 5.4l-.994 3.635 3.73-.978zM16.51 14.5c-.244-.122-1.443-.712-1.665-.793-.223-.081-.385-.122-.547.122-.162.244-.629.793-.771.954-.142.162-.284.183-.528.061-.244-.122-1.03-.38-1.962-1.212-.725-.647-1.215-1.446-1.357-1.69-.142-.244-.015-.376.107-.497.111-.11.244-.285.365-.427.122-.142.162-.244.244-.406.081-.162.041-.305-.02-.427-.061-.122-.547-1.32-.75-1.81-.197-.474-.397-.411-.547-.411-.142 0-.305-.02-.467-.02-.162 0-.427.061-.65.305-.223.244-.853.833-.853 2.031 0 1.198.873 2.356.994 2.519.122.162 1.719 2.625 4.165 3.679.582.251 1.036.4 1.391.514.584.186 1.114.16 1.533.098.467-.069 1.443-.59 1.645-1.159.203-.569.203-1.057.142-1.159-.061-.101-.223-.162-.467-.284z"/></svg>
-                </a>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 1er Año -->
+                <div class="bg-gris-50 rounded-2xl overflow-hidden border border-gris-200 shadow-sm flex flex-col">
+                    <div class="bg-bordo-900 text-white p-5 border-b-4 border-oro-500">
+                        <div class="text-oro-400 text-xs font-bold uppercase tracking-widest">Nivel Formativo</div>
+                        <h3 class="text-xl font-bold font-serif">Primer Año</h3>
+                        <p class="text-gris-300 text-xs mt-0.5">Fundamentos pedagógicos</p>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <ul class="space-y-2 text-xs text-gris-700 divide-y divide-gris-200">
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Pedagogía</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Didáctica General</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicología del Desarrollo I</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Filosofía de la Educación</li>
+                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Práctica Docente I</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2do Año -->
+                <div class="bg-gris-50 rounded-2xl overflow-hidden border border-gris-200 shadow-sm flex flex-col">
+                    <div class="bg-bordo-800 text-white p-5 border-b-4 border-oro-500">
+                        <div class="text-oro-400 text-xs font-bold uppercase tracking-widest">Nivel Intermedio</div>
+                        <h3 class="text-xl font-bold font-serif">Segundo Año</h3>
+                        <p class="text-gris-300 text-xs mt-0.5">Didácticas aplicadas I</p>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <ul class="space-y-2 text-xs text-gris-700 divide-y divide-gris-200">
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Didáctica de la Ed. Inicial I</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicología del Desarrollo II</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Didáctica de la Lengua y Lit.</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Juego y Desarrollo Infantil</li>
+                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Práctica Docente II</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3er Año -->
+                <div class="bg-gris-50 rounded-2xl overflow-hidden border border-gris-200 shadow-sm flex flex-col">
+                    <div class="bg-bordo-900 text-white p-5 border-b-4 border-oro-500">
+                        <div class="text-oro-400 text-xs font-bold uppercase tracking-widest">Nivel Avanzado</div>
+                        <h3 class="text-xl font-bold font-serif">Tercer Año</h3>
+                        <p class="text-gris-300 text-xs mt-0.5">Campos del saber y áreas</p>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <ul class="space-y-2 text-xs text-gris-700 divide-y divide-gris-200">
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Didáctica de la Matemática</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Didáctica de Ciencias Soc. y Nat.</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Literatura Infantil</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Expresión Artística y Corporal</li>
+                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Práctica Docente III</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4to Año -->
+                <div class="bg-gris-50 rounded-2xl overflow-hidden border border-gris-200 shadow-sm flex flex-col">
+                    <div class="bg-bordo-950 text-white p-5 border-b-4 border-oro-500">
+                        <div class="text-oro-400 text-xs font-bold uppercase tracking-widest">Nivel Profesional</div>
+                        <h3 class="text-xl font-bold font-serif">Cuarto Año</h3>
+                        <p class="text-gris-300 text-xs mt-0.5">Residencia e integración</p>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <ul class="space-y-2 text-xs text-gris-700 divide-y divide-gris-200">
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Ateneos Pedagógicos</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Ética y Deontología Profesional</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Inclusión Educativa y Diversidad</li>
+                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Gestión de Inst. Educativas</li>
+                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Residencia Pedagógica (Práctica IV)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO DOCENTE -->
+    <section id="docentes" class="py-20 bg-gris-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-oro-600 font-bold uppercase tracking-wider text-xs bg-oro-100 px-3 py-1 rounded-md border border-oro-200">Excelencia Académica</span>
+                <h2 class="text-3xl font-extrabold text-bordo-950 mt-3">Equipo Docente</h2>
+                <p class="text-gris-600 text-sm mt-2">Profesionales y especialistas en Educación e Inicial</p>
+                <div class="w-16 h-1 bg-bordo-800 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="footer-text">
-                <p>&copy; 2026 Instituto del Profesorado Francisco de Paula Robles. Todos los derechos reservados.</p>
-                <p class="footer-info">
-                    Aristóbulo del Valle 350, Dolores (B7160) | Tel: 02245-44-7466 / 02245-15-410225 <br>
-                    Email: <a href="mailto:institutoparroquialadm@hotmail.com">institutoparroquialadm@hotmail.com</a>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">FR</div>
+                    <div class="font-bold text-gris-800 text-sm">Fernando Romero</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">ML</div>
+                    <div class="font-bold text-gris-800 text-sm">María Luciano</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">KG</div>
+                    <div class="font-bold text-gris-800 text-sm">Karina Guiñez</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">EC</div>
+                    <div class="font-bold text-gris-800 text-sm">Emilce Cortiglia</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">GH</div>
+                    <div class="font-bold text-gris-800 text-sm">Gabriela Herrero</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">EW</div>
+                    <div class="font-bold text-gris-800 text-sm">Eugenia Wibaux</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">KG</div>
+                    <div class="font-bold text-gris-800 text-sm">Karina García</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">GG</div>
+                    <div class="font-bold text-gris-800 text-sm">Gabriela Geber</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">AA</div>
+                    <div class="font-bold text-gris-800 text-sm">Alicia Alvarez</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">RU</div>
+                    <div class="font-bold text-gris-800 text-sm">Rocío Ubarrieta</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">PC</div>
+                    <div class="font-bold text-gris-800 text-sm">Paula Caregal</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MB</div>
+                    <div class="font-bold text-gris-800 text-sm">Marcela Barredo</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">CB</div>
+                    <div class="font-bold text-gris-800 text-sm">Cecilia Bianchi</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">VM</div>
+                    <div class="font-bold text-gris-800 text-sm">Verónica Meo Laos</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">CL</div>
+                    <div class="font-bold text-gris-800 text-sm">Cyntia Losada</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">VC</div>
+                    <div class="font-bold text-gris-800 text-sm">Vilma Conti</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">LG</div>
+                    <div class="font-bold text-gris-800 text-sm">Liliana Gallastegui</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MD</div>
+                    <div class="font-bold text-gris-800 text-sm">Maximiliano D'Amore</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">SR</div>
+                    <div class="font-bold text-gris-800 text-sm">Silvia Raposso</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">SC</div>
+                    <div class="font-bold text-gris-800 text-sm">Susana Cerillano</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">JL</div>
+                    <div class="font-bold text-gris-800 text-sm">Juan Cruz Llosa</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MC</div>
+                    <div class="font-bold text-gris-800 text-sm">Mercedes Constantino</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">BH</div>
+                    <div class="font-bold text-gris-800 text-sm">Belén Herrera</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">NE</div>
+                    <div class="font-bold text-gris-800 text-sm">Natalia Equisito</div>
+                    <div class="text-xs text-oro-600">Docente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PREINSCRIPCIÓN / CONTACTO -->
+    <section id="inscripcion" class="py-20 bordo-gradient-bg text-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-oro-300 font-bold uppercase tracking-wider text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-md">Inscripciones Abiertas</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">Sé Parte del Profesorado de <span class="gold-gradient-text">Educación Inicial</span></h2>
+                    <p class="text-gris-200 text-sm sm:text-base leading-relaxed">
+                        Las preinscripciones están abiertas. Acércate a nuestra administración o escríbenos para solicitar información sobre requisitos y aranceles.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-black/20 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-oro-500 text-bordo-950 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-oro-300 font-semibold uppercase">Dirección</div>
+                                <div class="text-white font-medium text-sm">A. del Valle 350. Ciudad de Dolores, Bs. As.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-black/20 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-oro-500 text-bordo-950 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-oro-300 font-semibold uppercase">Teléfonos de Contacto</div>
+                                <div class="text-white font-medium text-sm">02245-44-7466 / 0224515-410225</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-black/20 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-oro-500 text-bordo-950 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-oro-300 font-semibold uppercase">Correo Electrónico</div>
+                                <div class="text-white font-medium text-sm">institutoparroquialadm@hotmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de Consulta Rápida -->
+                <div class="lg:col-span-6" id="contacto">
+                    <div class="bg-white rounded-2xl p-8 text-gris-800 shadow-2xl border-2 border-oro-400">
+                        <h3 class="text-2xl font-bold text-bordo-900 mb-2">Solicitar Información</h3>
+                        <p class="text-gris-600 text-xs mb-6">Completá el formulario para recibir información sobre requisitos y aranceles.</p>
+                        
+                        <form onsubmit="event.preventDefault(); alert('¡Gracias por tu consulta! La administración se comunicará a la brevedad.');" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Nombre y Apellido</label>
+                                <input type="text" required placeholder="Tu nombre completo" class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Teléfono / WhatsApp</label>
+                                    <input type="tel" required placeholder="Ej: 2245..." class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Email</label>
+                                    <input type="email" required placeholder="tu@email.com" class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Mensaje / Consulta</label>
+                                <textarea rows="3" placeholder="Consultar sobre horarios, requisitos de inscripción..." class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500 font-bold py-3 rounded-lg shadow-md transition-colors duration-200">
+                                Enviar Consulta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-gris-900 text-gris-300 py-12 border-t-2 border-oro-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <div class="font-serif font-bold text-white text-base mb-3 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded bg-bordo-800 text-oro-400 flex items-center justify-center text-xs">P</span>
+                    Institutos Parroquiales
+                </div>
+                <p class="text-xs text-gris-400 leading-relaxed">
+                    Instituto del Profesorado Francisco de Paula Robles. Compromiso educativo y formativo en la ciudad de Dolores.
                 </p>
             </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Carreras de Nivel Superior</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li>• Tecnicatura Superior en Análisis de Sistemas</li>
+                    <li>• Tecnicatura Superior en Psicopedagogía</li>
+                    <li class="text-white font-medium">• Profesorado en Educación Inicial</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Enlaces Rápidos</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="#perfil" class="hover:text-white transition-colors">Perfil Profesional</a></li>
+                    <li><a href="#plan" class="hover:text-white transition-colors">Plan de Estudios</a></li>
+                    <li><a href="#ubicacion" class="hover:text-white transition-colors">Ubicación</a></li>
+                    <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Sede Institucional</h4>
+                <p class="text-xs text-gris-400">A. del Valle 350, Dolores (Bs. As.)</p>
+                <p class="text-xs text-gris-400 mt-1">Tel: 02245-44-7466</p>
+                <p class="text-xs text-oro-400 mt-2 font-mono">DIPREGEP Oficial</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-gris-800 text-center text-xs text-gris-500">
+            © 2026 Instituto del Profesorado Francisco de Paula Robles — Institutos Parroquiales de Dolores. Todos los derechos reservados.
         </div>
     </footer>
 
