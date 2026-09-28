@@ -3,6 +3,7 @@
    Archivos vinculados: index.html y interfazanalistas.html
    ========================================================================== */
 
+
 /* 1. Variables Globales y Paleta de Colores */
 :root {
     --bordo-950: #31030c;
@@ -11,12 +12,14 @@
     --bordo-700: #7a1228;
     --bordo-50:  #fdf2f4;
 
+
     --oro-700:   #84570d;
     --oro-600:   #a87515;
     --oro-500:   #c69225;
     --oro-400:   #dfb75c;
     --oro-200:   #faecc4;
     --oro-100:   #fdf7e7;
+
 
     --gris-900:  #0f172a;
     --gris-800:  #1e293b;
@@ -27,8 +30,10 @@
     --gris-100:  #f1f5f9;
     --gris-50:   #f8fafc;
 
+
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
+
 
 /* 2. Reset Básico (Principalmente para el Index) */
 *, *::before, *::after {
@@ -37,9 +42,11 @@
     padding: 0;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family: var(--font-sans);
@@ -48,15 +55,18 @@ body {
     line-height: 1.6;
 }
 
+
 a {
     text-decoration: none;
     color: inherit;
     transition: all 0.2s ease;
 }
 
+
 ul {
     list-style: none;
 }
+
 
 .container {
     max-width: 1200px;
@@ -64,9 +74,11 @@ ul {
     padding: 0 1.5rem;
 }
 
+
 /* ==========================================================================
    ESTILOS ESPECÍFICOS PARA: interfazanalistas.html
    ========================================================================== */
+
 
 .gold-gradient-text {
     background: linear-gradient(135deg, #fcebc2 0%, #dfb75c 50%, #a87515 100%);
@@ -74,20 +86,24 @@ ul {
     -webkit-text-fill-color: transparent;
 }
 
+
 .bordo-gradient-bg {
     background: linear-gradient(135deg, var(--bordo-900) 0%, var(--bordo-800) 50%, var(--bordo-700) 100%);
 }
+
 
 .card-gold-border {
     border: 1px solid rgba(198, 146, 37, 0.25);
     transition: all 0.3s ease;
 }
 
+
 .card-gold-border:hover {
     border-color: rgba(198, 146, 37, 0.6);
     transform: translateY(-4px);
     box-shadow: 0 12px 24px -10px rgba(100, 13, 31, 0.15);
 }
+
 
 /* Barra de desplazamiento */
 ::-webkit-scrollbar { width: 8px; }
@@ -96,9 +112,12 @@ ul {
 ::-webkit-scrollbar-thumb:hover { background: var(--bordo-900); }
 
 
+
+
 /* ==========================================================================
    ESTILOS ESPECÍFICOS PARA: index.html (Sin Tailwind)
    ========================================================================== */
+
 
 /* Navbar y Menú */
 header {
@@ -110,16 +129,29 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
+    padding: 12px 24px;
+    max-width: 100%; /* Línea nueva para expandir al margen */
 }
 
-.logo-image { height: 48px; width: auto; object-fit: contain; }
+
+.logo-image {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    top: 3px;
+}
+
+
+
 
 .menu-toggle, .burger-icon { display: none; }
+
 
 .nav-links {
     display: flex;
@@ -129,8 +161,10 @@ header {
     font-weight: 600;
 }
 
+
 .nav-links a { color: var(--gris-700); }
 .nav-links a:hover, .nav-links a.active { color: var(--bordo-800); }
+
 
 /* Dropdown */
 .dropdown { position: relative; }
@@ -149,6 +183,7 @@ header {
     z-index: 110;
 }
 
+
 .dropdown-menu li a {
     display: block;
     padding: 0.6rem 1.2rem;
@@ -156,12 +191,15 @@ header {
     font-weight: 500;
 }
 
+
 .dropdown-menu li a:hover {
     background-color: var(--bordo-50);
     color: var(--bordo-900);
 }
 
+
 .dropdown:hover .dropdown-menu { display: block; }
+
 
 .btn-nav {
     background-color: var(--bordo-800) !important;
@@ -171,16 +209,19 @@ header {
     border: 1px solid rgba(198, 146, 37, 0.4);
 }
 
+
 .btn-nav:hover { background-color: var(--bordo-900) !important; color: #ffffff !important; }
+
 
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--bordo-950) 0%, var(--bordo-900) 50%, var(--bordo-800) 100%);
     color: #ffffff;
-    padding: 5.5rem 0;
+    padding: 3.5rem 0;
     text-align: center;
     border-bottom: 4px solid var(--oro-500);
 }
+
 
 .hero-badge {
     display: inline-block;
@@ -195,10 +236,13 @@ header {
     margin-bottom: 1.2rem;
 }
 
+
 .hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 1.2rem; line-height: 1.2; }
 .hero p { font-size: 1.15rem; max-width: 720px; margin: 0 auto 2.2rem auto; color: var(--gris-200); }
 
+
 .hero-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
 
 .btn-primary {
     background-color: var(--oro-500);
@@ -209,7 +253,9 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+
 .btn-primary:hover { background-color: var(--oro-600); color: #ffffff; }
+
 
 .btn-secondary {
     background-color: rgba(255, 255, 255, 0.1);
@@ -220,17 +266,22 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+
 .btn-secondary:hover { background-color: rgba(255, 255, 255, 0.2); }
+
 
 /* Secciones Generales */
 .about-summary, .carreras-section, .info-highlight, .map-section { padding: 4.5rem 0; }
 .about-summary { background-color: #ffffff; text-align: center; }
 
+
 .section-title { font-size: 2rem; font-weight: 800; text-align: center; color: var(--bordo-950); margin-bottom: 0.75rem; }
 .section-title.text-light { color: #ffffff; }
 
+
 .section-divider { width: 60px; height: 4px; background-color: var(--oro-500); margin: 0 auto 2rem auto; border-radius: 2px; }
 .divider-light { background-color: var(--oro-400); }
+
 
 .gold-text {
     max-width: 800px;
@@ -242,6 +293,7 @@ header {
     line-height: 1.8;
 }
 
+
 /* Grilla de Carreras (Index) */
 .cards-grid {
     display: grid;
@@ -249,6 +301,7 @@ header {
     gap: 2rem;
     margin-top: 1rem;
 }
+
 
 .card {
     background-color: #ffffff;
@@ -260,6 +313,7 @@ header {
     flex-direction: column;
 }
 
+
 .card:hover { transform: translateY(-5px); border-color: var(--oro-500); box-shadow: 0 12px 20px -5px rgba(100, 13, 31, 0.12); }
 .card-meta { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--oro-600); margin-bottom: 0.5rem; }
 .card h3 { font-size: 1.35rem; font-weight: 700; color: var(--bordo-900); margin-bottom: 0.75rem; }
@@ -267,13 +321,16 @@ header {
 .card-link { font-size: 0.9rem; font-weight: 700; color: var(--bordo-800); display: inline-flex; align-items: center; gap: 0.35rem; }
 .card-link:hover { color: var(--oro-600); }
 
+
 /* Banner Preinscripciones */
 .info-highlight { background: linear-gradient(135deg, var(--bordo-900) 0%, var(--bordo-800) 100%); text-align: center; color: #ffffff; }
 .info-highlight p { max-width: 650px; margin: 0 auto 2rem auto; color: var(--gris-200); font-size: 1.05rem; }
 
+
 /* Mapa */
 .map-section { background-color: #ffffff; }
 .map-wrapper { border-radius: 1rem; overflow: hidden; border: 1px solid var(--gris-200); }
+
 
 /* Footer del Index */
 footer {
@@ -285,6 +342,7 @@ footer {
     margin-top: auto;
 }
 
+
 .footer-container { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.75rem; }
 .social-media-box { display: flex; gap: 1.25rem; }
 .social-icon { width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.25s ease; }
@@ -294,6 +352,7 @@ footer {
 .footer-text p { margin-bottom: 0.5rem; }
 .footer-info { color: var(--gris-600); font-size: 0.825rem; }
 .footer-info a { color: var(--oro-400); }
+
 
 /* Responsive del Nav (Móvil) */
 @media (max-width: 900px) {
