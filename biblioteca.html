@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca | Instituto Francisco de Paula Robles</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            50: '#fdf2f4', 100: '#fbe6e9', 500: '#9e1c38',
+                            700: '#7a1228', 800: '#640d1f', 900: '#4d0816', 950: '#31030c'
+                        },
+                        oro: {
+                            100: '#fdf7e7', 200: '#faecc4', 400: '#dfb75c',
+                            500: '#c69225', 600: '#a87515', 700: '#84570d'
+                        },
+                        gris: {
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+                            600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        serif: ['Cinzel', 'Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Externo compartido -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
+
+
+    <!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-lg bordo-gradient-bg flex items-center justify-center text-oro-400 text-xl font-serif font-bold shadow-md border border-oro-500/40 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm md:text-base font-bold text-bordo-900 leading-tight group-hover:text-bordo-700 transition-colors">Instituto Francisco de Paula Robles</h1>
+                    <p class="text-xs text-oro-600 font-semibold uppercase tracking-wider">Biblioteca Institucional</p>
+                </div>
+            </a>
+
+            <!-- Menú Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
+                <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+                </a>
+                <a href="#historia" class="hover:text-bordo-800 transition-colors">Nuestra Historia</a>
+                <a href="#equipo" class="hover:text-bordo-800 transition-colors">Bibliotecarias</a>
+                <a href="#espacio" class="hover:text-bordo-800 transition-colors">El Espacio</a>
+                <a href="#contacto-biblioteca" class="hover:text-bordo-800 transition-colors">Contacto</a>
+            </nav>
+
+            <a href="#contacto-biblioteca" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold shadow transition-all duration-200 hover:shadow-md flex items-center gap-2">
+                <span>Contacto</span>
+                <i class="fa-solid fa-envelope text-xs text-oro-400"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bordo-gradient-bg text-white py-20 lg:py-28 overflow-hidden border-b-4 border-oro-500">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c69225_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-oro-500/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/30 border border-oro-400/40 text-oro-200 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-oro-400 animate-pulse"></span>
+                    Centro de Recursos Bibliográficos y Documentales
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    Biblioteca <br>
+                    <span class="gold-gradient-text">Francisco de Paula Robles</span>
+                </h1>
+
+                <p class="text-gris-200 text-base lg:text-lg max-w-2xl font-light leading-relaxed">
+                    Un espacio educativo abierto, multidisciplinario y multimedial concebido para brindar servicios de calidad y responder a las necesidades académicas de toda nuestra comunidad educativa.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#historia" class="bg-oro-500 hover:bg-oro-600 text-bordo-950 font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Conocer Historia
+                    </a>
+                    <a href="#contacto-biblioteca" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-lg backdrop-blur-sm transition-all duration-200">
+                        Contactar Bibliotecaria
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta Informativa Lateral -->
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-2xl p-8 shadow-2xl text-gris-800 border-2 border-oro-400/40 relative">
+                    <div class="absolute -top-3 right-6 bg-bordo-800 text-oro-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-oro-500/50">
+                        Atención Presencial
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-bordo-50 flex items-center justify-center text-bordo-800 text-2xl mb-5">
+                        <i class="fa-solid fa-book-reader"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-bordo-900 mb-2">Un Espacio para Crecer</h3>
+                    <p class="text-gris-600 text-sm mb-6 leading-relaxed">
+                        Un lugar de encuentro, estudio e investigación pensado para estudiantes y docentes de todas nuestras carreras superiores.
+                    </p>
+
+                    <div class="space-y-3.5 border-t border-gris-200 pt-5 text-sm font-semibold text-gris-700">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Material Específico de Carreras
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Colección Bibliográfica General
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Recursos Multimediales
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Acompañamiento Pedagógico
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORIA Y TRAYECTORIA -->
+    <section id="historia" class="py-20 bg-white border-b border-gris-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-6 space-y-6">
+                    <span class="text-oro-600 font-bold uppercase tracking-wider text-xs bg-oro-100 px-3 py-1 rounded-md border border-oro-200">Desde 1961</span>
+                    <h2 class="text-3xl font-extrabold text-bordo-950">Trayectoria e Historia</h2>
+                    <div class="w-16 h-1 bg-bordo-800 rounded-full"></div>
+                    
+                    <p class="text-gris-700 leading-relaxed text-sm md:text-base">
+                        Trazando un recorrido en el tiempo, podemos decir que esta biblioteca nace junto con el <strong>Instituto del Profesorado Francisco de Paula Robles el 13 de marzo de 1961</strong> con una amplia colección bibliográfica de carácter general, como así también material específico sobre las carreras que ofrece la institución[cite: 7].
+                    </p>
+                </div>
+
+                <div class="md:col-span-6">
+                    <div class="bg-gris-50 border border-gris-200 rounded-2xl p-8 shadow-sm border-l-4 border-l-oro-500">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-icons"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-bordo-900">Organización y Recursos</h3>
+                        </div>
+                        <p class="text-gris-600 text-sm leading-relaxed">
+                            La biblioteca se concibe como una organización, un espacio educativo abierto, un centro de recursos bibliográficos, documentales y multimediales, que brinda servicios de calidad dando respuestas a las necesidades académicas de todos los miembros de la comunidad educativa[cite: 7].
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO DOCENTE / BIBLIOTECARIAS -->
+    <section id="equipo" class="py-20 bg-gris-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-bordo-800 font-bold uppercase tracking-wider text-xs bg-bordo-50 px-3 py-1 rounded-md border border-bordo-200">Reconocimiento</span>
+                <h2 class="text-3xl font-extrabold text-bordo-950 mt-3">Cuerpo de Bibliotecarias</h2>
+                <p class="text-gris-600 text-sm mt-2">Demostrando gran profesionalismo y compromiso se han desempeñado como bibliotecarias en nuestra institución[cite: 7]</p>
+                <div class="w-16 h-1 bg-oro-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Bibliotecaria Actual -->
+            <div class="max-w-3xl mx-auto mb-12">
+                <div class="bg-white rounded-2xl p-8 border-2 border-oro-400 shadow-md flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                    <div class="w-20 h-20 rounded-full bg-bordo-900 text-oro-400 flex items-center justify-center text-3xl font-bold shrink-0 border-2 border-oro-400">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-oro-600 uppercase tracking-wider">Cargo Actual</div>
+                        <h3 class="text-2xl font-bold text-bordo-900">María Felisa Novaretti</h3>
+                        <p class="text-gris-600 text-sm mt-1">
+                            Brinda gran apoyo y acompañamiento pedagógico a profesores y alumnos[cite: 7].
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Histórico de Bibliotecarias -->
+            <div class="max-w-4xl mx-auto">
+                <h4 class="text-center font-bold text-gris-700 uppercase tracking-wider text-xs mb-6">Trayectoria Histórica de Bibliotecarias</h4>
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-xl border border-gris-200 text-center shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">ME</div>
+                        <div class="font-bold text-gris-800 text-sm">Martha Elena Espil</div>
+                        <div class="text-xs text-gris-600">Ex Bibliotecaria</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gris-200 text-center shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MF</div>
+                        <div class="font-bold text-gris-800 text-sm">María Amalia Fontana</div>
+                        <div class="text-xs text-gris-600">Ex Bibliotecaria</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gris-200 text-center shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">ML</div>
+                        <div class="font-bold text-gris-800 text-sm">María Graciela Lanz</div>
+                        <div class="text-xs text-gris-600">Ex Bibliotecaria</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gris-200 text-center shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">OG</div>
+                        <div class="font-bold text-gris-800 text-sm">Ornela Greco</div>
+                        <div class="text-xs text-gris-600">Ex Bibliotecaria</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPÓSITO / VALORES DEL ESPACIO -->
+    <section id="espacio" class="py-20 bg-white border-y border-gris-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-block p-4 rounded-full bg-bordo-50 text-bordo-800 mb-6 border border-bordo-100">
+                <i class="fa-solid fa-users-line text-2xl text-oro-600"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-bordo-950 mb-6">Un Lugar de Encuentro y Producción</h2>
+            <p class="text-lg md:text-xl text-gris-700 font-serif leading-relaxed max-w-3xl mx-auto italic">
+                "La Biblioteca es un espacio abierto, libre, que favorece al encuentro con otros integrantes de la comunidad educativa, es un lugar donde se estudia, si investiga, se proyecta, se lee, se comparten muy buenos momentos."
+            </p>
+            
+            <div class="mt-8">
+                <span class="inline-block bg-bordo-800 text-oro-200 font-bold px-6 py-2.5 rounded-full text-base shadow-md border border-oro-500/50">
+                    ¡Acercate, te esperamos!
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTACADO CONTACTO BIBLIOTECA (SECCIÓN SIMPLIFICADA) -->
+    <section id="contacto-biblioteca" class="py-16 bordo-gradient-bg text-white text-center border-t-2 border-oro-500">
+        <div class="max-w-4xl mx-auto px-6 space-y-4">
+            <h2 class="text-3xl font-extrabold text-white">Contacto de Biblioteca</h2>
+            <div class="w-16 h-1 bg-oro-400 mx-auto rounded-full"></div>
+            
+            <p class="text-lg pt-2">
+                <strong>Bibliotecaria:</strong> María Felisa Novaretti
+            </p>
+            <p class="text-lg">
+                <strong>Correo electrónico:</strong> 
+                <a href="mailto:novarettifely@gmail.com" class="text-oro-300 hover:text-oro-200 underline transition-colors ml-1 font-semibold">
+                    novarettifely@gmail.com
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-gris-900 text-gris-300 py-12 border-t-2 border-oro-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <div class="font-serif font-bold text-white text-base mb-3 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded bg-bordo-800 text-oro-400 flex items-center justify-center text-xs">P</span>
+                    Institutos Parroquiales
+                </div>
+                <p class="text-xs text-gris-400 leading-relaxed">
+                    Instituto del Profesorado Francisco de Paula Robles. Compromiso educativo y formativo en la ciudad de Dolores.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Servicios Institucionales</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="biblioteca.html" class="hover:text-white transition-colors">• Biblioteca Institucional</a></li>
+                    <li><a href="interfazanalista.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Análisis de Sistemas</a></li>
+                    <li><a href="interfazpsicopedagogia.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Psicopedagogía</a></li>
+                    <li><a href="interfazedinicial.html" class="hover:text-white transition-colors">• Profesorado en Educación Inicial</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Enlaces Rápidos</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Volver al Inicio</a></li>
+                    <li><a href="#historia" class="hover:text-white transition-colors">Historia</a></li>
+                    <li><a href="#equipo" class="hover:text-white transition-colors">Bibliotecarias</a></li>
+                    <li><a href="#contacto-biblioteca" class="hover:text-white transition-colors">Contacto Directo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Sede Institucional</h4>
+                <p class="text-xs text-gris-400">A. del Valle 350, Dolores (Bs. As.)</p>
+                <p class="text-xs text-gris-400 mt-1">Email: novarettifely@gmail.com</p>
+                <p class="text-xs text-oro-400 mt-2 font-mono">DIPREGEP Oficial</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-gris-800 text-center text-xs text-gris-500">
+            © 2026 Instituto del Profesorado Francisco de Paula Robles — Institutos Parroquiales de Dolores. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
