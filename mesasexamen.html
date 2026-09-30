@@ -1,186 +1,554 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesas de Exámenes - Institutos Parroquiales</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
+    <title>Mesas de Exámenes Finales | Instituto Francisco de Paula Robles</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            50: '#fdf2f4', 100: '#fbe6e9', 500: '#9e1c38',
+                            700: '#7a1228', 800: '#640d1f', 900: '#4d0816', 950: '#31030c'
+                        },
+                        oro: {
+                            100: '#fdf7e7', 200: '#faecc4', 400: '#dfb75c',
+                            500: '#c69225', 600: '#a87515', 700: '#84570d'
+                        },
+                        gris: {
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+                            600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        serif: ['Cinzel', 'Merriweather', 'serif']
+                    }
+                }
+            }
         }
-    </style>
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Compartido -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <header>
-        <div>
-            <a href="https://ww.facebook.com/francisco.depaularobles.9" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://www.instagram.com/franciscodepaularoblessuperior/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://api.whatsapp.com/send?phone=5492245410225&amp;text=Hola!%20En%20que%20podemos%20ayudarte?" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        </div>
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-lg bordo-gradient-bg flex items-center justify-center text-oro-400 text-xl font-serif font-bold shadow-md border border-oro-500/40 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm md:text-base font-bold text-bordo-900 leading-tight group-hover:text-bordo-700 transition-colors">Instituto Francisco de Paula Robles</h1>
+                    <p class="text-xs text-oro-600 font-semibold uppercase tracking-wider">Nivel Terciario Superior</p>
+                </div>
+            </a>
 
-        <div>
-            <a href="index.html">
-                <img src="https://www.institutosparroquiales.com/images/title-header.png" alt="Institutos Parroquiales">
+            <!-- Menú Navegación -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
+                <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+                </a>
+
+                <!-- Dropdown Carreras -->
+                <div class="relative group py-6">
+                    <button class="hover:text-bordo-800 transition-colors flex items-center gap-1.5 focus:outline-none font-medium">
+                        <span>Carreras</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-oro-600 group-hover:rotate-180 transition-transform duration-200"></i>
+                    </button>
+                    <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-60 bg-white border border-gris-200 rounded-xl shadow-xl p-2 gap-1 transition-all duration-200 z-50">
+                        <a href="interfazanalista.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid fa-laptop-code text-oro-600 text-xs"></i>
+                            <span>Análisis de Sistemas</span>
+                        </a>
+                        <a href="interfazpsicopedagogia.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid fa-brain text-oro-600 text-xs"></i>
+                            <span>Psicopedagogía</span>
+                        </a>
+                        <a href="interfazedinicial.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid fa-shapes text-oro-600 text-xs"></i>
+                            <span>Educación Inicial</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="mesas_examenes.html" class="text-bordo-800 font-bold transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-calendar-check text-xs text-oro-600"></i> Mesas de Exámenes
+                </a>
+            </nav>
+
+            <a href="index.html#preinscripciones" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold shadow transition-all duration-200 hover:shadow-md flex items-center gap-2">
+                <span>Preinscripción</span>
+                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
             </a>
         </div>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li>
-                    <span>Carreras</span>
-                    <ul>
-                        <li><a href="interfazanalista.html">Tecnicatura Superior en Análisis de Sistemas</a></li>
-                        <li><a href="interfazpsicopedagogia.html">Tecnicatura Superior en Psicopedagogía</a></li>
-                        <li><a href="interfazedinicial.html">Profesorado en Educación Inicial</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Directivos</a></li>
-                <li><a href="#">Biblioteca</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="mesasexamen.html">Mesas de Exámenes</a></li>
-                <li><a href="#">Preinscripción</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <!-- Requisitos para rendir -->
-        <section>
+    <!-- HERO DE LA SECCIÓN -->
+    <section class="bordo-gradient-bg text-white py-14 border-b-4 border-oro-500">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block px-3.5 py-1.5 rounded-full bg-black/30 border border-oro-400/40 text-oro-200 text-xs font-semibold tracking-wide uppercase mb-3">
+                Calendario Académico Oficial
+            </span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white">
+                Mesas de Exámenes <span class="gold-gradient-text">Finales</span>
+            </h1>
+            <p class="text-gris-200 text-sm md:text-base max-w-2xl mx-auto mt-2 font-light">
+                Cronograma completo de mesas organizadas por carrera y año lectivo. Consulta fechas, horarios y aulas designadas.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL / SELECTOR Y TABLAS -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-12 w-full">
+
+        <!-- Selector de Carrera -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gris-200 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-                <h2>Mesa de Exámenes</h2>
+                <h2 class="text-lg font-bold text-bordo-950">Selecciona tu Carrera</h2>
+                <p class="text-xs text-gris-600">Filtra el cronograma para visualizar las asignaturas correspondientes</p>
             </div>
-            
-            <div>
-                <h1>Alumnos:</h1>
-                <p>Estamos por comenzar el turno de finales y queremos recordarte los requisitos para su inscripción:</p>
-                <ul>
-                    <li>Realizar la inscripción con al menos 72 hs (3 días hábiles, ni sábado, ni domingos ni feriados) antes de la mesa, sin excepción.</li>
-                    <li>Solo se podrán inscribir en administración de 17 a 19 hs de lunes a viernes.</li>
-                    <li>Tener cuota al día al momento de la inscripción.</li>
-                    <li>Controlar fechas y horarios.</li>
-                    <li>Tener en cuenta las correlatividades de cada materia a rendir.</li>
-                </ul>
-                <p>Por favor respetar cada punto para que podamos lograr mayor eficiencia en el proceso.</p>
-                <p>¡Gracias!</p>
+            <div class="flex flex-wrap gap-2 w-full md:w-auto">
+                <button onclick="mostrarCarrera('analisis')" id="btn-analisis" class="tab-btn active-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code"></i> Análisis de Sistemas
+                </button>
+                <button onclick="mostrarCarrera('psico')" id="btn-psico" class="tab-btn inactive-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-brain"></i> Psicopedagogía
+                </button>
+                <button onclick="mostrarCarrera('inicial')" id="btn-inicial" class="tab-btn inactive-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-shapes"></i> Educación Inicial
+                </button>
             </div>
-        </section>
+        </div>
 
-        <!-- BOTONES DE ACCESO DIRECTO -->
-        <section>
-            <h3>Ir directamente a las mesas de tu carrera:</h3>
-            <div>
-                <a href="#mesas-sistemas"><button type="button">Análisis de Sistemas</button></a>
-                <a href="#mesas-psicopedagogia"><button type="button">Psicopedagogía</button></a>
-                <a href="#mesas-inicial"><button type="button">Educación Inicial</button></a>
-            </div>
-        </section>
-
-        <!-- SECCIONES SEPARADAS POR CARRERA -->
-        <section>
-            
-            <!-- Bloque 1: Análisis de Sistemas -->
-            <div id="mesas-sistemas">
-                <hr>
-                <h2>Tecnicatura Superior en Análisis de Sistemas</h2>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Materia</th>
-                            <th>Año</th>
-                            <th>Fecha</th>
-                            <th>Horario</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sistemas y Organizaciones</td>
-                            <td>1°</td>
-                            <td>A confirmar</td>
-                            <td>18:00 hs</td>
-                        </tr>
-                        <tr>
-                            <td>Algoritmos y Estructuras de Datos</td>
-                            <td>1°</td>
-                            <td>A confirmar</td>
-                            <td>19:00 hs</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><a href="#">↑ Volver arriba</a></p>
+        <!-- SECCIÓN 1: ANÁLISIS DE SISTEMAS -->
+        <div id="carrera-analisis" class="space-y-10">
+            <div class="flex items-center justify-between border-b border-gris-300 pb-3">
+                <h2 class="text-2xl font-extrabold text-bordo-900 flex items-center gap-3">
+                    <i class="fa-solid fa-laptop-code text-oro-600"></i> Tecnicatura Superior en Análisis de Sistemas
+                </h2>
+                <a href="interfazanalista.html" class="text-xs font-bold text-oro-700 hover:text-bordo-800 flex items-center gap-1">
+                    Ver Información de la Carrera <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
 
-            <!-- Bloque 2: Psicopedagogía -->
-            <div id="mesas-psicopedagogia">
-                <hr>
-                <h2>Tecnicatura Superior en Psicopedagogía</h2>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Materia</th>
-                            <th>Año</th>
-                            <th>Fecha</th>
-                            <th>Horario</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Introducción a la Psicopedagogía</td>
-                            <td>1°</td>
-                            <td>A confirmar</td>
-                            <td>18:00 hs</td>
-                        </tr>
-                        <tr>
-                            <td>Neurociencias</td>
-                            <td>1°</td>
-                            <td>A confirmar</td>
-                            <td>19:30 hs</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><a href="#">↑ Volver arriba</a></p>
+            <!-- 1° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Primer Año</h3>
+                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Res. 6790/19</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Inglés I</td><td class="p-4">17/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Elias Malvina</td><td class="p-4 text-center font-mono font-bold">A-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Ciencia, Tecnología y Sociedad</td><td class="p-4">18/11/2026</td><td class="p-4">18:30 hs</td><td class="p-4">Aizpitarte Agustina</td><td class="p-4 text-center font-mono font-bold">A-2</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Análisis Matemático I</td><td class="p-4">19/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Blassi Ramiro</td><td class="p-4 text-center font-mono font-bold">A-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Álgebra</td><td class="p-4">20/11/2026</td><td class="p-4">19:00 hs</td><td class="p-4">Capitan Belen</td><td class="p-4 text-center font-mono font-bold">A-3</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Algoritmos y Estructuras de Datos I</td><td class="p-4">23/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Lazzaro Pablo</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Sistemas y Organizaciones</td><td class="p-4">24/11/2026</td><td class="p-4">18:30 hs</td><td class="p-4">Aguiar Julio</td><td class="p-4 text-center font-mono font-bold">A-2</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Arquitectura de Computadoras</td><td class="p-4">25/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Del Matte Horacio</td><td class="p-4 text-center font-mono font-bold">Lab 2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Prácticas Profesionalizantes I</td><td class="p-4">26/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Francisco Mariano</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Formación Religiosa I</td><td class="p-4">27/11/2026</td><td class="p-4">19:00 hs</td><td class="p-4">Masotti Leandro</td><td class="p-4 text-center font-mono font-bold">A-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- Bloque 3: Educación Inicial -->
-            <div id="mesas-inicial">
-                <hr>
-                <h2>Profesorado en Educación Inicial</h2>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Materia</th>
-                            <th>Año</th>
-                            <th>Fecha</th>
-                            <th>Horario</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pedagogía</td>
-                            <td>1°</td>
-                            <td>A confirmar</td>
-                            <td>18:00 hs</td>
-                        </tr>
-                        <tr>
-                            <td>Didáctica General</td>
-                            <td>1°</td>
-                            <td>A confirmar</td>
-                            <td>19:00 hs</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><a href="#">↑ Volver arriba</a></p>
+            <!-- 2° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-800 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Segundo Año</h3>
+                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Res. 6790/19</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Inglés II</td><td class="p-4">17/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Elias Malvina</td><td class="p-4 text-center font-mono font-bold">A-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Análisis Matemático II</td><td class="p-4">19/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Blassi Ramiro</td><td class="p-4 text-center font-mono font-bold">A-1</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Estadística</td><td class="p-4">20/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Capitan Belen</td><td class="p-4 text-center font-mono font-bold">A-3</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Ingeniería del Software I</td><td class="p-4">23/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Lima Pablo</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Algoritmos y Estructuras de Datos II</td><td class="p-4">24/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Lazzaro Pablo</td><td class="p-4 text-center font-mono font-bold">Lab 2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Sistemas Operativos</td><td class="p-4">25/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Del Matte Horacio</td><td class="p-4 text-center font-mono font-bold">Lab 2</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Bases de Datos</td><td class="p-4">26/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Membiela Marcos</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Prácticas Profesionalizantes II</td><td class="p-4">27/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Francisco Mariano</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Formación Religiosa II</td><td class="p-4">30/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Masotti Leandro</td><td class="p-4 text-center font-mono font-bold">A-2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-        </section>
+            <!-- 3° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Tercer Año</h3>
+                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Res. 6790/19</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Inglés III</td><td class="p-4">17/11/2026</td><td class="p-4">20:30 hs</td><td class="p-4">Elias Malvina</td><td class="p-4 text-center font-mono font-bold">A-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Aspectos Legales de la Profesión</td><td class="p-4">18/11/2026</td><td class="p-4">20:00 hs</td><td class="p-4">Reimondez Alejandro</td><td class="p-4 text-center font-mono font-bold">A-2</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Seminario de Actualización</td><td class="p-4">20/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Rossi Santiago</td><td class="p-4 text-center font-mono font-bold">Lab 2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Redes y Comunicaciones</td><td class="p-4">23/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Mario Vazquez</td><td class="p-4 text-center font-mono font-bold">Lab 2</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Ingeniería del Software II</td><td class="p-4">24/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Lima Pablo</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Algoritmos y Estructuras de Datos III</td><td class="p-4">25/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Lazzaro Pablo</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Prácticas Profesionalizantes III</td><td class="p-4">27/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Francisco Mariano</td><td class="p-4 text-center font-mono font-bold">Lab 1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Formación Religiosa III</td><td class="p-4">30/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Masotti Leandro</td><td class="p-4 text-center font-mono font-bold">A-2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: PSICOPEDAGOGÍA -->
+        <div id="carrera-psico" class="space-y-10 hidden">
+            <div class="flex items-center justify-between border-b border-gris-300 pb-3">
+                <h2 class="text-2xl font-extrabold text-bordo-900 flex items-center gap-3">
+                    <i class="fa-solid fa-brain text-oro-600"></i> Tecnicatura Superior en Psicopedagogía
+                </h2>
+                <a href="interfazpsicopedagogia.html" class="text-xs font-bold text-oro-700 hover:text-bordo-800 flex items-center gap-1">
+                    Ver Información de la Carrera <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- 1° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Primer Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Introducción a la Psicopedagogía</td><td class="p-4">17/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Psicología General</td><td class="p-4">19/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-1</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Anatomofisiología</td><td class="p-4">23/11/2026</td><td class="p-4">18:30 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Sociología de la Educación</td><td class="p-4">25/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-2</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Práctica Profesional I</td><td class="p-4">27/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 2° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-800 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Segundo Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Psicología del Evolutiva I</td><td class="p-4">18/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-3</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Neuropsicología</td><td class="p-4">20/11/2026</td><td class="p-4">18:30 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-3</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Didáctica General</td><td class="p-4">24/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Práctica Profesional II</td><td class="p-4">26/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-2</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Tercer Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Diagnóstico Psicopedagógico</td><td class="p-4">17/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Psicopatología Infantil</td><td class="p-4">20/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-2</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Práctica Profesional III</td><td class="p-4">27/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 4° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-gris-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Cuarto Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Tratamiento Psicopedagógico</td><td class="p-4">18/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-3</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Ética y Deontología Profesional</td><td class="p-4">25/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-3</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Residencia y Práctica Profesional IV</td><td class="p-4">30/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Docente Designado</td><td class="p-4 text-center font-mono font-bold">B-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: EDUCACIÓN INICIAL -->
+        <div id="carrera-inicial" class="space-y-10 hidden">
+            <div class="flex items-center justify-between border-b border-gris-300 pb-3">
+                <h2 class="text-2xl font-extrabold text-bordo-900 flex items-center gap-3">
+                    <i class="fa-solid fa-shapes text-oro-600"></i> Profesorado de Educación Inicial
+                </h2>
+                <a href="interfazedinicial.html" class="text-xs font-bold text-oro-700 hover:text-bordo-800 flex items-center gap-1">
+                    Ver Información de la Carrera <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- 1° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Primer Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Pedagogía</td><td class="p-4">17/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Didáctica General</td><td class="p-4">19/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-1</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Psicología del Desarrollo I</td><td class="p-4">23/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Práctica de Campo I</td><td class="p-4">27/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 2° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-800 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Segundo Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Psicología del Desarrollo II</td><td class="p-4">18/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Didáctica de la Lengua y Literatura</td><td class="p-4">20/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-3</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Práctica de Campo II</td><td class="p-4">26/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Tercer Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Didáctica de la Matemática</td><td class="p-4">24/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-2</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Juego y Desarrollo Infantil</td><td class="p-4">25/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-3</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950">Práctica de Campo III</td><td class="p-4">27/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 4° Año -->
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden">
+                <div class="bg-gris-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center">
+                    <h3 class="font-bold font-serif text-lg text-oro-200">Cuarto Año</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Horario</th>
+                                <th class="p-4">Tribunal Presidido por</th>
+                                <th class="p-4 text-center">Aula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">
+                            <tr><td class="p-4 font-semibold text-bordo-950">Ateneo Pedagógico</td><td class="p-4">18/11/2026</td><td class="p-4">19:30 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-1</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950">Residencia Pedagógica IV</td><td class="p-4">30/11/2026</td><td class="p-4">18:00 hs</td><td class="p-4">Equipo Docente Inicial</td><td class="p-4 text-center font-mono font-bold">C-1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <footer>
-        <hr>
-        <p>&copy; Institutos Parroquiales. Todos los derechos reservados.</p>
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-gris-900 text-gris-300 py-12 border-t-2 border-oro-500 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <div class="font-serif font-bold text-white text-base mb-3 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded bg-bordo-800 text-oro-400 flex items-center justify-center text-xs">P</span>
+                    Institutos Parroquiales
+                </div>
+                <p class="text-xs text-gris-400 leading-relaxed">
+                    Instituto del Profesorado Francisco de Paula Robles. Compromiso educativo y formativo en la ciudad de Dolores.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Carreras</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="interfazanalista.html" class="hover:text-white transition-colors">• Análisis de Sistemas</a></li>
+                    <li><a href="interfazpsicopedagogia.html" class="hover:text-white transition-colors">• Psicopedagogía</a></li>
+                    <li><a href="interfazedinicial.html" class="hover:text-white transition-colors">• Educación Inicial</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Acceso Rápido</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">• Inicio</a></li>
+                    <li><a href="mesas_examenes.html" class="hover:text-white transition-colors">• Mesas de Exámenes</a></li>
+                    <li><a href="index.html#preinscripciones" class="hover:text-white transition-colors">• Preinscripciones 2026</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Sede Institucional</h4>
+                <p class="text-xs text-gris-400">A. del Valle 350, Dolores (Bs. As.)</p>
+                <p class="text-xs text-gris-400 mt-1">Tel: 0224515-410225</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-gris-800 text-center text-xs text-gris-500">
+            © 2026 Instituto del Profesorado Francisco de Paula Robles. Todos los derechos reservados.
+        </div>
     </footer>
 
+    <!-- LÓGICA JAVASCRIPT PARA PESTAÑAS -->
+    <script>
+        function mostrarCarrera(carrera) {
+            // Ocultar todos los contenedores
+            document.getElementById('carrera-analisis').classList.add('hidden');
+            document.getElementById('carrera-psico').classList.add('hidden');
+            document.getElementById('carrera-inicial').classList.add('hidden');
+
+            // Resetear estilos de botones
+            const botones = document.querySelectorAll('.tab-btn');
+            botones.forEach(btn => {
+                btn.className = "tab-btn inactive-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2";
+            });
+
+            // Mostrar el contenedor activo y aplicar estilo al botón
+            document.getElementById('carrera-' + carrera).classList.remove('hidden');
+            const btnActivo = document.getElementById('btn-' + carrera);
+            btnActivo.className = "tab-btn active-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2";
+        }
+    </script>
+
+    <!-- ESTILOS ADICIONALES PARA LAS PESTAÑAS -->
+    <style>
+        .active-tab {
+            background-color: #640d1f;
+            color: #faecc4;
+            border-color: #c69225;
+            box-shadow: 0 4px 10px rgba(100, 13, 31, 0.2);
+        }
+        .inactive-tab {
+            background-color: #ffffff;
+            color: #334155;
+            border-color: #cbd5e1;
+        }
+        .inactive-tab:hover {
+            background-color: #f8fafc;
+            color: #640d1f;
+            border-color: #c69225;
+        }
+    </style>
 </body>
 </html>
