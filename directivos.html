@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoridades y Directivos | Instituto Francisco de Paula Robles</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            50: '#fdf2f4', 100: '#fbe6e9', 500: '#9e1c38',
+                            700: '#7a1228', 800: '#640d1f', 900: '#4d0816', 950: '#31030c'
+                        },
+                        oro: {
+                            100: '#fdf7e7', 200: '#faecc4', 400: '#dfb75c',
+                            500: '#c69225', 600: '#a87515', 700: '#84570d'
+                        },
+                        gris: {
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+                            600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        serif: ['Cinzel', 'Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Externo compartido -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-lg bordo-gradient-bg flex items-center justify-center text-oro-400 text-xl font-serif font-bold shadow-md border border-oro-500/40 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm md:text-base font-bold text-bordo-900 leading-tight group-hover:text-bordo-700 transition-colors">Instituto Francisco de Paula Robles</h1>
+                    <p class="text-xs text-oro-600 font-semibold uppercase tracking-wider">Autoridades Institucionales</p>
+                </div>
+            </a>
+
+            <!-- Menú Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
+                <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+                </a>
+
+                <!-- DROPDOWN DE CARRERAS -->
+                <div class="relative group py-6">
+                    <button class="hover:text-bordo-800 transition-colors flex items-center gap-1.5 focus:outline-none font-medium">
+                        <span>Carreras</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-oro-600 group-hover:rotate-180 transition-transform duration-200"></i>
+                    </button>
+                    <!-- Menú Desplegable -->
+                    <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-60 bg-white border border-gris-200 rounded-xl shadow-xl p-2 gap-1 transition-all duration-200 z-50">
+                        <a href="interfazanalista.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid text-oro-600 text-xs"></i>
+                            <span>Análisis de Sistemas</span>
+                        </a>
+                        <a href="interfazpsicopedagogia.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid text-oro-600 text-xs"></i>
+                            <span>Psicopedagogía</span>
+                        </a>
+                        <a href="interfazedinicial.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid text-oro-600 text-xs"></i>
+                            <span>Educación Inicial</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#directivos" class="hover:text-bordo-800 transition-colors">Equipo Directivo</a>
+                <a href="#contacto" class="hover:text-bordo-800 transition-colors">Contacto</a>
+            </nav>
+
+            <a href="#contacto" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold shadow transition-all duration-200 hover:shadow-md flex items-center gap-2">
+                <span>Realizar Consulta</span>
+                <i class="fa-solid fa-envelope text-xs text-oro-400"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bordo-gradient-bg text-white py-20 lg:py-28 overflow-hidden border-b-4 border-oro-500">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c69225_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-oro-500/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/30 border border-oro-400/40 text-oro-200 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-oro-400 animate-pulse"></span>
+                    Gestión y Liderazgo Educativo
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    Cuerpo <br>
+                    <span class="gold-gradient-text">Directivo y Administrativo</span>
+                </h1>
+
+                <p class="text-gris-200 text-base lg:text-lg max-w-2xl font-light leading-relaxed">
+                    Conocé al equipo de profesionales responsables de la gestión académica, administrativa y pedagógica del Instituto Francisco de Paula Robles, comprometidos con la formación de excelencia y los valores humanísticos.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#directivos" class="bg-oro-500 hover:bg-oro-600 text-bordo-950 font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-users"></i> Conocer Autoridades
+                    </a>
+                    <a href="#contacto" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-lg backdrop-blur-sm transition-all duration-200">
+                        Ir a Contacto
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta Lateral de Impacto -->
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-2xl p-8 shadow-2xl text-gris-800 border-2 border-oro-400/40 relative">
+                    <div class="absolute -top-3 right-6 bg-bordo-800 text-oro-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-oro-500/50">
+                        Atención Permanente
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-bordo-50 flex items-center justify-center text-bordo-800 text-2xl mb-5">
+                        <i class="fa-solid fa-building-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-bordo-900 mb-2">Administración Institucional</h3>
+                    <p class="text-gris-600 text-sm mb-6 leading-relaxed">
+                        Nuestro equipo se encarga de la planificación, coordinación y acompañamiento constante de las actividades de nuestra gran comunidad educativa.
+                    </p>
+
+                    <div class="space-y-3.5 border-t border-gris-200 pt-5">
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Gestión Académica Integral
+                        </div>
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Trámites y Documentación Alumnos
+                        </div>
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Asistencia Pedagógica y Docente
+                        </div>
+                        <div class="flex items-center text-sm font-semibold text-gris-700">
+                            <i class="fa-solid fa-circle-check text-oro-600 mr-2.5"></i> Coordinación Institucional
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPÓSITO INSTITUCIONAL -->
+    <section id="objetivo" class="py-16 bg-white border-b border-gris-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-block p-3 rounded-full bg-bordo-50 text-bordo-800 mb-4 border border-bordo-100">
+                <i class="fa-solid fa-quote-left text-xl text-oro-600"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-bordo-950 mb-6">Compromiso con la Excelencia Educativa</h2>
+            <blockquote class="text-lg md:text-xl text-gris-700 italic font-serif leading-relaxed max-w-3xl mx-auto">
+                "Nuestro equipo directivo y administrativo trabaja día a día para garantizar un entorno académico de calidad, acompañando a docentes y estudiantes en cada paso de su trayectoria formativa con dedicación y valores."
+            </blockquote>
+            <div class="mt-6 flex items-center justify-center gap-3">
+                <div class="h-0.5 w-12 bg-oro-400"></div>
+                <span class="text-xs font-bold text-bordo-900 uppercase tracking-widest">Instituto del Profesorado Francisco de Paula Robles</span>
+                <div class="h-0.5 w-12 bg-oro-400"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO DIRECTIVO Y ADMINISTRATIVO -->
+    <section id="directivos" class="py-20 bg-gris-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-oro-600 font-bold uppercase tracking-wider text-xs bg-oro-100 px-3 py-1 rounded-md border border-oro-200">Autoridades</span>
+                <h2 class="text-3xl font-extrabold text-bordo-950 mt-3">Equipo Directivo y Administrativo</h2>
+                <p class="text-gris-600 text-sm mt-2">Profesionales al servicio de nuestra comunidad educativa</p>
+                <div class="w-16 h-1 bg-bordo-800 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Tarjeta Representante Legal -->
+                <div class="bg-white p-8 rounded-2xl border-2 border-oro-400/50 text-center shadow-md hover:border-oro-400 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-20 h-20 rounded-full bg-bordo-900 text-oro-400 font-bold mx-auto mb-4 flex items-center justify-center text-3xl font-serif shadow-inner">
+                        PB
+                    </div>
+                    <div class="font-bold text-bordo-900 text-xl">Patricia Batagglia</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">Representante Legal</div>
+                </div>
+
+                <!-- Tarjeta Director -->
+                <div class="bg-white p-8 rounded-2xl border-2 border-oro-400/50 text-center shadow-md hover:border-oro-400 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-20 h-20 rounded-full bg-bordo-900 text-oro-400 font-bold mx-auto mb-4 flex items-center justify-center text-3xl font-serif shadow-inner">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="font-bold text-bordo-900 text-xl">José Antonio Ruvira</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">Director</div>
+                </div>
+
+                <!-- Tarjeta Secretaria -->
+                <div class="bg-white p-8 rounded-2xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-20 h-20 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-4 flex items-center justify-center text-2xl font-serif">OG</div>
+                    <div class="font-bold text-bordo-900 text-xl">Ornela Grecco</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">Secretaria</div>
+                </div>
+
+                <!-- Tarjeta Preceptora 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-20 h-20 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-4 flex items-center justify-center text-2xl font-serif">TG</div>
+                    <div class="font-bold text-bordo-900 text-xl">Teresita Goicoechea</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">Preceptora</div>
+                </div>
+
+                <!-- Tarjeta Preceptora 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-20 h-20 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-4 flex items-center justify-center text-2xl font-serif">NL</div>
+                    <div class="font-bold text-bordo-900 text-xl">Natalia Ludeña</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">Preceptora</div>
+                </div>
+
+                <!-- Tarjeta Bibliotecaria -->
+                <div class="bg-white p-8 rounded-2xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-20 h-20 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-4 flex items-center justify-center text-2xl font-serif">FN</div>
+                    <div class="font-bold text-bordo-900 text-xl">Felisa Novaretti</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">Bibliotecaria</div>
+                </div>
+
+                <!-- Tarjeta PF 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-20 h-20 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-4 flex items-center justify-center text-2xl font-serif">SF</div>
+                    <div class="font-bold text-bordo-900 text-xl">Silvia Fernandez</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">PF</div>
+                </div>
+
+                <!-- Tarjeta PF 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-20 h-20 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-4 flex items-center justify-center text-2xl font-serif">JL</div>
+                    <div class="font-bold text-bordo-900 text-xl">Juliana La Coste</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">PF</div>
+                </div>
+
+                <!-- Tarjeta Auxiliar -->
+                <div class="bg-white p-8 rounded-2xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
+                    <div class="w-20 h-20 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-4 flex items-center justify-center text-2xl font-serif">SD</div>
+                    <div class="font-bold text-bordo-900 text-xl">Sonia Di Franco</div>
+                    <div class="text-sm font-bold text-oro-600 uppercase tracking-wider mt-2">Auxiliar</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="contacto" class="py-20 bordo-gradient-bg text-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-oro-300 font-bold uppercase tracking-wider text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-md">Atención al Público</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">Comunicate con <br><span class="gold-gradient-text">Administración</span></h2>
+                    <p class="text-gris-200 text-sm sm:text-base leading-relaxed">
+                        Si tenés dudas sobre inscripciones, mesas de exámenes, constancias o necesitás realizar una consulta administrativa, envíanos tu mensaje.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-black/20 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-oro-500 text-bordo-950 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-oro-300 font-semibold uppercase">Dirección</div>
+                                <div class="text-white font-medium text-sm">A. del Valle 350. Ciudad de Dolores, Bs. As.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-black/20 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-oro-500 text-bordo-950 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-oro-300 font-semibold uppercase">Teléfonos de Contacto</div>
+                                <div class="text-white font-medium text-sm">02245-44-7466 / 0224515-410225</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-black/20 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-oro-500 text-bordo-950 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-oro-300 font-semibold uppercase">Correo Electrónico</div>
+                                <div class="text-white font-medium text-sm">institutoparroquialadm@hotmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de Consulta Rápida -->
+                <div class="lg:col-span-6">
+                    <div class="bg-white rounded-2xl p-8 text-gris-800 shadow-2xl border-2 border-oro-400">
+                        <h3 class="text-2xl font-bold text-bordo-900 mb-2">Enviar Mensaje</h3>
+                        <p class="text-gris-600 text-xs mb-6">Completá el formulario para comunicarte directamente con la secretaría o directivos.</p>
+                        
+                        <form onsubmit="event.preventDefault(); alert('¡Gracias por tu consulta! La administración se comunicará a la brevedad.');" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Nombre y Apellido</label>
+                                <input type="text" required placeholder="Tu nombre completo" class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Teléfono / WhatsApp</label>
+                                    <input type="tel" required placeholder="Ej: 2245..." class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Email</label>
+                                    <input type="email" required placeholder="tu@email.com" class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Mensaje / Consulta</label>
+                                <textarea rows="3" placeholder="Escribí aquí tu consulta..." class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500 font-bold py-3 rounded-lg shadow-md transition-colors duration-200">
+                                Enviar Consulta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-gris-900 text-gris-300 py-12 border-t-2 border-oro-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <div class="font-serif font-bold text-white text-base mb-3 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded bg-bordo-800 text-oro-400 flex items-center justify-center text-xs">P</span>
+                    Institutos Parroquiales
+                </div>
+                <p class="text-xs text-gris-400 leading-relaxed">
+                    Instituto del Profesorado Francisco de Paula Robles. Compromiso educativo y formativo en la ciudad de Dolores.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Servicios Institucionales</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="biblioteca.html" class="hover:text-white transition-colors">• Biblioteca Institucional</a></li>
+                    <li><a href="interfazanalista.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Análisis de Sistemas</a></li>
+                    <li><a href="interfazpsicopedagogia.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Psicopedagogía</a></li>
+                    <li><a href="interfazedinicial.html" class="hover:text-white transition-colors">• Profesorado en Educación Inicial</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Enlaces Rápidos</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Volver al Inicio</a></li>
+                    <li><a href="#directivos" class="hover:text-white transition-colors">Equipo Directivo</a></li>
+                    <li><a href="#contacto" class="hover:text-white transition-colors">Contacto de Administración</a></li>
+                    <li><a href="mesasexamen.html" class="hover:text-white transition-colors">Mesas de Exámenes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Sede Institucional</h4>
+                <p class="text-xs text-gris-400">A. del Valle 350, Dolores (Bs. As.)</p>
+                <p class="text-xs text-gris-400 mt-1">Tel: 0224515-410225</p>
+                <p class="text-xs text-oro-400 mt-2 font-mono">DIPREGEP Oficial</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-gris-800 text-center text-xs text-gris-500">
+            © 2026 Instituto del Profesorado Francisco de Paula Robles — Institutos Parroquiales de Dolores. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
