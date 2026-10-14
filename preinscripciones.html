@@ -44,7 +44,6 @@
 </head>
 <body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
 
-    
     <!-- Navegación Principal -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -93,49 +92,11 @@
         </div>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL: DOCUMENTACIÓN + FORMULARIO -->
+    <!-- CONTENIDO PRINCIPAL: FORMULARIO (IZQ) + DOCUMENTACIÓN (DER) -->
     <main class="py-16 bg-gris-100 flex-grow">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
             
-            <!-- PANEL IZQUIERDO: REQUISITOS Y DOCUMENTACIÓN -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gris-200 card-gold-border">
-                    <div class="w-12 h-12 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-xl shadow mb-6">
-                        <i class="fa-solid fa-folder-open"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-bordo-900 mb-2">Documentación a Presentar</h2>
-                    <p class="text-gris-600 text-xs mb-6">
-                        Para completar el trámite de preinscripción deberás contar con los siguientes documentos escaneados o fotocopiados:
-                    </p>
-
-                    <ul class="space-y-4 text-gris-700 text-sm">
-                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
-                            <i class="fa-solid fa-id-card text-oro-600 mt-1 shrink-0"></i>
-                            <span>Fotocopia de DNI (frente y dorso).</span>
-                        </li>
-                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
-                            <i class="fa-solid fa-certificate text-oro-600 mt-1 shrink-0"></i>
-                            <span>Fotocopia de la partida de nacimiento.</span>
-                        </li>
-                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
-                            <i class="fa-solid fa-graduation-cap text-oro-600 mt-1 shrink-0"></i>
-                            <span>Fotocopia del título secundario o certificado de título en trámite o que adeudas materias.</span>
-                        </li>
-                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
-                            <i class="fa-solid fa-image text-oro-600 mt-1 shrink-0"></i>
-                            <span>2 fotos carnet (4x4).</span>
-                        </li>
-                    </ul>
-
-                    <div class="mt-8 p-4 rounded-xl bg-bordo-50 border border-bordo-100 text-xs text-bordo-900 leading-relaxed">
-                        <i class="fa-solid fa-circle-info text-oro-600 mr-1"></i>
-                        <strong>Importante:</strong> Podés adjuntar los archivos digitales directamente en el formulario o presentarlos de forma física en la sede del instituto.
-                    </div>
-                </div>
-            </div>
-
-            <!-- PANEL DERECHO: FORMULARIO DE PREINSCRIPCIÓN -->
+            <!-- PANEL IZQUIERDO: FORMULARIO DE PREINSCRIPCIÓN -->
             <div class="lg:col-span-7">
                 <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-oro-400">
                     <h3 class="text-2xl font-bold text-bordo-900 mb-2">Formulario de Preinscripción</h3>
@@ -186,26 +147,29 @@
                             <input type="email" name="Email" required placeholder="tu@email.com" class="w-full px-4 py-2.5 rounded-lg border border-gris-300 focus:outline-none focus:ring-2 focus:ring-bordo-800 text-sm">
                         </div>
 
-                        <!-- Carga de Archivos Requeridos -->
+                        <!-- Carga de Archivos Requeridos (MÚLTIPLES ARCHIVOS) -->
                         <div class="pt-2 border-t border-gris-200">
-                            <h4 class="text-sm font-bold text-bordo-900 mb-3"><i class="fa-solid fa-paperclip text-oro-600 mr-1.5"></i> Adjuntar Documentación (Opcional)</h4>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-sm font-bold text-bordo-900"><i class="fa-solid fa-paperclip text-oro-600 mr-1.5"></i> Adjuntar Documentación (Opcional)</h4>
+                                <span class="text-[10px] bg-bordo-50 text-bordo-800 font-semibold px-2 py-0.5 rounded border border-bordo-200">Podés seleccionar múltiples fotos/archivos por campo</span>
+                            </div>
                             
                             <div class="space-y-3">
                                 <div>
-                                    <label class="block text-xs font-semibold text-gris-600 mb-1">Fotocopia de DNI</label>
-                                    <input type="file" name="adjunto_dni" accept="image/*,.pdf" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
+                                    <label class="block text-xs font-semibold text-gris-600 mb-1">Fotocopia de DNI (Anverso y Reverso / Frente y Dorso)</label>
+                                    <input type="file" name="adjunto_dni[]" multiple accept="image/*,.pdf" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-gris-600 mb-1">Partida de Nacimiento</label>
-                                    <input type="file" name="adjunto_nacimiento" accept="image/*,.pdf" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
+                                    <input type="file" name="adjunto_nacimiento[]" multiple accept="image/*,.pdf" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-gris-600 mb-1">Título Secundario o Constancia de Título en Trámite / Adeuda Materias</label>
-                                    <input type="file" name="adjunto_secundario" accept="image/*,.pdf" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
+                                    <input type="file" name="adjunto_secundario[]" multiple accept="image/*,.pdf" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-gris-600 mb-1">Fotos Carnet (2 unidades)</label>
-                                    <input type="file" name="adjunto_foto" accept="image/*" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
+                                    <input type="file" name="adjunto_foto[]" multiple accept="image/*" class="w-full text-xs text-gris-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-bordo-50 file:text-bordo-800 hover:file:bg-bordo-100 cursor-pointer">
                                 </div>
                             </div>
                         </div>
@@ -221,6 +185,44 @@
                             <span>Enviar Preinscripción 2027</span>
                         </button>
                     </form>
+                </div>
+            </div>
+
+            <!-- PANEL DERECHO: REQUISITOS Y DOCUMENTACIÓN -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gris-200 card-gold-border">
+                    <div class="w-12 h-12 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-xl shadow mb-6">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-bordo-900 mb-2">Documentación a Presentar</h2>
+                    <p class="text-gris-600 text-xs mb-6">
+                        Para completar el trámite de preinscripción deberás contar con los siguientes documentos escaneados o fotocopiados:
+                    </p>
+
+                    <ul class="space-y-4 text-gris-700 text-sm">
+                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
+                            <i class="fa-solid fa-id-card text-oro-600 mt-1 shrink-0"></i>
+                            <span>Fotocopia de DNI (anverso y reverso / frente y dorso).</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
+                            <i class="fa-solid fa-certificate text-oro-600 mt-1 shrink-0"></i>
+                            <span>Fotocopia de la partida de nacimiento.</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
+                            <i class="fa-solid fa-graduation-cap text-oro-600 mt-1 shrink-0"></i>
+                            <span>Fotocopia del título secundario o certificado de título en trámite o que adeudas materias.</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 rounded-lg bg-gris-50 border border-gris-200">
+                            <i class="fa-solid fa-image text-oro-600 mt-1 shrink-0"></i>
+                            <span>2 fotos carnet (4x4).</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 p-4 rounded-xl bg-bordo-50 border border-bordo-100 text-xs text-bordo-900 leading-relaxed">
+                        <i class="fa-solid fa-circle-info text-oro-600 mr-1"></i>
+                        <strong>Importante:</strong> Podés adjuntar los archivos digitales directamente en el formulario o presentarlos de forma física en la sede del instituto.
+                    </div>
                 </div>
             </div>
 
@@ -242,9 +244,9 @@
             <div>
                 <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Carreras de Nivel Superior</h4>
                 <ul class="space-y-1.5 text-xs text-gris-400">
-                    <li><a href="interfazanalista.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Análisis de Sistemas</a></li>
-                    <li><a href="interfazpsicopedagogia.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Psicopedagogía</a></li>
-                    <li><a href="interfazedinicial.html" class="hover:text-white transition-colors">• Profesorado en Educación Inicial</a></li>
+                    <li><a href="interfazanalista.html" class="hover:text-white transition-colors">Tecnicatura Superior en Análisis de Sistemas</a></li>
+                    <li><a href="interfazpsicopedagogia.html" class="hover:text-white transition-colors">Tecnicatura Superior en Psicopedagogía</a></li>
+                    <li><a href="interfazedinicial.html" class="hover:text-white transition-colors">Profesorado en Educación Inicial</a></li>
                 </ul>
             </div>
             <div>
