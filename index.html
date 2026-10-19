@@ -1,135 +1,195 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto Parroquial Francisco de Paula Robles - Nivel Superior</title>
-    <!-- CSS Externo Integrado -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            50: '#fdf2f4', 100: '#fbe6e9', 500: '#9e1c38',
+                            700: '#7a1228', 800: '#640d1f', 900: '#4d0816', 950: '#31030c'
+                        },
+                        oro: {
+                            100: '#fdf7e7', 200: '#faecc4', 400: '#dfb75c',
+                            500: '#c69225', 600: '#a87515', 700: '#84570d'
+                        },
+                        gris: {
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+                            600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        serif: ['Cinzel', 'Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Externo compartido -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
 
-
-    <!-- ENCABEZADO / NAVBAR -->
-    <header>
-        <nav class="navbar container">
-            <a href="index.html" class="logo-container" aria-label="Inicio">
-                <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="logo-image">
+<!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
+        <div class="w-full px-6 h-20 flex items-center justify-between">
+            <!-- LOGO SOLO (Para páginas generales) -->
+            <a href="index.html" class="flex items-center group">
+                <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
             </a>
-           
-            <input type="checkbox" id="menu-btn" class="menu-toggle">
-            <label for="menu-btn" class="burger-icon" aria-label="Abrir Menú">&#9776;</label>
 
+            <!-- Menú Links Global -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
+                <a href="index.html" class="text-bordo-800 font-bold transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+                </a>
 
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Inicio</a></li>
-               
-                <!-- PESTAÑA CARRERAS CON DESPLEGABLE CONECTADO -->
-                <li class="dropdown">
-                    <a href="#carreras" class="dropdown-toggle">Carreras <span class="arrow">&#9662;</span></a>
-                    <ul class="dropdown-menu">
-                        <!-- Enlace corregido a interfazanalista.html -->
-                        <li><a href="interfazanalista.html">Análisis de Sistemas</a></li>
-                        <li><a href="interfazpsicopedagogia.html">Psicopedagogía</a></li>
-                        <li><a href="interfazedinicial.html">Educación Inicial</a></li>
-                    </ul>
-                </li>
+                <!-- DROPDOWN DE CARRERAS -->
+                <div class="relative group py-6">
+                    <button class="hover:text-bordo-800 transition-colors flex items-center gap-1.5 focus:outline-none font-medium">
+                        <span>Carreras</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-oro-600 group-hover:rotate-180 transition-transform duration-200"></i>
+                    </button>
+                    <!-- Menú Desplegable -->
+                    <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-60 bg-white border border-gris-200 rounded-xl shadow-xl p-2 gap-1 transition-all duration-200 z-50">
+                        <a href="interfazanalista.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid fa-code text-oro-600 text-xs"></i>
+                            <span>Análisis de Sistemas</span>
+                        </a>
+                        <a href="interfazpsicopedagogia.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid fa-lightbulb text-oro-600 text-xs"></i>
+                            <span>Psicopedagogía</span>
+                        </a>
+                        <a href="interfazedinicial.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
+                            <i class="fa-solid fa-shapes text-oro-600 text-xs"></i>
+                            <span>Educación Inicial</span>
+                        </a>
+                    </div>
+                </div>
 
+                <a href="directivos.html" class="hover:text-bordo-800 transition-colors">Directivos</a>
+                <a href="biblioteca.html" class="hover:text-bordo-800 transition-colors">Biblioteca</a>
+                <a href="mesasexamen.html" class="hover:text-bordo-800 transition-colors">Mesas de Exámenes</a>
+            </nav>
 
-                <li><a href="directivos.html">Directivos</a></li>
-                <li><a href="biblioteca.html">Biblioteca</a></li>
-                <li><a href="mesas_examenes.html">Mesas de Exámenes</a></li>
-                <li><a href="#preinscripciones" class="btn-nav">Preinscripción</a></li>
-            </ul>
-        </nav>
+            <a href="#preinscripciones" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold shadow transition-all duration-200 hover:shadow-md flex items-center gap-2">
+                <span>Preinscripción</span>
+                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
+            </a>
+        </div>
     </header>
 
-
     <main>
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-content container">
-        <!-- Nuevo logo circular -->
-        <img src="images/escudo_instituto.png" alt="Escudo Instituto Parroquial" class="hero-logo" height="200" width="200">
-        <h1>65 Años de Trayectoria Educativa</h1>
-        <p>Formando profesionales con solidez científica, ética y una equilibrada visión del educador en Dolores y toda la región.</p>
-        <div class="hero-buttons">
-            <a href="#carreras" class="btn-primary">Oferta Académica</a>
-            <a href="#preinscripciones" class="btn-secondary">Inscripciones 2026</a>
-        </div>
-    </div>
-</section>
+        <!-- HERO SECTION (Color bordó original 950-900-800) -->
+        <section class="relative bg-gradient-to-br from-bordo-950 via-bordo-900 to-bordo-800 text-white py-20 lg:py-28 overflow-hidden border-b-4 border-oro-500">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c69225_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+                <img src="images/escudo_instituto.png" alt="Escudo Instituto Parroquial" class="h-40 w-40 mb-6 drop-shadow-xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+                    65 Años de <br><span class="gold-gradient-text">Trayectoria Educativa</span>
+                </h1>
+                <p class="text-gris-200 text-lg max-w-2xl font-light leading-relaxed mb-8">
+                    Formando profesionales con solidez científica, ética y una equilibrada visión del educador en Dolores y toda la región.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#carreras" class="bg-oro-500 hover:bg-oro-600 text-bordo-950 font-bold px-8 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                        Oferta Académica
+                    </a>
+                    <a href="#preinscripciones" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-8 py-3.5 rounded-lg backdrop-blur-sm transition-all">
+                        Inscripciones 2026
+                    </a>
+                </div>
+            </div>
         </section>
-
 
         <!-- BIENVENIDA / INSTITUCIONAL -->
-        <section class="about-summary">
-            <div class="container">
-                <h2 class="section-title">Bienvenidos a Nuestra Institución</h2>
-                <div class="section-divider"></div>
-                <!-- Párrafo en color dorado -->
-                <p class="gold-text">Nuestro instituto nace para ofrecer profesionales diplomados con una sólida preparación académica. Actualmente contamos con una oferta educativa amplia, acorde a las demandas de nuestro tiempo, buscando dotar a nuestros alumnos de mejores herramientas para hacer frente a los desafíos del mundo actual.</p>
+        <section class="py-20 bg-white border-b border-gris-200 text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-extrabold text-bordo-950 mb-4">Bienvenidos a Nuestra Institución</h2>
+                <div class="w-16 h-1 bg-oro-500 mx-auto rounded-full mb-8"></div>
+                <p class="text-lg md:text-xl text-oro-700 italic font-serif leading-relaxed font-medium">
+                    "Nuestro instituto nace para ofrecer profesionales diplomados con una sólida preparación académica. Actualmente contamos con una oferta educativa amplia, acorde a las demandas de nuestro tiempo, buscando dotar a nuestros alumnos de mejores herramientas para hacer frente a los desafíos del mundo actual."
+                </p>
             </div>
         </section>
-
 
         <!-- SECCIÓN CARRERAS -->
-        <section id="carreras" class="carreras-section">
-            <div class="container">
-                <h2 class="section-title">Oferta Académica 2026</h2>
-                <div class="section-divider"></div>
-               
-                <div class="cards-grid">
-                    <!-- Tarjeta 1: Análisis de Sistemas (CONECTADA Y CORREGIDA) -->
-                    <article class="card">
-                        <div class="card-meta">Tecnicatura Superior</div>
-                        <h3>Análisis de Sistemas</h3>
-                        <p>Estudios avanzados enfocados en sistemas informáticos, desarrollo de software y gestión tecnológica con visión ética y profesional.</p>
-                        <a href="interfazanalista.html" class="card-link">Explorar Carrera <span>&rarr;</span></a>
-                    </article>
+        <section id="carreras" class="py-20 bg-gris-100">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-bordo-950">Oferta Académica 2026</h2>
+                    <div class="w-16 h-1 bg-bordo-800 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Tarjeta 1: Análisis de Sistemas -->
+                    <div class="bg-white rounded-2xl p-8 border border-gris-200 shadow-sm hover:border-oro-500 hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="text-xs font-bold text-oro-600 uppercase tracking-wider mb-2">Tecnicatura Superior</div>
+                        <h3 class="text-2xl font-bold text-bordo-900 mb-4">Análisis de Sistemas</h3>
+                        <p class="text-gris-600 text-sm mb-6 flex-grow">Estudios avanzados enfocados en sistemas informáticos, desarrollo de software y gestión tecnológica con visión ética y profesional.</p>
+                        <a href="interfazanalista.html" class="text-bordo-800 font-bold text-sm hover:text-oro-600 flex items-center gap-2 transition-colors">
+                            Explorar Carrera <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
 
+                    <!-- Tarjeta 2: Psicopedagogía -->
+                    <div class="bg-white rounded-2xl p-8 border border-gris-200 shadow-sm hover:border-oro-500 hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="text-xs font-bold text-oro-600 uppercase tracking-wider mb-2">Tecnicatura Superior</div>
+                        <h3 class="text-2xl font-bold text-bordo-900 mb-4">Psicopedagogía</h3>
+                        <p class="text-gris-600 text-sm mb-6 flex-grow">Especialización en los procesos de aprendizaje y sus intervenciones. Preparación para equipos interdisciplinarios y práctica profesional.</p>
+                        <a href="interfazpsicopedagogia.html" class="text-bordo-800 font-bold text-sm hover:text-oro-600 flex items-center gap-2 transition-colors">
+                            Explorar Carrera <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-                    <!-- Tarjeta 2: Psicopedagogía (CONECTADA) -->
-                    <article class="card">
-                        <div class="card-meta">Tecnicatura Superior</div>
-                        <h3>Psicopedagogía</h3>
-                        <p>Especialización en los procesos de aprendizaje y sus intervenciones. Preparación para equipos interdisciplinarios y práctica profesional.</p>
-                        <a href="interfazpsicopedagogia.html" class="card-link">Explorar Carrera <span>&rarr;</span></a>
-                    </article>
-
-
-                    <!-- Tarjeta 3: Educación Inicial (CONECTADA) -->
-                    <article class="card">
-                        <div class="card-meta">Profesorado</div>
-                        <h3>Educación Inicial</h3>
-                        <p>Formación docente integral orientada al desarrollo infantil, aprehensión de valores, innovación pedagógica y respeto por la diversidad.</p>
-                        <a href="interfazedinicial.html" class="card-link">Explorar Carrera <span>&rarr;</span></a>
-                    </article>
+                    <!-- Tarjeta 3: Educación Inicial -->
+                    <div class="bg-white rounded-2xl p-8 border border-gris-200 shadow-sm hover:border-oro-500 hover:-translate-y-1 transition-all flex flex-col">
+                        <div class="text-xs font-bold text-oro-600 uppercase tracking-wider mb-2">Profesorado</div>
+                        <h3 class="text-2xl font-bold text-bordo-900 mb-4">Educación Inicial</h3>
+                        <p class="text-gris-600 text-sm mb-6 flex-grow">Formación docente integral orientada al desarrollo infantil, aprehensión de valores, innovación pedagógica y respeto por la diversidad.</p>
+                        <a href="interfazedinicial.html" class="text-bordo-800 font-bold text-sm hover:text-oro-600 flex items-center gap-2 transition-colors">
+                            Explorar Carrera <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- DESTACADO PREINSCRIPCIONES -->
-        <section id="preinscripciones" class="info-highlight">
-            <div class="container">
-                <h2 class="section-title text-light">Ciclo Lectivo 2026</h2>
-                <div class="section-divider divider-light"></div>
-                <p>Las preinscripciones se encuentran abiertas. Consulta los requisitos de ingreso y comienza tu camino profesional junto a nosotros.</p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn-primary btn-highlight">Ver Requisitos e Inscribirme</a>
-                </div>
+        <!-- DESTACADO PREINSCRIPCIONES (Color bordó original 900-800) -->
+        <section id="preinscripciones" class="py-20 bg-gradient-to-br from-bordo-900 to-bordo-800 text-white text-center border-t-4 border-oro-500">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Ciclo Lectivo 2026</h2>
+                <div class="w-16 h-1 bg-oro-400 mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gris-200 mb-8 font-light">Las preinscripciones se encuentran abiertas. Consulta los requisitos de ingreso y comienza tu camino profesional junto a nosotros.</p>
+                <a href="directivos.html#contacto" class="bg-oro-500 hover:bg-oro-600 text-bordo-950 font-bold px-8 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all inline-block">
+                    Ver Requisitos e Inscribirme
+                </a>
             </div>
         </section>
-
 
         <!-- SECCIÓN UBICACIÓN (MAPA) -->
-        <section id="ubicacion" class="map-section">
-            <div class="container">
-                <h2 class="section-title">Nuestra Ubicación</h2>
-                <div class="section-divider"></div>
-               
-                <div class="map-wrapper">
+        <section id="ubicacion" class="py-20 bg-white border-t border-gris-200">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-bordo-950">Nuestra Ubicación</h2>
+                    <div class="w-16 h-1 bg-bordo-800 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="rounded-2xl overflow-hidden shadow-md border border-gris-200">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.2709212004655!2d-57.68364882425482!3d-36.31782297239016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a25e24391206d1%3A0x6bda69ee02f8295b!2sArist%C3%B3bulo%20del%20Valle%20350%2C%20B7160%20Dolores%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar"
                         width="100%"
@@ -145,33 +205,52 @@
         </section>
     </main>
 
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-container container">
-            <div class="social-media-box">
-                <a href="https://www.facebook.com/francisco.depaularobles.9" target="_blank" class="social-icon facebook" title="Facebook Instituto Robles" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/franciscodepaularoblessuperior/" target="_blank" class="social-icon instagram" title="Instagram Instituto Robles" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=5492245410225&text=¡Hola!%20Me%20gustaría%20solicitar%20información." target="_blank" class="social-icon whatsapp" title="Contactar por WhatsApp" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-3.507c1.66.986 3.295 1.503 5.344 1.505 5.494 0 9.961-4.464 9.964-9.96.002-2.661-1.034-5.163-2.919-7.051C17.16 3.099 14.653 2.06 12.003 2.06c-5.497 0-9.966 4.467-9.969 9.965-.001 2.094.551 3.791 1.587 5.4l-.994 3.635 3.73-.978zM16.51 14.5c-.244-.122-1.443-.712-1.665-.793-.223-.081-.385-.122-.547.122-.162.244-.629.793-.771.954-.142.162-.284.183-.528.061-.244-.122-1.03-.38-1.962-1.212-.725-.647-1.215-1.446-1.357-1.69-.142-.244-.015-.376.107-.497.111-.11.244-.285.365-.427.122-.142.162-.244.244-.406.081-.162.041-.305-.02-.427-.061-.122-.547-1.32-.75-1.81-.197-.474-.397-.411-.547-.411-.142 0-.305-.02-.467-.02-.162 0-.427.061-.65.305-.223.244-.853.833-.853 2.031 0 1.198.873 2.356.994 2.519.122.162 1.719 2.625 4.165 3.679.582.251 1.036.4 1.391.514.584.186 1.114.16 1.533.098.467-.069 1.443-.59 1.645-1.159.203-.569.203-1.057.142-1.159-.061-.101-.223-.162-.467-.284z"/></svg>
-                </a>
-            </div>
-
-
-            <div class="footer-text">
-                <p>&copy; 2026 Instituto del Profesorado Francisco de Paula Robles. Todos los derechos reservados.</p>
-                <p class="footer-info">
-                    Aristóbulo del Valle 350, Dolores (B7160) | Tel: 02245-44-7466 / 02245-15-410225 <br>
-                    Email: <a href="mailto:institutoparroquialadm@hotmail.com">institutoparroquialadm@hotmail.com</a>
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-gris-900 text-gris-300 py-12 border-t-2 border-oro-500 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <div class="font-serif font-bold text-white text-base mb-3 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded bg-bordo-800 text-oro-400 flex items-center justify-center text-xs">P</span>
+                    Institutos Parroquiales
+                </div>
+                <p class="text-xs text-gris-400 leading-relaxed">
+                    Instituto del Profesorado Francisco de Paula Robles. Compromiso educativo y formativo en la ciudad de Dolores.
                 </p>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://www.facebook.com/francisco.depaularobles.9" target="_blank" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/franciscodepaularoblessuperior/" target="_blank" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5492245410225" target="_blank" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Servicios Institucionales</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="biblioteca.html" class="hover:text-white transition-colors">• Biblioteca Institucional</a></li>
+                    <li><a href="interfazanalista.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Análisis de Sistemas</a></li>
+                    <li><a href="interfazpsicopedagogia.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Psicopedagogía</a></li>
+                    <li><a href="interfazedinicial.html" class="hover:text-white transition-colors">• Profesorado en Educación Inicial</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Enlaces Rápidos</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="directivos.html" class="hover:text-white transition-colors">Equipo Directivo</a></li>
+                    <li><a href="mesasexamen.html" class="hover:text-white transition-colors">Mesas de Exámenes</a></li>
+                    <li><a href="directivos.html#contacto" class="hover:text-white transition-colors">Contacto de Administración</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Sede Institucional</h4>
+                <p class="text-xs text-gris-400">A. del Valle 350, Dolores (Bs. As.)</p>
+                <p class="text-xs text-gris-400 mt-1">Tel: 02245-44-7466 / 02245-15-410225</p>
+                <p class="text-xs text-gris-400 mt-1">Email: institutoparroquialadm@hotmail.com</p>
+                <p class="text-xs text-oro-400 mt-2 font-mono">DIPREGEP Oficial</p>
             </div>
         </div>
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-gris-800 text-center text-xs text-gris-500">
+            © 2026 Instituto del Profesorado Francisco de Paula Robles — Institutos Parroquiales de Dolores. Todos los derechos reservados.
+        </div>
     </footer>
-
 
 </body>
 </html>

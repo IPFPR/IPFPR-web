@@ -44,23 +44,18 @@
 </head>
 <body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Navegación Principal -->
+<!-- Navegación Principal -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                <div class="w-12 h-12 rounded-lg bordo-gradient-bg flex items-center justify-center text-oro-400 text-xl font-serif font-bold shadow-md border border-oro-500/40 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <div>
-                    <h1 class="text-sm md:text-base font-bold text-bordo-900 leading-tight group-hover:text-bordo-700 transition-colors">Instituto Francisco de Paula Robles</h1>
-                    <p class="text-xs text-oro-600 font-semibold uppercase tracking-wider">Nivel Terciario Superior</p>
-                </div>
+        <div class="w-full px-6 h-20 flex items-center justify-between">
+            <!-- LOGO SOLO (Para páginas generales) -->
+            <a href="index.html" class="flex items-center group">
+                <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
             </a>
 
-            <!-- Menú Links -->
+            <!-- Menú Links Global -->
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
-                <!-- CONECTADO AL INDEX.HTML -->
                 <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid text-xs text-oro-600"></i> Inicio
+                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
                 </a>
 
                 <!-- DROPDOWN DE CARRERAS -->
@@ -72,26 +67,24 @@
                     <!-- Menú Desplegable -->
                     <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-60 bg-white border border-gris-200 rounded-xl shadow-xl p-2 gap-1 transition-all duration-200 z-50">
                         <a href="interfazanalista.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
-                            <i class="fa-solid text-oro-600 text-xs"></i>
+                            <i class="fa-solid fa-code text-oro-600 text-xs"></i>
                             <span>Análisis de Sistemas</span>
                         </a>
                         <a href="interfazpsicopedagogia.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
-                            <i class="fa-solid text-oro-600 text-xs"></i>
+                            <i class="fa-solid fa-lightbulb text-oro-600 text-xs"></i>
                             <span>Psicopedagogía</span>
                         </a>
                         <a href="interfazedinicial.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
-                            <i class="fa-solid text-oro-600 text-xs"></i>
+                            <i class="fa-solid fa-shapes text-oro-600 text-xs"></i>
                             <span>Educación Inicial</span>
                         </a>
                     </div>
                 </div>
 
-                <a href="#perfil" class="hover:text-bordo-800 transition-colors">Perfil & Campo</a>
-                <a href="#plan" class="hover:text-bordo-800 transition-colors">Plan de Estudios</a>
-                <a href="#docentes" class="hover:text-bordo-800 transition-colors">Cuerpo Docente</a>
-                <a href="#contacto" class="hover:text-bordo-800 transition-colors">Contacto</a>
+                <a href="directivos.html" class="hover:text-bordo-800 transition-colors">Directivos</a>
+                <a href="biblioteca.html" class="hover:text-bordo-800 transition-colors">Biblioteca</a>
+                <a href="mesasexamen.html" class="hover:text-bordo-800 transition-colors">Mesas de Exámenes</a>
             </nav>
-
             <a href="#inscripcion" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold shadow transition-all duration-200 hover:shadow-md flex items-center gap-2">
                 <span>Preinscripción</span>
                 <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
