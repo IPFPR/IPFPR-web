@@ -1,17 +1,18 @@
 /* ==========================================================================
    Instituto Francisco de Paula Robles - Estilos Globales
-   Archivos vinculados: index.html y interfazanalistas.html
+   Archivos vinculados: index.html, interfaces y páginas generales
    ========================================================================== */
 
 
 /* 1. Variables Globales y Paleta de Colores */
 :root {
-    --bordo-950: #31030c;
-    --bordo-900: #4d0816;
-    --bordo-800: #640d1f;
-    --bordo-700: #7a1228;
+    /* Nueva Paleta Bordó (#821C20 Base) */
+    --bordo-950: #3b090b;
+    --bordo-900: #540f12;
+    --bordo-800: #671417;
+    --bordo-700: #821C20; /* Color principal institucional */
+    --bordo-500: #821C20;
     --bordo-50:  #fdf2f4;
-
 
     --oro-700:   #84570d;
     --oro-600:   #a87515;
@@ -19,7 +20,6 @@
     --oro-400:   #dfb75c;
     --oro-200:   #faecc4;
     --oro-100:   #fdf7e7;
-
 
     --gris-900:  #0f172a;
     --gris-800:  #1e293b;
@@ -29,7 +29,6 @@
     --gris-200:  #e2e8f0;
     --gris-100:  #f1f5f9;
     --gris-50:   #f8fafc;
-
 
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
@@ -76,7 +75,7 @@ ul {
 
 
 /* ==========================================================================
-   ESTILOS ESPECÍFICOS PARA: interfazanalistas.html
+   ESTILOS ESPECÍFICOS PARA: INTERFACES Y PÁGINAS GENERALES
    ========================================================================== */
 
 
@@ -88,7 +87,7 @@ ul {
 
 
 .bordo-gradient-bg {
-    background: linear-gradient(135deg, var(--bordo-900) 0%, var(--bordo-800) 50%, var(--bordo-700) 100%);
+    background: linear-gradient(135deg, var(--bordo-900) 0%, #821C20 50%, var(--bordo-800) 100%);
 }
 
 
@@ -101,15 +100,15 @@ ul {
 .card-gold-border:hover {
     border-color: rgba(198, 146, 37, 0.6);
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px -10px rgba(100, 13, 31, 0.15);
+    box-shadow: 0 12px 24px -10px rgba(130, 28, 32, 0.2);
 }
 
 
 /* Barra de desplazamiento */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--gris-100); }
-::-webkit-scrollbar-thumb { background: var(--bordo-800); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--bordo-900); }
+::-webkit-scrollbar-thumb { background: #821C20; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bordo-800); }
 
 
 
@@ -119,15 +118,17 @@ ul {
    ========================================================================== */
 
 
-/* Navbar y Menú */
 header {
-    background-color: #ffffff;
-    border-bottom: 1px solid var(--gris-200);
+    background-color: #821C20;
+    border-bottom: 1px solid var(--oro-500);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
+.nav-links a { color: var(--oro-200); }
+.nav-links a:hover, .nav-links a.active { color: #ffffff; }
 
 
 .navbar {
@@ -135,7 +136,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 12px 24px;
-    max-width: 100%; /* Línea nueva para expandir al margen */
+    max-width: 100%;
 }
 
 
@@ -163,7 +164,7 @@ header {
 
 
 .nav-links a { color: var(--gris-700); }
-.nav-links a:hover, .nav-links a.active { color: var(--bordo-800); }
+.nav-links a:hover, .nav-links a.active { color: #821C20; }
 
 
 /* Dropdown */
@@ -202,7 +203,7 @@ header {
 
 
 .btn-nav {
-    background-color: var(--bordo-800) !important;
+    background-color: #821C20 !important;
     color: var(--oro-200) !important;
     padding: 0.55rem 1.25rem;
     border-radius: 0.5rem;
@@ -210,18 +211,17 @@ header {
 }
 
 
-.btn-nav:hover { background-color: var(--bordo-900) !important; color: #ffffff !important; }
+.btn-nav:hover { background-color: var(--bordo-800) !important; color: #ffffff !important; }
 
 
-/* Hero Section */
+/* Hero Section (Index) */
 .hero {
-    background: linear-gradient(135deg, var(--bordo-950) 0%, var(--bordo-900) 50%, var(--bordo-800) 100%);
+    background: linear-gradient(135deg, #821C20 0%, var(--bordo-800) 50%, var(--bordo-900) 100%);
     color: #ffffff;
     padding: 3.5rem 0;
     text-align: center;
     border-bottom: 4px solid var(--oro-500);
 }
-
 
 .hero-badge {
     display: inline-block;
@@ -314,16 +314,21 @@ header {
 }
 
 
-.card:hover { transform: translateY(-5px); border-color: var(--oro-500); box-shadow: 0 12px 20px -5px rgba(100, 13, 31, 0.12); }
+.card:hover { transform: translateY(-5px); border-color: var(--oro-500); box-shadow: 0 12px 20px -5px rgba(130, 28, 32, 0.15); }
 .card-meta { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--oro-600); margin-bottom: 0.5rem; }
 .card h3 { font-size: 1.35rem; font-weight: 700; color: var(--bordo-900); margin-bottom: 0.75rem; }
 .card p { font-size: 0.925rem; color: var(--gris-600); margin-bottom: 1.5rem; flex-grow: 1; }
-.card-link { font-size: 0.9rem; font-weight: 700; color: var(--bordo-800); display: inline-flex; align-items: center; gap: 0.35rem; }
+.card-link { font-size: 0.9rem; font-weight: 700; color: #821C20; display: inline-flex; align-items: center; gap: 0.35rem; }
 .card-link:hover { color: var(--oro-600); }
 
 
+
 /* Banner Preinscripciones */
-.info-highlight { background: linear-gradient(135deg, var(--bordo-900) 0%, var(--bordo-800) 100%); text-align: center; color: #ffffff; }
+.info-highlight { 
+    background: linear-gradient(135deg, #821C20 0%, var(--bordo-800) 100%); 
+    text-align: center; 
+    color: #ffffff; 
+}
 .info-highlight p { max-width: 650px; margin: 0 auto 2rem auto; color: var(--gris-200); font-size: 1.05rem; }
 
 
