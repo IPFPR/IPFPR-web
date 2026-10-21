@@ -13,21 +13,25 @@
                 extend: {
                     colors: {
                         bordo: {
-                            50: '#fdf2f4', 100: '#fbe6e9', 500: '#9e1c38',
-                            700: '#7a1228', 800: '#640d1f', 900: '#4d0816', 950: '#31030c'
+                            50: '#fdf2f4',
+                            100: '#fbe6e9',
+                            500: '#821C20',
+                            700: '#821C20',
+                            800: '#671417',
+                            900: '#540f12',
+                            950: '#3b090b',
                         },
                         oro: {
-                            100: '#fdf7e7', 200: '#faecc4', 400: '#dfb75c',
-                            500: '#c69225', 600: '#a87515', 700: '#84570d'
-                        },
-                        gris: {
-                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
-                            600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a'
+                            100: '#fdf7e7',
+                            200: '#faecc4',
+                            400: '#dfb75c',
+                            500: '#c69225',
+                            600: '#a87515',
+                            700: '#84570d',
                         }
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                        serif: ['Cinzel', 'Merriweather', 'serif']
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
@@ -88,11 +92,13 @@
                     <i class="fa-solid fa-calendar-check text-xs text-oro-600"></i> Mesas de Exámenes
                 </a>
             </nav>
-
-            <a href="index.html#preinscripciones" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold shadow transition-all duration-200 hover:shadow-md flex items-center gap-2">
-                <span>Preinscripción</span>
-                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
-            </a>
+                <!-- BOTÓN FANTASMA / INVISIBLE (Mantiene exacto el espacio para que los links no se muevan) -->
+            <div class="opacity-0 pointer-events-none select-none">
+                <span class="bg-bordo-800 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2">
+                    <span>Preinscripción</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </span>
+            </div>
         </div>
     </header>
 
