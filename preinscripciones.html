@@ -89,7 +89,7 @@
                 <a href="mesasexamen.html" class="hover:text-bordo-500 transition-colors">Mesas de Exámenes</a>
             </nav>
 
-             <!-- BOTÓN FANTASMA / INVISIBLE (Mantiene exacto el espacio para que los links no se muevan) -->
+             <!-- BOTÓN FANTASMA / INVISIBLE -->
             <div class="opacity-0 pointer-events-none select-none">
                 <span class="bg-bordo-800 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2">
                     <span>Preinscripción</span>
@@ -100,7 +100,7 @@
     </header>
 
     <main class="flex-grow">
-        <!-- HERO SECTION CON LA CLASE DE STYLES.CSS -->
+        <!-- HERO SECTION -->
         <section class="relative bordo-gradient-bg text-white py-16 lg:py-20 overflow-hidden border-b-4 border-oro-500 text-center">
             <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c69225_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <div class="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
@@ -111,7 +111,7 @@
                     Preinscripción <span class="gold-gradient-text">2027</span>
                 </h1>
                 <p class="text-gris-200 text-base md:text-lg max-w-2xl font-light leading-relaxed">
-                    Completá el formulario digital y adjuntá la documentación correspondiente para iniciar tu legajo de ingreso al Nivel Superior.
+                    A continuación se muestran los requisitos para adjuntar la documentación correspondiente para iniciar tu legajo de ingreso al Nivel Superior.
                 </p>
             </div>
         </section>
@@ -134,7 +134,7 @@
                     </ul>
                 </div>
 
-                <!-- 2. MEMBRETE INSTITUCIONAL Y FORMULARIO -->
+                <!-- 2. MEMBRETE INSTITUCIONAL Y AVISO PRESENCIAL -->
                 <div class="bg-white rounded-2xl shadow-xl border-2 border-oro-400 p-6 md:p-10 space-y-8">
                     
                     <!-- Encabezado con escudo -->
@@ -146,26 +146,30 @@
                         </div>
                     </div>
 
-                    <!-- Título del Formulario -->
-                    <div class="text-center space-y-3">
+                    <!-- Título y Aviso Presencial Nuevo -->
+                    <div class="text-center space-y-6">
                         <h2 class="text-xl md:text-2xl font-black text-bordo-900 uppercase tracking-tight">
                             Solicitud de Preinscripción<br>
                             <span class="text-bordo-500">Aspirantes para el Curso Inicial - Año 2027</span>
                         </h2>
 
-                        <!-- Alerta de campos obligatorios -->
-                        <div class="bg-bordo-500 text-white text-xs md:text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm border border-bordo-800">
-                            Los campos marcados con asteriscos (<span class="text-oro-200 font-bold">*</span>) son obligatorios para poder procesar su solicitud.
+                        <!-- Nota de entrega presencial -->
+                        <div class="bg-oro-100 text-bordo-950 text-sm md:text-base font-bold py-4 px-6 rounded-xl shadow-md border-2 border-oro-500 inline-block mx-auto max-w-2xl">
+                            <i class="fa-solid fa-clock text-oro-600 mr-2 text-lg"></i>
+                            Para completar el trámite, por favor acercarse al establecimiento a entregar la información presencialmente en el horario de 18:00 a 22:00 hs.
                         </div>
                     </div>
 
-                    <!-- Formulario -->
+                    <!-- /// 
+                    <div class="bg-bordo-500 text-white text-xs md:text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm border border-bordo-800 text-center">
+                        Los campos marcados con asteriscos (<span class="text-oro-200 font-bold">*</span>) son obligatorios para poder procesar su solicitud.
+                    </div>
+
                     <form action="https://formsubmit.co/inscripcionesroblessuperior@yahoo.com" method="POST" enctype="multipart/form-data" class="space-y-8">
                         
                         <input type="hidden" name="_subject" value="Nueva Solicitud de Preinscripción 2027">
                         <input type="hidden" name="_captcha" value="false">
 
-                        <!-- SECCIÓN: Carrera y Turno -->
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-4 bg-gris-50 p-4 md:p-6 rounded-xl border border-gris-200">
                             <div class="md:col-span-8">
                                 <label class="block text-xs font-bold text-gris-700 uppercase mb-1">Carrera <span class="text-bordo-500">*</span></label>
@@ -182,14 +186,12 @@
                             </div>
                         </div>
 
-                        <!-- SECCIÓN: Datos Personales -->
                         <div class="space-y-4">
                             <h3 class="text-xl font-extrabold text-bordo-950 border-b-2 border-oro-400 pb-2 flex items-center gap-2">
                                 <i class="fa-solid fa-user text-oro-600 text-base"></i>
                                 Datos personales
                             </h3>
 
-                            <!-- Fila 1 -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="md:col-span-1">
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Apellido y nombre <span class="text-bordo-500">*</span></label>
@@ -210,7 +212,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 2 -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Fecha de nacimiento <span class="text-bordo-500">*</span></label>
@@ -233,7 +234,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 3 -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Hijos</label>
@@ -249,7 +249,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 4 -->
                             <div class="grid grid-cols-3 md:grid-cols-3 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">N° <span class="text-bordo-500">*</span></label>
@@ -265,7 +264,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 5 -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Loc/barrio</label>
@@ -281,7 +279,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 6 -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Teléfono <span class="text-bordo-500">*</span></label>
@@ -297,7 +294,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 7 -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="md:col-span-2">
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Correo electrónico <span class="text-bordo-500">*</span></label>
@@ -306,7 +302,6 @@
                             </div>
                         </div>
 
-                        <!-- SECCIÓN: Carga de Archivos Digitales -->
                         <div class="space-y-4 pt-4 border-t border-gris-200">
                             <div class="flex items-center justify-between">
                                 <h3 class="text-lg font-bold text-bordo-950 flex items-center gap-2">
@@ -336,14 +331,12 @@
                             </div>
                         </div>
 
-                        <!-- SECCIÓN: Estudios Cursados -->
                         <div class="space-y-4 pt-4 border-t border-gris-200">
                             <h3 class="text-xl font-extrabold text-bordo-950 border-b-2 border-oro-400 pb-2 flex items-center gap-2">
                                 <i class="fa-solid fa-graduation-cap text-oro-600 text-base"></i>
                                 Estudios cursados
                             </h3>
 
-                            <!-- Fila 1 -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Título nivel medio o polimodal</label>
@@ -355,7 +348,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 2 -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Escuela</label>
@@ -367,7 +359,6 @@
                                 </div>
                             </div>
 
-                            <!-- Otros Estudios -->
                             <div class="space-y-3 pt-2">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Otros estudios</label>
@@ -398,14 +389,12 @@
                             </div>
                         </div>
 
-                        <!-- SECCIÓN: Datos Laborales -->
                         <div class="space-y-4 pt-4 border-t border-gris-200">
                             <h3 class="text-xl font-extrabold text-bordo-950 border-b-2 border-oro-400 pb-2 flex items-center gap-2">
                                 <i class="fa-solid fa-briefcase text-oro-600 text-base"></i>
                                 Datos laborales
                             </h3>
 
-                            <!-- Fila 1 -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-2">Trabaja</label>
@@ -426,7 +415,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 2 -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Horario</label>
@@ -438,7 +426,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila 3 -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-bold text-gris-700 mb-1">Obra Social</label>
@@ -447,7 +434,6 @@
                             </div>
                         </div>
 
-                        <!-- BOTÓN DE ENVIAR -->
                         <div class="pt-6 border-t border-gris-200 text-center">
                             <button type="submit" class="bg-oro-500 hover:bg-oro-600 text-bordo-950 font-extrabold text-base px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-3 cursor-pointer">
                                 <i class="fa-solid fa-paper-plane"></i>
@@ -456,6 +442,7 @@
                         </div>
 
                     </form>
+                    /// -->
                 </div>
 
             </div>
