@@ -1,0 +1,29 @@
+{
+  "consultas": [
+    {
+      "id": "skdXKTr8ZtE",
+      "nombre": "Pedro",
+      "telefono": "2245635267",
+      "email": "pedro@email.com",
+      "mensaje": "prueba 1",
+      "fecha": "26/10/2026, 02:30:55"
+    },
+    {
+      "id": "RfKvYtOBXT8",
+      "nombre": "Jose",
+      "telefono": "224568392",
+      "email": "jose@email.com",
+      "mensaje": "prueba 2",
+      "fecha": "26/10/2026, 02:38:56"
+    },
+    {
+      "id": "PEyNdIVVfb8",
+      "nombre": "juan",
+      "telefono": "2245324566",
+      "email": "juan@email.com",
+      "mensaje": "p",
+      "fecha": "26/10/2026, 02:40:03"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
