@@ -48,56 +48,100 @@
 </head>
 <body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gris-200">
-        <div class="w-full px-6 h-20 flex items-center justify-between">
-            <!-- LOGO SOLO (Para páginas generales) -->
-            <a href="index.html" class="flex items-center group">
-                <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+    <!-- Navegación Principal Unificada y Responsive -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+        
+        <!-- LOGO INSTITUCIONAL -->
+        <a href="index.html" class="flex items-center group">
+            <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+        </a>
+
+        <!-- MENÚ DE NAVEGACIÓN DESKTOP -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-700">
+            <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
             </a>
 
-            <!-- Menú Links Global -->
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gris-700">
-                <a href="index.html" class="hover:text-bordo-500 transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
-                </a>
-
-                <!-- DROPDOWN DE CARRERAS -->
-                <div class="relative group py-6">
-                    <button class="hover:text-bordo-500 transition-colors flex items-center gap-1.5 focus:outline-none font-medium">
-                        <span>Carreras</span>
-                        <i class="fa-solid fa-chevron-down text-[10px] text-oro-600 group-hover:rotate-180 transition-transform duration-200"></i>
-                    </button>
-                    <!-- Menú Desplegable -->
-                    <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-60 bg-white border border-gris-200 rounded-xl shadow-xl p-2 gap-1 transition-all duration-200 z-50">
-                        <a href="interfazanalista.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
-                            <i class="fa-solid fa-code text-oro-600 text-xs"></i>
-                            <span>Análisis de Sistemas</span>
-                        </a>
-                        <a href="interfazpsicopedagogia.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
-                            <i class="fa-solid fa-lightbulb text-oro-600 text-xs"></i>
-                            <span>Psicopedagogía</span>
-                        </a>
-                        <a href="interfazedinicial.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-gris-700 hover:text-bordo-900 transition-colors">
-                            <i class="fa-solid fa-shapes text-oro-600 text-xs"></i>
-                            <span>Educación Inicial</span>
-                        </a>
-                    </div>
+            <!-- DROPDOWN DE CARRERAS DESKTOP -->
+            <div class="relative group py-6">
+                <button class="hover:text-bordo-800 transition-colors flex items-center gap-1.5 focus:outline-none font-medium">
+                    <span>Carreras</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] text-oro-600 group-hover:rotate-180 transition-transform duration-200"></i>
+                </button>
+                <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-60 bg-white border border-slate-200 rounded-xl shadow-xl p-2 gap-1 transition-all duration-200 z-50">
+                    <a href="interfazanalista.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-slate-700 hover:text-bordo-900 transition-colors">
+                        <i class="fa-solid fa-code text-oro-600 text-xs"></i>
+                        <span>Análisis de Sistemas</span>
+                    </a>
+                    <a href="interfazpsicopedagogia.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-slate-700 hover:text-bordo-900 transition-colors">
+                        <i class="fa-solid fa-lightbulb text-oro-600 text-xs"></i>
+                        <span>Psicopedagogía</span>
+                    </a>
+                    <a href="interfazedinicial.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-slate-700 hover:text-bordo-900 transition-colors">
+                        <i class="fa-solid fa-shapes text-oro-600 text-xs"></i>
+                        <span>Educación Inicial</span>
+                    </a>
                 </div>
-
-                <a href="directivos.html" class="hover:text-bordo-500 transition-colors">Directivos</a>
-                <a href="biblioteca.html" class="hover:text-bordo-500 transition-colors">Biblioteca</a>
-                <a href="mesasexamen.html" class="hover:text-bordo-500 transition-colors">Mesas de Exámenes</a>
-            </nav>
-
-             <!-- BOTÓN FANTASMA / INVISIBLE -->
-            <div class="opacity-0 pointer-events-none select-none">
-                <span class="bg-bordo-800 text-oro-200 border border-oro-500/50 px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2">
-                    <span>Preinscripción</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                </span>
             </div>
+
+            <a href="directivos.html" class="hover:text-bordo-800 transition-colors">Directivos</a>
+            <a href="biblioteca.html" class="hover:text-bordo-800 transition-colors">Biblioteca</a>
+            <a href="mesasexamen.html" class="hover:text-bordo-800 transition-colors">Mesas de Exámenes</a>
+        </nav>
+
+        <!-- BOTÓN DERECHO + BOTÓN MÓVIL HAMBURGUESA -->
+        <div class="flex items-center gap-3">
+            <a href="preinscripciones.html" class="hidden sm:flex bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold shadow transition-all duration-200 hover:shadow-md items-center gap-2">
+                <span>Preinscripción</span>
+                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
+            </a>
+
+            <!-- BOTÓN HAMBURGUESA -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú" class="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-bordo-800 hover:bg-bordo-50 hover:border-bordo-800/30 active:scale-95 transition-all shadow-sm">
+                <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+            </button>
         </div>
-    </header>
+    </div>
+
+    <!-- MENÚ MÓVIL (Mismas opciones que escritorio, sin íconos adicionales) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-xl px-6 py-4 space-y-2">
+        <a href="index.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
+            <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+        </a>
+
+        <!-- SUBMENÚ DE CARRERAS -->
+        <div class="py-1 space-y-1 pl-3 border-l-2 border-oro-500/40 my-1">
+            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Carreras</span>
+            <a href="interfazanalista.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">
+                Análisis de Sistemas
+            </a>
+            <a href="interfazpsicopedagogia.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">
+                Psicopedagogía
+            </a>
+            <a href="interfazedinicial.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">
+                Educación Inicial
+            </a>
+        </div>
+
+        <a href="directivos.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
+            Directivos
+        </a>
+        <a href="biblioteca.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
+            Biblioteca
+        </a>
+        <a href="mesasexamen.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
+            Mesas de Exámenes
+        </a>
+
+        <div class="pt-2 border-t border-slate-100">
+            <a href="preinscripciones.html" class="flex items-center justify-center gap-2 bg-bordo-800 text-oro-200 py-2.5 rounded-lg text-sm font-semibold shadow-sm">
+                <span>Preinscripción</span>
+                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
+            </a>
+        </div>
+    </div>
+</header>
 
     <main class="flex-grow">
         <!-- HERO SECTION -->
@@ -497,4 +541,21 @@
     </footer>
 
 </body>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    }
+</script>
 </html>
