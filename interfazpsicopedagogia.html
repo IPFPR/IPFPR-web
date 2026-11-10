@@ -48,17 +48,19 @@
 </head>
 <body class="bg-gris-100 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
 
-<!-- Navegación Principal Unificada y Responsive -->
+<!-- Navegación Principal para Index (Con enlace al HTML de preinscripciones) -->
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 grid grid-cols-3 items-center">
         
-        <!-- LOGO INSTITUCIONAL -->
-        <a href="index.html" class="flex items-center group">
-            <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
-        </a>
+        <!-- COLUMNA IZQUIERDA: LOGO INSTITUCIONAL -->
+        <div class="flex items-center justify-start">
+            <a href="index.html" class="flex items-center group">
+                <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+            </a>
+        </div>
 
-        <!-- MENÚ DE NAVEGACIÓN DESKTOP -->
-        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-700">
+        <!-- COLUMNA CENTRAL: MENÚ DE NAVEGACIÓN -->
+        <nav class="hidden lg:flex items-center justify-center gap-6 xl:gap-8 text-sm font-medium text-slate-700 whitespace-nowrap">
             <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
                 <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
             </a>
@@ -87,58 +89,42 @@
 
             <a href="directivos.html" class="hover:text-bordo-800 transition-colors">Directivos</a>
             <a href="biblioteca.html" class="hover:text-bordo-800 transition-colors">Biblioteca</a>
+            <!--<a href="contacto.html" class="hover:text-bordo-800 transition-colors">Contacto</a>-->
             <a href="mesasexamen.html" class="hover:text-bordo-800 transition-colors">Mesas de Exámenes</a>
         </nav>
 
-        <!-- BOTÓN DERECHO + BOTÓN MÓVIL HAMBURGUESA -->
-        <div class="flex items-center gap-3">
-            <a href="preinscripciones.html" class="hidden sm:flex bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/50 px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold shadow transition-all duration-200 hover:shadow-md items-center gap-2">
+        <!-- COLUMNA DERECHA: BOTÓN DE PREINSCRIPCIÓN APUNTANDO AL HTML -->
+        <div class="hidden lg:flex items-center justify-end">
+            <a href="preinscripciones.html" class="bg-bordo-800 hover:bg-bordo-900 text-oro-200 border border-oro-500/60 font-bold px-5 py-2.5 rounded-xl shadow-md transition-all duration-200 flex items-center gap-2 text-sm group">
                 <span>Preinscripción</span>
-                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
+                <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
             </a>
+        </div>
 
-            <!-- BOTÓN HAMBURGUESA -->
-            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú" class="lg:hidden h-10 w-10 flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-bordo-800 hover:bg-bordo-50 hover:border-bordo-800/30 active:scale-95 transition-all shadow-sm">
+        <!-- BOTÓN MÓVIL HAMBURGUESA -->
+        <div class="col-span-2 flex items-center justify-end lg:hidden">
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú" class="h-10 w-10 flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-bordo-800 hover:bg-bordo-50 hover:border-bordo-800/30 active:scale-95 transition-all shadow-sm">
                 <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
             </button>
         </div>
     </div>
 
-    <!-- MENÚ MÓVIL (Mismas opciones que escritorio, sin íconos adicionales) -->
+    <!-- MENÚ MÓVIL -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-xl px-6 py-4 space-y-2">
         <a href="index.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
             <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
         </a>
-
-        <!-- SUBMENÚ DE CARRERAS -->
         <div class="py-1 space-y-1 pl-3 border-l-2 border-oro-500/40 my-1">
             <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Carreras</span>
-            <a href="interfazanalista.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">
-                Análisis de Sistemas
-            </a>
-            <a href="interfazpsicopedagogia.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">
-                Psicopedagogía
-            </a>
-            <a href="interfazedinicial.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">
-                Educación Inicial
-            </a>
+            <a href="interfazanalista.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">Análisis de Sistemas</a>
+            <a href="interfazpsicopedagogia.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">Psicopedagogía</a>
+            <a href="interfazedinicial.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">Educación Inicial</a>
         </div>
-
-        <a href="directivos.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
-            Directivos
-        </a>
-        <a href="biblioteca.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
-            Biblioteca
-        </a>
-        <a href="mesasexamen.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
-            Mesas de Exámenes
-        </a>
-
+        <a href="directivos.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">Directivos</a>
+        <a href="biblioteca.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">Biblioteca</a>
+        <a href="mesasexamen.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">Mesas de Exámenes</a>
         <div class="pt-2 border-t border-slate-100">
-            <a href="preinscripciones.html" class="flex items-center justify-center gap-2 bg-bordo-800 text-oro-200 py-2.5 rounded-lg text-sm font-semibold shadow-sm">
-                <span>Preinscripción</span>
-                <i class="fa-solid fa-arrow-right text-xs text-oro-400"></i>
-            </a>
+            <a href="preinscripciones.html" class="block text-center bg-bordo-800 text-oro-200 font-bold py-2.5 rounded-lg text-sm">Preinscripción</a>
         </div>
     </div>
 </header>
