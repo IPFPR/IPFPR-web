@@ -1,12 +1,12 @@
 # Registro de decisiones técnicas
 
-Sitio web del Instituto Robles (Nivel Superior) · TP9, parte B · 16/11/2026
+Sitio web del Instituto Robles (Nivel Superior) · TP9, parte B · 16/11/2026 · actualizado el 18/11/2026
 
 Para: quien herede el mantenimiento del sitio y necesite saber por qué está hecho así. Es el mismo contenido de la sección 15 del [informe técnico final](informe-tecnico-final.md). Las referencias a defectos (DEF), pendientes (P) y riesgos (R) remiten a ese informe.
 
 **Estados posibles:** vigente · revisada · se revertiría.
 
-Seis decisiones. Ninguna se registró cuando se tomó: las fechas salen del historial y el fundamento es el que el equipo sostiene hoy. **D-02 es la que hoy se revertiría**; D-06 se revisó.
+Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fechas salen del historial y el fundamento es el que el equipo sostiene hoy. D-07 se registró el mismo día. **D-02 es la que hoy se revertiría**; D-06 se revisó.
 
 | # | Decisión | Fecha | Estado |
 |---|---|---|---|
@@ -16,6 +16,7 @@ Seis decisiones. Ninguna se registró cuando se tomó: las fechas salen del hist
 | D-04 | Publicación en Vercel, automática desde `main` | 19/10/2026 | Vigente, con condición |
 | D-05 | Desactivar la preinscripción en línea hasta que funcione | 26/10/2026 | Vigente |
 | D-06 | Construir sin diagnóstico ni alcance escritos | 01/07/2026 | Revisada |
+| D-07 | Página de contacto sin formulario, con WhatsApp, correo y teléfono | 18/11/2026 | Vigente |
 
 ### D-01 · Sitio estático, sin base de datos ni servidor
 
@@ -26,7 +27,7 @@ Seis decisiones. Ninguna se registró cuando se tomó: las fechas salen del hist
 | Contexto | El pedido era una página institucional de contenido casi todo informativo, para una institución sin presupuesto ni personal técnico |
 | Alternativas consideradas | (a) Gestor de contenidos como WordPress. (b) Aplicación con framework de JavaScript y base de datos |
 | Fundamento | Era la tecnología que los cuatro integrantes ya manejaban. No necesita servidor, no cuesta dinero y no tiene base de datos que proteger ni actualizar. El contenido cambia pocas veces por año |
-| Consecuencias | A favor: costo cero, nada que mantener en un servidor. Se resigna: que el Instituto edite desde un panel. Cada cambio exige editar un archivo, y las ocho páginas dependen de un CDN para sus estilos |
+| Consecuencias | A favor: costo cero, nada que mantener en un servidor. Se resigna: que el Instituto edite desde un panel. Cada cambio exige editar un archivo, y las nueve páginas dependen de un CDN para sus estilos |
 | Estado | Vigente |
 
 ### D-02 · Menú copiado a mano en cada página (hoy se revertiría)
@@ -38,7 +39,7 @@ Seis decisiones. Ninguna se registró cuando se tomó: las fechas salen del hist
 | Contexto | Cada integrante construía una página en su propia rama y necesitaba que funcionara sola |
 | Alternativas consideradas | (a) Un único archivo de menú que todas las páginas cargan con JavaScript. (b) Un generador de sitios estáticos con plantillas |
 | Fundamento | Era lo más rápido y permitía trabajar en paralelo sin depender del archivo de otro. Con dos páginas no parecía un problema |
-| Consecuencias | Con ocho páginas, cada enlace nuevo obliga a editar ocho archivos. Produjo menús distintos y enlaces rotos (DEF-01 y DEF-03) y llevó unas 14 horas unificarlos. El menú sigue repetido |
+| Consecuencias | Con nueve páginas, cada enlace nuevo obliga a editar nueve archivos: se vio otra vez el 18/11, cuando agregar Contacto al menú tocó las nueve. Produjo menús distintos y enlaces rotos (DEF-01 y DEF-03) y llevó unas 14 horas unificarlos. El menú sigue repetido |
 | Por qué se revertiría | El costo apareció tarde y fue mayor que el ahorro inicial. Un menú único se cambia una sola vez. Revertirla cuesta 6,5 horas (P5), menos de la mitad de lo que ya costó no haberlo hecho |
 | Estado | Se revertiría |
 
@@ -89,3 +90,15 @@ Seis decisiones. Ninguna se registró cuando se tomó: las fechas salen del hist
 | Fundamento | Parecía un proyecto chico y conocido: "una página para la escuela". Planificar se sentía como demora |
 | Consecuencias | A favor: hubo sitio publicado en tres meses y medio. Se resigna: el alcance creció sin control (mesas, preinscripción, directivos), se publicó un formulario que todavía no funcionaba, se usaron fechas de prueba sin marcarlas, nadie validó el contenido y no hay estimación contra la cual medirse. Los TP1 a TP7 se escribieron al cierre |
 | Estado | Revisada. En un próximo proyecto, el equipo escribe el alcance y consigue un referente antes de programar; el modo incremental se mantiene |
+
+### D-07 · Página de contacto sin formulario
+
+| Campo | Contenido |
+|---|---|
+| Decisión | Crear `contacto.html` con dirección, teléfonos, correo, horario, redes y mapa, y con enlaces directos a WhatsApp y al correo, sin formulario. Sumar un botón flotante de WhatsApp en todas las páginas |
+| Fecha | 18/11/2026 |
+| Contexto | Cinco enlaces de "Contacto" esperaban esta sección (DEF-10, P1). Los formularios de consulta de las carreras muestran un aviso y no envían nada (DEF-11) |
+| Alternativas consideradas | (a) Reactivar la sección oculta de `directivos.html`, que trae un formulario que no envía. (b) Un formulario conectado a un servicio externo como FormSubmit. (c) Una página propia con enlaces directos a los canales que el Instituto ya usa |
+| Fundamento | El mismo criterio de D-05: no se publica lo que no funciona. Un enlace a WhatsApp o al correo siempre llega, y el sitio sigue sin recoger datos personales |
+| Consecuencias | A favor: la consulta llega por un canal que alguien ya atiende y no hay nada que mantener. Se resigna: reunir las consultas en una sola casilla. Depende de que el número de WhatsApp y el correo sean los oficiales (DEF-12, P3). El menú pasó a estar copiado en nueve archivos (D-02) |
+| Estado | Vigente |
