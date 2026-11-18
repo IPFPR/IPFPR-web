@@ -22,7 +22,7 @@ carreras, planes de estudio, mesas de examen, preinscripción, biblioteca y auto
 
 ## Qué es
 
-Un sitio estático de ocho páginas que reúne la información del Nivel Superior del Instituto. Lo construyó un equipo de estudiantes de 2.º año de la Tecnicatura Superior en Análisis de Sistemas como proyecto integrador de **Prácticas Profesionalizantes II** (ciclo 2026), a pedido del docente de la cátedra.
+Un sitio estático de nueve páginas que reúne la información del Nivel Superior del Instituto. Lo construyó un equipo de estudiantes de 2.º año de la Tecnicatura Superior en Análisis de Sistemas como proyecto integrador de **Prácticas Profesionalizantes II** (ciclo 2026), a pedido del docente de la cátedra.
 
 **¿A quién le sirve este README?** A quien llega al repositorio y necesita entender qué hay, cómo se publica y cómo se cambia algo.
 
@@ -42,11 +42,12 @@ Un sitio estático de ocho páginas que reúne la información del Nivel Superio
 | Psicopedagogía | `interfazpsicopedagogia.html` | Materias por año, docentes y plan de estudios (Res. 2460/11) |
 | Educación Inicial | `interfazedinicial.html` | Materias por año, docentes y plan de estudios (Res. 4154/07) |
 | Mesas de examen | `mesasexamen.html` | 90 mesas del turno de diciembre de 2026, con buscador por materia o docente, selector de carrera y ordenamiento |
+| Contacto | `contacto.html` | Dirección, teléfonos, correo, horario, accesos a WhatsApp y correo, redes y mapa |
 | Preinscripción | `preinscripciones.html` | Documentación requerida, correo de envío y horario de entrega presencial |
 | Biblioteca | `biblioteca.html` | Información y contacto de la biblioteca |
 | Directivos | `directivos.html` | Autoridades con nombre y cargo |
 
-Todas las páginas comparten el mismo menú, se adaptan a celulares y usan la misma identidad visual (bordó y dorado).
+Todas las páginas comparten el mismo menú y un botón flotante de WhatsApp, se adaptan a celulares y usan la misma identidad visual (bordó y dorado).
 
 ## Tecnología
 
@@ -69,6 +70,7 @@ IPFPR-web/
 ├── interfazpsicopedagogia.html   Tecnicatura Superior en Psicopedagogía
 ├── interfazedinicial.html        Profesorado de Educación Inicial
 ├── mesasexamen.html              Mesas de examen
+├── contacto.html                 Contacto
 ├── preinscripciones.html         Preinscripción
 ├── biblioteca.html               Biblioteca
 ├── directivos.html               Directivos
@@ -143,7 +145,7 @@ Después, abra un pull request en GitHub y pida revisión.
 
 **Antes de pedir revisión, tenga en cuenta**
 
-- El menú y el pie están copiados en las ocho páginas. Un enlace nuevo se agrega en las ocho.
+- El menú, el pie y el botón de WhatsApp están copiados en las nueve páginas. Un enlace nuevo se agrega en las nueve.
 - Las mesas son filas de tabla dentro de `mesasexamen.html`. La fecha va como `dd/mm/aaaa` o el orden por fecha deja de funcionar.
 - El año de inscripción está escrito a mano en `index.html` y `preinscripciones.html`.
 
@@ -153,10 +155,9 @@ Versión **1.0** (noviembre de 2026). Publicado y en uso. Pendientes conocidos:
 
 | Pendiente | Detalle |
 |---|---|
-| Sección de contacto | Prevista. Los cinco enlaces de "Contacto" ya apuntan a `directivos.html#contacto`, que hoy está oculta |
 | Formularios de consulta de las carreras | Muestran un aviso de envío y no envían nada |
 | Nombre institucional y casillas de correo | Hay variantes entre páginas; falta que el Instituto confirme las oficiales |
-| Menú único | Hoy está repetido en ocho archivos |
+| Menú único | Hoy está repetido en nueve archivos |
 | Preinscripción en línea | El formulario está comentado en `preinscripciones.html` hasta que funcione. Para activarlo hacen falta aviso de privacidad y consentimiento (Ley 25.326) y una casilla oficial |
 
 El detalle, con severidad y horas estimadas, está en el [Anexo A del informe](docs/informe-tecnico-final.md#anexo-a-registro-de-defectos).
