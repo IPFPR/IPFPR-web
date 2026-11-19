@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Instituto Francisco de Paula Robles</title>
+    <link rel="icon" type="image/png" href="images/escudo_instituto.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            50: '#fdf2f4',
+                            100: '#fbe6e9',
+                            500: '#821C20',
+                            700: '#821C20',
+                            800: '#671417',
+                            900: '#540f12',
+                            950: '#3b090b',
+                        },
+                        oro: {
+                            100: '#fdf7e7',
+                            200: '#faecc4',
+                            400: '#dfb75c',
+                            500: '#c69225',
+                            600: '#a87515',
+                            700: '#84570d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Compartido -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gris-100 text-gris-800 font-sans antialiased flex flex-col min-h-screen">
+
+<!-- Navegación Principal Unificada y Alineada -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 grid grid-cols-3 items-center">
+        
+        <!-- COLUMNA IZQUIERDA: LOGO INSTITUCIONAL -->
+        <div class="flex items-center justify-start">
+            <a href="index.html" class="flex items-center group">
+                <img src="images/logo_instituto.png" alt="Logo Instituto Robles" class="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+            </a>
+        </div>
+
+        <!-- COLUMNA CENTRAL: MENÚ DE NAVEGACIÓN -->
+        <nav class="hidden lg:flex items-center justify-center gap-6 xl:gap-8 text-sm font-medium text-slate-700 whitespace-nowrap">
+            <a href="index.html" class="hover:text-bordo-800 transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+            </a>
+
+            <!-- DROPDOWN DE CARRERAS DESKTOP -->
+            <div class="relative group py-6">
+                <button class="hover:text-bordo-800 transition-colors flex items-center gap-1.5 focus:outline-none font-medium">
+                    <span>Carreras</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] text-oro-600 group-hover:rotate-180 transition-transform duration-200"></i>
+                </button>
+                <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-60 bg-white border border-slate-200 rounded-xl shadow-xl p-2 gap-1 transition-all duration-200 z-50">
+                    <a href="interfazanalista.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-slate-700 hover:text-bordo-900 transition-colors">
+                        <i class="fa-solid fa-code text-oro-600 text-xs"></i>
+                        <span>Análisis de Sistemas</span>
+                    </a>
+                    <a href="interfazpsicopedagogia.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-slate-700 hover:text-bordo-900 transition-colors">
+                        <i class="fa-solid fa-lightbulb text-oro-600 text-xs"></i>
+                        <span>Psicopedagogía</span>
+                    </a>
+                    <a href="interfazedinicial.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-bordo-50 text-slate-700 hover:text-bordo-900 transition-colors">
+                        <i class="fa-solid fa-shapes text-oro-600 text-xs"></i>
+                        <span>Educación Inicial</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="directivos.html" class="hover:text-bordo-800 transition-colors">Directivos</a>
+            <a href="biblioteca.html" class="hover:text-bordo-800 transition-colors">Biblioteca</a>
+            <a href="mesasexamen.html" class="hover:text-bordo-800 transition-colors">Mesas de Exámenes</a>
+            <a href="contacto.html" class="hover:text-bordo-800 transition-colors">Contacto</a>
+        </nav>
+
+        <!-- COLUMNA DERECHA: ESPACIO VACÍO PARA MANTENER LA SIMETRÍA -->
+        <div class="hidden lg:flex items-center justify-end"></div>
+
+        <!-- BOTÓN MÓVIL HAMBURGUESA -->
+        <div class="col-span-2 flex items-center justify-end lg:hidden">
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú" class="h-10 w-10 flex items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-bordo-800 hover:bg-bordo-50 hover:border-bordo-800/30 active:scale-95 transition-all shadow-sm">
+                <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- MENÚ MÓVIL -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-xl px-6 py-4 space-y-2">
+        <a href="index.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">
+            <i class="fa-solid fa-house text-xs text-oro-600"></i> Inicio
+        </a>
+        <div class="py-1 space-y-1 pl-3 border-l-2 border-oro-500/40 my-1">
+            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Carreras</span>
+            <a href="interfazanalista.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">Análisis de Sistemas</a>
+            <a href="interfazpsicopedagogia.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">Psicopedagogía</a>
+            <a href="interfazedinicial.html" class="block py-1.5 text-sm text-slate-700 hover:text-bordo-800 transition-colors">Educación Inicial</a>
+        </div>
+        <a href="directivos.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">Directivos</a>
+        <a href="biblioteca.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">Biblioteca</a>
+        <a href="mesasexamen.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">Mesas de Exámenes</a>
+        <a href="contacto.html" class="block py-2 text-sm font-medium text-slate-700 hover:text-bordo-800 transition-colors">Contacto</a>
+    </div>
+</header>
+
+    <!-- HERO DE LA SECCIÓN -->
+    <section class="bordo-gradient-bg text-white py-14 border-b-4 border-oro-500">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block px-3.5 py-1.5 rounded-full bg-black/30 border border-oro-400/40 text-oro-200 text-xs font-semibold tracking-wide uppercase mb-3">
+                Atención al Público
+            </span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white">
+                Comunicate con <span class="gold-gradient-text">Nosotros</span>
+            </h1>
+            <p class="text-gris-200 text-sm md:text-base max-w-2xl mx-auto mt-2 font-light">
+                Inscripciones, mesas de exámenes, constancias o cualquier consulta administrativa: elegí el medio que te quede más cómodo.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-12 w-full space-y-12">
+
+        <!-- DATOS DE CONTACTO -->
+        <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 card-gold-border shadow-sm">
+                <div class="w-11 h-11 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-lg mb-4">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h2 class="text-xs font-bold text-oro-600 uppercase tracking-wider mb-1">Dirección</h2>
+                <p class="text-bordo-950 font-semibold text-sm">Aristóbulo del Valle 350</p>
+                <p class="text-gris-600 text-sm">Dolores, Buenos Aires</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 card-gold-border shadow-sm">
+                <div class="w-11 h-11 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-lg mb-4">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h2 class="text-xs font-bold text-oro-600 uppercase tracking-wider mb-1">Teléfonos</h2>
+                <p class="text-sm"><a href="tel:+542245447466" class="text-bordo-950 font-semibold hover:text-oro-600">02245-44-7466</a></p>
+                <p class="text-sm"><a href="tel:+5492245410225" class="text-bordo-950 font-semibold hover:text-oro-600">02245-15-410225</a></p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 card-gold-border shadow-sm">
+                <div class="w-11 h-11 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-lg mb-4">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <h2 class="text-xs font-bold text-oro-600 uppercase tracking-wider mb-1">Correo electrónico</h2>
+                <p class="text-sm break-all"><a href="mailto:institutoparroquialadm@hotmail.com" class="text-bordo-950 font-semibold hover:text-oro-600">institutoparroquialadm@hotmail.com</a></p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 card-gold-border shadow-sm">
+                <div class="w-11 h-11 rounded-xl bg-bordo-800 text-oro-400 flex items-center justify-center text-lg mb-4">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h2 class="text-xs font-bold text-oro-600 uppercase tracking-wider mb-1">Atención presencial</h2>
+                <p class="text-bordo-950 font-semibold text-sm">18:00 a 22:00 hs</p>
+                <p class="text-gris-600 text-sm">En la sede del Instituto</p>
+            </div>
+        </section>
+
+        <!-- ACCESOS DIRECTOS -->
+        <section class="bordo-gradient-bg rounded-2xl p-8 md:p-10 text-white text-center border-2 border-oro-500/40 shadow-md">
+            <h2 class="text-2xl md:text-3xl font-extrabold">¿Querés hacernos una <span class="gold-gradient-text">consulta</span>?</h2>
+            <div class="w-16 h-1 bg-oro-500 mx-auto mt-4 mb-6 rounded-full"></div>
+            <p class="text-gris-200 text-sm md:text-base max-w-xl mx-auto mb-8">
+                Escribinos por WhatsApp o por correo y te respondemos a la brevedad.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/5492245410225" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-oro-500 hover:bg-oro-600 text-bordo-950 hover:text-white font-bold px-6 py-3 rounded-lg shadow transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Escribir por WhatsApp
+                </a>
+                <a href="mailto:institutoparroquialadm@hotmail.com" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-lg transition-all">
+                    <i class="fa-solid fa-envelope"></i> Enviar un correo
+                </a>
+            </div>
+            <div class="flex justify-center gap-4 mt-8">
+                <a href="https://www.facebook.com/francisco.depaularobles.9" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 rounded-full bg-black/20 border border-white/15 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/franciscodepaularoblessuperior/" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-full bg-black/20 border border-white/15 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </section>
+
+        <!-- MAPA -->
+        <section>
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-extrabold text-bordo-950">Cómo llegar</h2>
+                <div class="w-16 h-1 bg-oro-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-md border border-gris-200">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.2709212004655!2d-57.68364882425482!3d-36.31782297239016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a25e24391206d1%3A0x6bda69ee02f8295b!2sArist%C3%B3bulo%20del%20Valle%20350%2C%20B7160%20Dolores%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de ubicación del Instituto">
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-gris-900 text-gris-300 py-12 border-t-2 border-oro-500 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <div class="font-serif font-bold text-white text-base mb-3 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded bg-bordo-800 text-oro-400 flex items-center justify-center text-xs">P</span>
+                    Institutos Parroquiales
+                </div>
+                <p class="text-xs text-gris-400 leading-relaxed">
+                    Instituto del Profesorado Francisco de Paula Robles. Compromiso educativo y formativo en la ciudad de Dolores.
+                </p>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://www.facebook.com/francisco.depaularobles.9" target="_blank" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/franciscodepaularoblessuperior/" target="_blank" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=5492245410225" target="_blank" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-oro-400 hover:bg-oro-500 hover:text-bordo-950 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Servicios Institucionales</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="biblioteca.html" class="hover:text-white transition-colors">• Biblioteca Institucional</a></li>
+                    <li><a href="interfazanalista.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Análisis de Sistemas</a></li>
+                    <li><a href="interfazpsicopedagogia.html" class="hover:text-white transition-colors">• Tecnicatura Superior en Psicopedagogía</a></li>
+                    <li><a href="interfazedinicial.html" class="hover:text-white transition-colors">• Profesorado en Educación Inicial</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Enlaces Rápidos</h4>
+                <ul class="space-y-1.5 text-xs text-gris-400">
+                    <li><a href="directivos.html" class="hover:text-white transition-colors">Equipo Directivo</a></li>
+                    <li><a href="mesasexamen.html" class="hover:text-white transition-colors">Mesas de Exámenes</a></li>
+                    <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto de Administración</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-oro-400 text-xs uppercase tracking-wider mb-3">Sede Institucional</h4>
+                <p class="text-xs text-gris-400">A. del Valle 350, Dolores (Bs. As.)</p>
+                <p class="text-xs text-gris-400 mt-1">Tel: 02245-44-7466 / 02245-15-410225</p>
+                <p class="text-xs text-gris-400 mt-1">Email: institutoparroquialadm@hotmail.com</p>
+                <p class="text-xs text-oro-400 mt-2 font-mono">DIEGEP 4174</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-gris-800 text-center text-xs text-gris-500">
+            © 2026 Instituto del Profesorado Francisco de Paula Robles — Institutos Parroquiales de Dolores. Todos los derechos reservados.
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-5 text-center text-xs text-gris-500">
+            <p class="mb-2">Sitio desarrollado por estudiantes de la Tecnicatura Superior en Análisis de Sistemas</p>
+            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-1.5">
+                <li><span class="text-gris-300 font-medium">Tiago Bertoglio</span> · <a href="tel:2245422687" class="text-oro-400 hover:text-white transition-colors">2245422687</a></li>
+                <li><span class="text-gris-300 font-medium">Germán Lauria</span> · <a href="tel:2245503029" class="text-oro-400 hover:text-white transition-colors">2245503029</a></li>
+                <li><span class="text-gris-300 font-medium">Valentino Plescia</span> · <a href="tel:2245502688" class="text-oro-400 hover:text-white transition-colors">2245502688</a></li>
+                <li><span class="text-gris-300 font-medium">Anastasia Oldoni</span> · <a href="tel:2245458893" class="text-oro-400 hover:text-white transition-colors">2245458893</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/5492245410225" target="_blank" rel="noopener" class="wsp-float" aria-label="Escribinos por WhatsApp" title="Escribinos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+<script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>
