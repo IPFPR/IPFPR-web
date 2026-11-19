@@ -173,9 +173,13 @@
                         <i class="fa-solid fa-magnifying-glass text-oro-600 mr-1"></i> Buscar en las mesas
                     </label>
                     <div class="relative">
-                        <input type="text" id="input-busqueda" onkeyup="filtrarMesas()" placeholder="Buscar por materia o por profesor..." 
-                               class="w-full pl-10 pr-4 py-2.5 bg-gris-50 border border-gris-300 rounded-xl text-xs sm:text-sm text-gris-800 focus:outline-none focus:ring-2 focus:ring-bordo-800 focus:border-transparent transition-all">
+                        <input type="text" id="input-busqueda" oninput="manejarBusqueda()" placeholder="Buscar por materia o por profesor..." 
+                               class="w-full pl-10 pr-10 py-2.5 bg-gris-50 border border-gris-300 rounded-xl text-xs sm:text-sm text-gris-800 focus:outline-none focus:ring-2 focus:ring-bordo-800 focus:border-transparent transition-all">
                         <i class="fa-solid fa-search absolute left-3.5 top-3 text-gris-400 text-xs"></i>
+                        <button type="button" id="btn-limpiar-busqueda" onclick="limpiarBusqueda()" aria-label="Borrar búsqueda" title="Borrar búsqueda"
+                                class="hidden absolute right-3 top-2.5 w-6 h-6 rounded-full text-gris-400 hover:text-bordo-800 hover:bg-gris-200/70 flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-xmark text-xs"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -227,21 +231,21 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Arquitectura de Computadoras</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Lima</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Algoritmo y Estructura de Datos I</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Reimondez</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Algebra</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Vázquez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Form. Religiosa I</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis Matemático I</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Vázquez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Ciencia Tecnología y Sociedad</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Capitán</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Inglés Técnico I</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Aizpitarte</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Sistemas y Organizaciones</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Villalba</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Arquitectura de Computadoras</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Lima Pablo</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Algoritmos y Estructuras de Datos I</td><td class="p-4 col-fecha text-center">01/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Reimondez Alejandro</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Álgebra</td><td class="p-4 col-fecha text-center">02/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Vazquez Mario</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa I</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Aguiar Julio</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Análisis Matemático I</td><td class="p-4 col-fecha text-center">09/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Vazquez Mario</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Ciencia, Tecnología y Sociedad</td><td class="p-4 col-fecha text-center">10/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Capitan Belen</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Inglés I</td><td class="p-4 col-fecha text-center">11/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Aizpitarte Agustina</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Sistemas y Organizaciones</td><td class="p-4 col-fecha text-center">14/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Villalba</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -260,21 +264,21 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Base de Datos</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Lazzaro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Form. Religiosa II</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Sistemas Operativos de PC</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Del Matte</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Algoritmo y Estructura de Datos II</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Caram</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Ingeniería del Software I</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Bosatta</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Inglés técnico II</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Aizpitarte</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis Matemático II</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Vázquez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Probabilidad y Estadística</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Blasi</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Bases de Datos</td><td class="p-4 col-fecha text-center">01/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Lazzaro Pablo</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa II</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Aguiar Julio</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Sistemas Operativos</td><td class="p-4 col-fecha text-center">04/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Del Matte Horacio</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Algoritmos y Estructuras de Datos II</td><td class="p-4 col-fecha text-center">09/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Caram Miguel</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Ingeniería del Software I</td><td class="p-4 col-fecha text-center">11/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Bosatta Dario</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Inglés II</td><td class="p-4 col-fecha text-center">15/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Aizpitarte Agustina</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Análisis Matemático II</td><td class="p-4 col-fecha text-center">16/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Vazquez Mario</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Estadística</td><td class="p-4 col-fecha text-center">17/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Blassi Ramiro</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -293,19 +297,19 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Redes y comunicaciones (Teleinformática)</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Rossi</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Aspectos Legales de la profesión</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Elias</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Form. Religiosa III</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Ingeniería de Software II (Sist. Información)</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Membiela</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Algoritmos y estructura de Datos III</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Francisco</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Inglés Técnico III</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Aizpitarte</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Redes y Comunicaciones</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Rossi Santiago</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Aspectos Legales de la Profesión</td><td class="p-4 col-fecha text-center">02/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Elias Malvina</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa III</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Aguiar Julio</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Ingeniería del Software II</td><td class="p-4 col-fecha text-center">10/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Membiela Marcos</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Algoritmos y Estructuras de Datos III</td><td class="p-4 col-fecha text-center">15/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Francisco Mariano</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Inglés III</td><td class="p-4 col-fecha text-center">16/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Aizpitarte Agustina</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -336,22 +340,22 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Pedagogía</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Navarro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Manzo E</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica y Curriculum</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Van Mouleghey</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología General</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">D’amore C / Martínez M</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Filosofía</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Navarro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Estadística Aplicada</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Macció</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa I, II, III</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">1, 2, 3</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Estado y Sociedad</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Lestarrepe</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Bases Neurofisiológicas del Aprendizaje</td><td class="p-4 col-fecha">22/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">D’amore M</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Pedagogía</td><td class="p-4 col-fecha text-center">01/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Navarro Inés</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicopedagogía</td><td class="p-4 col-fecha text-center">02/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Manzo Eliana</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Didáctica y Currículum</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Van Mouleghey Evangelina</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología General</td><td class="p-4 col-fecha text-center">04/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">D'Amore Maximiliano / Martínez M</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Filosofía</td><td class="p-4 col-fecha text-center">10/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Navarro Inés</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Estadística Aplicada</td><td class="p-4 col-fecha text-center">14/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Maccio Lucia</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa I, II, III</td><td class="p-4 col-fecha text-center">17/12/2026</td><td class="p-4 text-center">1, 2, 3</td><td class="p-4 col-profesor text-center">Aguiar Julio</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Estado y Sociedad</td><td class="p-4 col-fecha text-center">18/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Lestarrepe Ángela</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Bases Neurofisiológicas del Aprendizaje</td><td class="p-4 col-fecha text-center">22/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">D'Amore Maximiliano</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -370,21 +374,21 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Aprendizaje</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Barberena</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Diagnóstico Psicopedagógico</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Pusanzini</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Barberena</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología Cognitiva</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Rollié</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Lenguaje</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Heuschkel</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Guiñez</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología Psicoanalítica</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Molina Dolezal</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Prob/Socioculturales Contemporáneas</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Manzo C</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología del Aprendizaje I</td><td class="p-4 col-fecha text-center">01/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Barberena Gabriela</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Diagnóstico Psicopedagógico I</td><td class="p-4 col-fecha text-center">02/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Pusanzini Verónica</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología del Desarrollo I</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Barberena Gabriela</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología Cognitiva</td><td class="p-4 col-fecha text-center">04/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Rollie Verónica</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología del Lenguaje</td><td class="p-4 col-fecha text-center">11/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Heuschkel Tarela Johana</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">E.D.I. (Espacio de Definición Institucional)</td><td class="p-4 col-fecha text-center">15/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Guiñez Karina</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología Psicoanalítica</td><td class="p-4 col-fecha text-center">17/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Molina Dolezal Mónica</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Problemáticas Socioculturales Contemporáneas</td><td class="p-4 col-fecha text-center">21/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Manzo Carlos</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -403,24 +407,24 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Atención al Sujeto con Discapacidad</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">La Posta</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopatología</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Molina Dolezal</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Diagnóstico Psicopedagógico</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Guiñez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Manzo I</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Bianchi</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Neurociencia</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">D’amore M</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Aprendizaje</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Rollie</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Lengua y su Didáctica</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Sami</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Matemática y su Enseñanza</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Romero</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis y Dinámica de Grupos</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">D’amore C / Martínez M</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Abordaje de Problemáticas Institucionales</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Jové</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Atención al Sujeto Discapacitado</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">La Posta Vanesa</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicopatología</td><td class="p-4 col-fecha text-center">02/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Molina Dolezal Mónica</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Diagnóstico Psicopedagógico II</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Guiñez Karina</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">E.D.I. (Espacio de Definición Institucional)</td><td class="p-4 col-fecha text-center">04/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Manzo Ivana</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología del Desarrollo II</td><td class="p-4 col-fecha text-center">09/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Bianchi Cecilia</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Neurociencias</td><td class="p-4 col-fecha text-center">10/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">D'Amore Maximiliano</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología del Aprendizaje II</td><td class="p-4 col-fecha text-center">11/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Rollie Verónica</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Lengua y su Enseñanza</td><td class="p-4 col-fecha text-center">15/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Sami</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Matemática y su Enseñanza</td><td class="p-4 col-fecha text-center">16/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Romero Fernando</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Análisis y Dinámica de Grupos</td><td class="p-4 col-fecha text-center">17/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">D'Amore Maximiliano / Martínez M</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Abordaje de Problemáticas Institucionales en el Ámbito Escolar</td><td class="p-4 col-fecha text-center">21/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Jove Cintia</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -439,20 +443,20 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía Laboral</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Rollie</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía e Int. Del Sujeto con Discapacidad</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Manzo E</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Pusanzini</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía Institucional</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Heuschkel</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Metodología de la Investigación</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Capitán</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Deontología y Ética Profesional</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">De Cicco</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Prevención Diagnóstico y Tratamiento</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Pusanzini</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicopedagogía Laboral</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Rollie Verónica</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicopedagogía e Integración del Sujeto con Discapacidad</td><td class="p-4 col-fecha text-center">01/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Manzo Eliana</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">E.D.I. (Espacio de Definición Institucional)</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Pusanzini Verónica</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicopedagogía Institucional</td><td class="p-4 col-fecha text-center">09/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Heuschkel Tarela Johana</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Metodología de la Investigación Aplicada</td><td class="p-4 col-fecha text-center">10/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Capitán Belén</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Deontología y Ética Profesional</td><td class="p-4 col-fecha text-center">15/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Decicco Adelina</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Prevención, Diagnóstico y Tratamiento Psicopedagógico</td><td class="p-4 col-fecha text-center">16/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Pusanzini Verónica</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -483,21 +487,21 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Temprana</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Guiñez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Corporeidad y Motricidad</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Geber</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo y el Aprendizaje</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Luciano</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis del Mundo Contemporánea</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Caregall</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Filosofía</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">García</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica General</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Luciano</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Llosa</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Pedagogía</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Herrero</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Educación Temprana</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Guiñez Karina</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Corporeidad y Motricidad</td><td class="p-4 col-fecha text-center">02/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Geber Gabriela</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología del Desarrollo y el Aprendizaje I</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Luciano María</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Análisis del Mundo Contemporáneo</td><td class="p-4 col-fecha text-center">04/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Caregal Paula</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Filosofía</td><td class="p-4 col-fecha text-center">09/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">García Karina</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Didáctica General</td><td class="p-4 col-fecha text-center">17/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Luciano María</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa</td><td class="p-4 col-fecha text-center">18/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Llosa Juan Cruz</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Pedagogía</td><td class="p-4 col-fecha text-center">21/12/2026</td><td class="p-4 text-center">1°</td><td class="p-4 col-profesor text-center">Herrero Gabriela</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -516,24 +520,24 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Cultura Comunicación y Educ</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Meo Laos</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica de la Ciencia Sociales</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Constantino</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Plástica</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Wibaux</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Teorías Sociopolíticas</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Herrero</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica de la Matemática</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Conti</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo y Aprendizaje</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Bianchi</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica del Lenguaje y la Literatura</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Constantino</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología Social</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Barberena</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Llosa</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica y Curriculum</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Flores</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica de las Cs. Naturales</td><td class="p-4 col-fecha">22/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Lozada</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Cultura, Comunicación y Educación</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Meo Laos Verónica</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Didáctica de las Ciencias Sociales</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Constantino Mercedes</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Educación Plástica</td><td class="p-4 col-fecha text-center">04/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Wibaux Eugenia</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Teorías Sociopolíticas y Educación</td><td class="p-4 col-fecha text-center">09/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Herrero Gabriela</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Didáctica de la Matemática</td><td class="p-4 col-fecha text-center">10/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Conti Vilma</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología del Desarrollo y el Aprendizaje II</td><td class="p-4 col-fecha text-center">14/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Bianchi Cecilia</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Didáctica del Lenguaje y la Literatura</td><td class="p-4 col-fecha text-center">15/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Constantino Mercedes</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Psicología Social e Institucional</td><td class="p-4 col-fecha text-center">17/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Barberena Gabriela</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa</td><td class="p-4 col-fecha text-center">18/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Llosa Juan Cruz</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Didáctica y Currículum del Nivel Inicial</td><td class="p-4 col-fecha text-center">21/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Flores</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Didáctica de las Ciencias Naturales</td><td class="p-4 col-fecha text-center">22/12/2026</td><td class="p-4 text-center">2°</td><td class="p-4 col-profesor text-center">Losada Cyntia</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -552,22 +556,22 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Historia y Prosp. De la Educación</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Navarro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Producción de Materiales y Objetos Lúdicos</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Ubarrieta</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Juego y desarrollo Infantil</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Geber</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Políticas Leg y Adm del Trabajo Escolar</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Gallastegui</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Wibaux</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Medios Audiovisuales TIC</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Meo Laos</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Musical</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Wibaux</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Llosa</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Física Escolar</td><td class="p-4 col-fecha">22/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Geber</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Historia y Prospectiva de la Educación</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Navarro Inés</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Producción de Material y Objetos Lúdicos</td><td class="p-4 col-fecha text-center">01/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Ubarrieta Rocío</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Juego y Desarrollo Infantil</td><td class="p-4 col-fecha text-center">01/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Geber Gabriela</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Políticas, Legislación y Administración del Trabajo Escolar</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Gallastegui Liliana</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">E.D.I. (Espacio de Definición Institucional)</td><td class="p-4 col-fecha text-center">10/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Wibaux Eugenia</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Medios Audiovisuales</td><td class="p-4 col-fecha text-center">11/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Meo Laos Verónica</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Educación Musical</td><td class="p-4 col-fecha text-center">17/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Wibaux Eugenia</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa</td><td class="p-4 col-fecha text-center">18/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Llosa Juan Cruz</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Educación Física Escolar</td><td class="p-4 col-fecha text-center">22/12/2026</td><td class="p-4 text-center">3°</td><td class="p-4 col-profesor text-center">Geber Gabriela</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -586,18 +590,18 @@
                     <table class="w-full text-left border-collapse text-sm tabla-mesas">
                         <thead>
                             <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
+                                <th class="p-4 text-left">Materia / Asignatura</th>
+                                <th class="p-4 text-center">Fecha</th>
+                                <th class="p-4 text-center">Curso</th>
+                                <th class="p-4 text-center">Tribunal / Profesor</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación en y para la Salud</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">D´amore</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Cerillano</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Ético Político de la Praxis</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Luciano</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Reflexión Filosófica de la Educación</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Herrero</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Llosa</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Educación en y para la Salud</td><td class="p-4 col-fecha text-center">30/11/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">D'Amore Maximiliano</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">E.D.I.</td><td class="p-4 col-fecha text-center">03/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Cerillano Susana</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Ético Política de la Praxis Docente</td><td class="p-4 col-fecha text-center">14/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Luciano María</td></tr>
+                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Reflexión Filosófica de la Educación</td><td class="p-4 col-fecha text-center">15/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Herrero Gabriela</td></tr>
+                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia text-left">Formación Religiosa </td><td class="p-4 col-fecha text-center">18/12/2026</td><td class="p-4 text-center">4°</td><td class="p-4 col-profesor text-center">Llosa Juan Cruz</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -669,6 +673,7 @@
                 const filas = Array.from(tbody.querySelectorAll("tr"));
                 filas.forEach((tr, index) => tr.setAttribute("data-index-original", index));
             });
+            actualizarBotonLimpiar();
         });
 
         function toggleAno(boton) {
@@ -697,7 +702,35 @@
             document.getElementById('carrera-' + carrera).classList.remove('hidden');
             const btnActivo = document.getElementById('btn-' + carrera);
             btnActivo.className = "tab-btn active-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all flex items-center gap-2";
+
+            // Limpia automáticamente la barra de búsqueda al cambiar de carrera
+            const inputBusqueda = document.getElementById('input-busqueda');
+            inputBusqueda.value = '';
+            actualizarBotonLimpiar();
             
+            filtrarMesas();
+        }
+
+        function actualizarBotonLimpiar() {
+            const inputBusqueda = document.getElementById('input-busqueda');
+            const btnLimpiar = document.getElementById('btn-limpiar-busqueda');
+            if (inputBusqueda.value.length > 0) {
+                btnLimpiar.classList.remove('hidden');
+            } else {
+                btnLimpiar.classList.add('hidden');
+            }
+        }
+
+        function limpiarBusqueda() {
+            const inputBusqueda = document.getElementById('input-busqueda');
+            inputBusqueda.value = '';
+            actualizarBotonLimpiar();
+            filtrarMesas();
+            inputBusqueda.focus();
+        }
+
+        function manejarBusqueda() {
+            actualizarBotonLimpiar();
             filtrarMesas();
         }
 
@@ -799,6 +832,7 @@
         function restablecerFiltros() {
             document.getElementById('input-busqueda').value = '';
             document.getElementById('select-orden').value = 'predeterminado';
+            actualizarBotonLimpiar();
             filtrarMesas();
             ordenarMesas();
         }
