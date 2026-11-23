@@ -327,7 +327,8 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Las listas de materias de cada año se cargan desde la API (materias.js). -->
+            <div id="plan-materias" data-id-carrera="2" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- 1er Año -->
                 <div class="bg-gris-50 rounded-2xl overflow-hidden border border-gris-200 shadow-sm flex flex-col">
                     <div class="bg-bordo-900 text-white p-5 border-b-4 border-oro-500">
@@ -336,17 +337,8 @@
                         <p class="text-slate-300 text-xs mt-0.5">Bases teóricas y fundamentos</p>
                     </div>
                     <div class="p-5 flex-grow">
-                        <ul class="space-y-2 text-xs text-slate-700 divide-y divide-slate-200">
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Filosofía</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Estado y Sociedad</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Didáctica y Currículum</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Pedagogía</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-brain text-xs text-bordo-800"></i> Psicología General</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Estadística Aplicada</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Bases Neurofisiológicas del Aprendizaje</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-heart-pulse text-xs text-bordo-800"></i> Psicopedagogía</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Práctica Profesional I</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-cross text-xs text-bordo-800"></i> Teología</li>
+                        <ul data-anio="1" class="space-y-2 text-xs text-slate-700 divide-y divide-slate-200">
+                            <li class="pt-2 text-gris-500 italic"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando materias...</li>
                         </ul>
                     </div>
                 </div>
@@ -359,18 +351,8 @@
                         <p class="text-slate-300 text-xs mt-0.5">Desarrollo y diagnóstico I</p>
                     </div>
                     <div class="p-5 flex-grow">
-                        <ul class="space-y-2 text-xs text-slate-700 divide-y divide-gris-200">
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Problemáticas Socioculturales Contemp.</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicología Psicoanalítica</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicología del Lenguaje</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Taller de Evaluación</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Taller de Medios y Recursos Didácticos</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-child text-xs text-bordo-800"></i> Psicología del Desarrollo I</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-book-open text-xs text-bordo-800"></i> Psicología del Aprendizaje I</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-stethoscope text-xs text-bordo-800"></i> Diagnóstico Psicopedagógico I</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-puzzle-piece text-xs text-oro-600"></i> E.D.I.</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Práctica Profesional II</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-cross text-xs text-bordo-800"></i> Teología</li>
+                        <ul data-anio="2" class="space-y-2 text-xs text-slate-700 divide-y divide-gris-200">
+                            <li class="pt-2 text-gris-500 italic"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando materias...</li>
                         </ul>
                     </div>
                 </div>
@@ -383,20 +365,8 @@
                         <p class="text-gris-300 text-xs mt-0.5">Neurociencias y psicopatología</p>
                     </div>
                     <div class="p-5 flex-grow">
-                        <ul class="space-y-2 text-xs text-gris-700 divide-y divide-gris-200">
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Abordaje de Probl. Inst. en Ámbito Escolar</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Lengua y su Enseñanza</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Matemática y su Enseñanza</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-notes-medical text-xs text-bordo-800"></i> Neurociencias</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicología del Desarrollo II</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicología del Aprendizaje II</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-disease text-xs text-bordo-800"></i> Psicopatología</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Análisis y Dinámica de Grupos</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Atención al Sujeto Discapacitado</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-stethoscope text-xs text-bordo-800"></i> Diagnóstico Psicopedagógico II</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-puzzle-piece text-xs text-oro-600"></i> E.D.I.</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Práctica Profesional III</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-cross text-xs text-bordo-800"></i> Teología</li>
+                        <ul data-anio="3" class="space-y-2 text-xs text-gris-700 divide-y divide-gris-200">
+                            <li class="pt-2 text-gris-500 italic"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando materias...</li>
                         </ul>
                     </div>
                 </div>
@@ -409,17 +379,8 @@
                         <p class="text-gris-300 text-xs mt-0.5">Especialización e investigación</p>
                     </div>
                     <div class="p-5 flex-grow">
-                        <ul class="space-y-2 text-xs text-slate-700 divide-y divide-gris-200">
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Deontología y Ética Profesional</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Metodología de la Investigación Aplicada</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Taller de Alfabetización</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-kit-medical text-xs text-bordo-800"></i> Prev., Diagnóstico y Tratamiento Psicopedagógico</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicopedagogía Laboral</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Psicopedagogía Institucional</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-hand-holding-hand text-xs text-bordo-800"></i> Psicopedagogía e Integración del Sujeto con Discapacidad</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-puzzle-piece text-xs text-oro-600"></i> E.D.I.</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Práctica Profesional IV</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-cross text-xs text-bordo-800"></i> Teología</li>
+                        <ul data-anio="4" class="space-y-2 text-xs text-slate-700 divide-y divide-gris-200">
+                            <li class="pt-2 text-gris-500 italic"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando materias...</li>
                         </ul>
                     </div>
                 </div>
@@ -437,117 +398,9 @@
                 <div class="w-16 h-1 bg-bordo-800 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">EM</div>
-                    <div class="font-bold text-gris-800 text-sm">Eliana Manzo</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">IM</div>
-                    <div class="font-bold text-gris-800 text-sm">Ivana Manzo</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">CM</div>
-                    <div class="font-bold text-gris-800 text-sm">Carlos Manzo</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">IN</div>
-                    <div class="font-bold text-gris-800 text-sm">Inés Navarro</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">AD</div>
-                    <div class="font-bold text-gris-800 text-sm">Adelina Decicco</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">VP</div>
-                    <div class="font-bold text-gris-800 text-sm">Verónica Pusanzini</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">GB</div>
-                    <div class="font-bold text-gris-800 text-sm">Gabriela Barberena</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">VR</div>
-                    <div class="font-bold text-gris-800 text-sm">Verónica Rollie</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">KG</div>
-                    <div class="font-bold text-gris-800 text-sm">Karina Guiñez</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">CB</div>
-                    <div class="font-bold text-gris-800 text-sm">Cecilia Bianchi</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MM</div>
-                    <div class="font-bold text-gris-800 text-sm">Mónica Molina Dolezal</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">AA</div>
-                    <div class="font-bold text-gris-800 text-sm">Alicia Álvarez</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">BC</div>
-                    <div class="font-bold text-gris-800 text-sm">Belén Capitán</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">JA</div>
-                    <div class="font-bold text-gris-800 text-sm">Julio Aguiar</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">LM</div>
-                    <div class="font-bold text-gris-800 text-sm">Lucia Maccio</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MD</div>
-                    <div class="font-bold text-gris-800 text-sm">Maximiliano D'Amore</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">EV</div>
-                    <div class="font-bold text-gris-800 text-sm">Evangelina Van Mouleghey</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">LA</div>
-                    <div class="font-bold text-gris-800 text-sm">Ángela Lestarrepe</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">JH</div>
-                    <div class="font-bold text-gris-800 text-sm">Johana Heuschkel Tarela</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">VL</div>
-                    <div class="font-bold text-gris-800 text-sm">Vanesa La Posta</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">CJ</div>
-                    <div class="font-bold text-gris-800 text-sm">Cintia Jove</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">FR</div>
-                    <div class="font-bold text-gris-800 text-sm">Fernando Romero</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
+            <!-- Los docentes se cargan desde la API (docentes.js). -->
+            <div id="grilla-docentes" data-id-carrera="2" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="col-span-full text-center text-gris-500 text-sm py-6"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando docentes...</div>
             </div>
         </div>
     </section>
@@ -686,6 +539,13 @@
     <a href="https://wa.me/5492245410225" target="_blank" rel="noopener" class="wsp-float" aria-label="Escribinos por WhatsApp" title="Escribinos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- MÓDULO DE LA API (lo usan docentes.js y materias.js) -->
+    <script src="api.js"></script>
+    <!-- EQUIPO DOCENTE DESDE LA API -->
+    <script src="docentes.js"></script>
+    <!-- PLAN DE ESTUDIOS DESDE LA API -->
+    <script src="materias.js"></script>
 
 </body>
 

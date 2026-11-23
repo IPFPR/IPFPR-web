@@ -128,7 +128,7 @@
     <section class="bordo-gradient-bg text-white py-14 border-b-4 border-oro-500">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <span class="inline-block px-3.5 py-1.5 rounded-full bg-black/30 border border-oro-400/40 text-oro-200 text-xs font-semibold tracking-wide uppercase mb-3">
-                Calendario Académico Oficial • Turno Diciembre 2026
+                Calendario Académico Oficial<span id="texto-llamado"></span>
             </span>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white">
                 Mesas de Exámenes <span class="gold-gradient-text">Finales</span>
@@ -203,6 +203,11 @@
 
         </div>
 
+        <!-- ESTADO DE LA CARGA: "Cargando...", error o aviso (lo maneja mostrarEstado()) -->
+        <div id="estado-mesas" class="mb-10"></div>
+
+        <!-- Las tarjetas de cada año se generan desde la API (ver cargarMesas()) -->
+
         <!-- ================= SECCIÓN 1: ANÁLISIS DE SISTEMAS ================= -->
         <div id="carrera-analisis" class="carrera-container space-y-6">
             <div class="flex items-center justify-between border-b border-gris-300 pb-3">
@@ -213,103 +218,7 @@
                     Ver Información de la Carrera <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-
-            <!-- 1° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-bordo-950 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Primer Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Arquitectura de Computadoras</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Lima</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Algoritmo y Estructura de Datos I</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Reimondez</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Algebra</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Vázquez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Form. Religiosa I</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis Matemático I</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Vázquez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Ciencia Tecnología y Sociedad</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Capitán</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Inglés Técnico I</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Aizpitarte</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Sistemas y Organizaciones</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Villalba</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 2° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-800 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-bordo-900 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Segundo Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Base de Datos</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Lazzaro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Form. Religiosa II</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Sistemas Operativos de PC</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Del Matte</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Algoritmo y Estructura de Datos II</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Caram</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Ingeniería del Software I</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Bosatta</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Inglés técnico II</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Aizpitarte</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis Matemático II</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Vázquez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Probabilidad y Estadística</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Blasi</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 3° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-black transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Tercer Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Redes y comunicaciones (Teleinformática)</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Rossi</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Aspectos Legales de la profesión</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Elias</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Form. Religiosa III</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Ingeniería de Software II (Sist. Información)</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Membiela</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Algoritmos y estructura de Datos III</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Francisco</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Inglés Técnico III</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Aizpitarte</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <div id="anios-analisis" class="space-y-6"></div>
         </div>
 
         <!-- ================= SECCIÓN 2: PSICOPEDAGOGÍA ================= -->
@@ -322,141 +231,7 @@
                     Ver Información de la Carrera <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-
-            <!-- 1° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-bordo-950 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Primer Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Pedagogía</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Navarro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Manzo E</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica y Curriculum</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Van Mouleghey</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología General</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">D’amore C / Martínez M</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Filosofía</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Navarro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Estadística Aplicada</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Macció</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa I, II, III</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">1, 2, 3</td><td class="p-4 col-profesor">Aguiar</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Estado y Sociedad</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Lestarrepe</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Bases Neurofisiológicas del Aprendizaje</td><td class="p-4 col-fecha">22/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">D’amore M</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 2° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-800 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-bordo-900 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Segundo Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Aprendizaje</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Barberena</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Diagnóstico Psicopedagógico</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Pusanzini</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Barberena</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología Cognitiva</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Rollié</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Lenguaje</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Heuschkel</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Guiñez</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología Psicoanalítica</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Molina Dolezal</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Prob/Socioculturales Contemporáneas</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Manzo C</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 3° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-black transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Tercer Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Atención al Sujeto con Discapacidad</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">La Posta</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopatología</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Molina Dolezal</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Diagnóstico Psicopedagógico</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Guiñez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Manzo I</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Bianchi</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Neurociencia</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">D’amore M</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Aprendizaje</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Rollie</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Lengua y su Didáctica</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Sami</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Matemática y su Enseñanza</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Romero</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis y Dinámica de Grupos</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">D’amore C / Martínez M</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Abordaje de Problemáticas Institucionales</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Jové</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 4° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-black transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Cuarto Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía Laboral</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Rollie</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía e Int. Del Sujeto con Discapacidad</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Manzo E</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Pusanzini</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicopedagogía Institucional</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Heuschkel</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Metodología de la Investigación</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Capitán</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Deontología y Ética Profesional</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">De Cicco</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Prevención Diagnóstico y Tratamiento</td><td class="p-4 col-fecha">16/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Pusanzini</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <div id="anios-psico" class="space-y-6"></div>
         </div>
 
         <!-- ================= SECCIÓN 3: EDUCACIÓN INICIAL ================= -->
@@ -469,139 +244,7 @@
                     Ver Información de la Carrera <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-
-            <!-- 1° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-900 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-bordo-950 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Primer Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Temprana</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Guiñez</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Corporeidad y Motricidad</td><td class="p-4 col-fecha">02/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Geber</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo y el Aprendizaje</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Luciano</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Análisis del Mundo Contemporánea</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Caregall</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Filosofía</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">García</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica General</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Luciano</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Llosa</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Pedagogía</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">1°</td><td class="p-4 col-profesor">Herrero</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 2° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-800 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-bordo-900 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Segundo Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Cultura Comunicación y Educ</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Meo Laos</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica de la Ciencia Sociales</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Constantino</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Plástica</td><td class="p-4 col-fecha">04/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Wibaux</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Teorías Sociopolíticas</td><td class="p-4 col-fecha">09/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Herrero</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica de la Matemática</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Conti</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología del Desarrollo y Aprendizaje</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Bianchi</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica del Lenguaje y la Literatura</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Constantino</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Psicología Social</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Barberena</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Llosa</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica y Curriculum</td><td class="p-4 col-fecha">21/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Flores</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Didáctica de las Cs. Naturales</td><td class="p-4 col-fecha">22/12/2026</td><td class="p-4">2°</td><td class="p-4 col-profesor">Lozada</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 3° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-black transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Tercer Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Historia y Prosp. De la Educación</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Navarro</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Producción de Materiales y Objetos Lúdicos</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Ubarrieta</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Juego y desarrollo Infantil</td><td class="p-4 col-fecha">01/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Geber</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Políticas Leg y Adm del Trabajo Escolar</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Gallastegui</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">10/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Wibaux</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Medios Audiovisuales TIC</td><td class="p-4 col-fecha">11/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Meo Laos</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Musical</td><td class="p-4 col-fecha">17/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Wibaux</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Llosa</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación Física Escolar</td><td class="p-4 col-fecha">22/12/2026</td><td class="p-4">3°</td><td class="p-4 col-profesor">Geber</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 4° Año -->
-            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
-                <button onclick="toggleAno(this)" class="w-full bg-bordo-950 text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none hover:bg-black transition-colors">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
-                        <h3 class="font-bold font-serif text-lg text-oro-200">Cuarto Año</h3>
-                    </div>
-                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">Turno Diciembre 2026</span>
-                </button>
-                <div class="contenido-ano hidden overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
-                        <thead>
-                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
-                                <th class="p-4">Materia / Asignatura</th>
-                                <th class="p-4">Fecha</th>
-                                <th class="p-4">Curso</th>
-                                <th class="p-4">Tribunal / Profesor</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gris-200 text-gris-700">
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Educación en y para la Salud</td><td class="p-4 col-fecha">30/11/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">D´amore</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">EDI</td><td class="p-4 col-fecha">03/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Cerillano</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Ético Político de la Praxis</td><td class="p-4 col-fecha">14/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Luciano</td></tr>
-                            <tr class="bg-gris-50/50"><td class="p-4 font-semibold text-bordo-950 col-materia">Reflexión Filosófica de la Educación</td><td class="p-4 col-fecha">15/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Herrero</td></tr>
-                            <tr><td class="p-4 font-semibold text-bordo-950 col-materia">Formación Religiosa</td><td class="p-4 col-fecha">18/12/2026</td><td class="p-4">4°</td><td class="p-4 col-profesor">Llosa</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <div id="anios-inicial" class="space-y-6"></div>
         </div>
 
     </main>
@@ -662,14 +305,138 @@
         </div>
     </footer>
 
+    <!-- MÓDULO DE LA API (define RoblesAPI). Tiene que ir antes del script de la página. -->
+    <script src="api.js"></script>
+
     <!-- LÓGICA JAVASCRIPT -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        // La API identifica cada carrera por su idCarrera; la página usa claves cortas
+        // ('analisis', 'psico', 'inicial') en los ids de los contenedores y botones.
+        const CLAVE_POR_ID_CARRERA = { 1: 'analisis', 2: 'psico', 3: 'inicial' };
+
+        // Color del encabezado de cada año (1°, 2°, 3°, 4°), igual que el diseño original.
+        const COLOR_ANIO = [
+            'bg-bordo-900 hover:bg-bordo-950',
+            'bg-bordo-800 hover:bg-bordo-900',
+            'bg-bordo-950 hover:bg-black',
+            'bg-bordo-950 hover:bg-black'
+        ];
+
+        document.addEventListener("DOMContentLoaded", cargarMesas);
+
+        // Pide las mesas a la API y arma las tablas de las tres carreras.
+        async function cargarMesas() {
+            mostrarEstado('cargando');
+
+            const datos = await RoblesAPI.getMesas();
+            if (!datos) {
+                mostrarEstado('error');
+                return;
+            }
+
+            // Turno(s) de examen vigente(s), por ejemplo "Diciembre", en el encabezado.
+            const llamados = (datos.llamados || []).map(l => l.descripcion).join(' / ');
+            document.getElementById('texto-llamado').textContent = llamados ? ` • Turno ${llamados}` : '';
+
+            let totalMesas = 0;
+            for (const carrera of datos.carreras || []) {
+                const clave = CLAVE_POR_ID_CARRERA[carrera.idCarrera];
+                if (!clave) continue; // Carrera que esta página todavía no muestra
+
+                const contenedor = document.getElementById('anios-' + clave);
+                contenedor.innerHTML = carrera.anios
+                    .map((anio, i) => crearTarjetaAnio(anio, i, llamados))
+                    .join('');
+                carrera.anios.forEach(anio => totalMesas += anio.mesas.length);
+            }
+
+            // Guardamos el orden original (cronológico, como lo manda la API)
+            // para que "Predeterminado" en el selector pueda volver a él.
             document.querySelectorAll(".tabla-mesas tbody").forEach(tbody => {
-                const filas = Array.from(tbody.querySelectorAll("tr"));
-                filas.forEach((tr, index) => tr.setAttribute("data-index-original", index));
+                tbody.querySelectorAll("tr").forEach((tr, index) => tr.setAttribute("data-index-original", index));
             });
-        });
+
+            mostrarEstado(totalMesas === 0 ? 'sin-mesas' : 'ok', llamados);
+            filtrarMesas();
+            ordenarMesas();
+        }
+
+        // Devuelve el HTML de la tarjeta desplegable de un año con su tabla de mesas.
+        // Todo texto que viene de la API pasa por escaparHTML (protección contra XSS).
+        function crearTarjetaAnio(anio, indice, llamados) {
+            const esc = RoblesAPI.escaparHTML;
+
+            const filas = anio.mesas.length === 0
+                ? `<tr><td colspan="4" class="p-4 text-center text-gris-500 italic">Todavía no hay mesas cargadas para este año.</td></tr>`
+                : anio.mesas.map(mesa => {
+                    const vocales = mesa.vocales && mesa.vocales.length
+                        ? `<span class="block text-xs text-gris-500">${mesa.vocales.map(esc).join(' · ')}</span>`
+                        : '';
+                    return `<tr>
+                        <td class="p-4 font-semibold text-bordo-950 col-materia">${esc(mesa.materia)}</td>
+                        <td class="p-4 col-fecha whitespace-nowrap">${esc(RoblesAPI.formatearFecha(mesa.fecha))}</td>
+                        <td class="p-4 whitespace-nowrap">${esc(mesa.hora)} h</td>
+                        <td class="p-4 col-profesor"><span class="font-medium">${esc(mesa.presidente)}</span>${vocales}</td>
+                    </tr>`;
+                }).join('');
+
+            const cantidad = anio.mesas.length === 1 ? '1 mesa' : `${anio.mesas.length} mesas`;
+
+            return `
+            <div class="bg-white rounded-2xl border border-gris-200 shadow-sm overflow-hidden tabla-card">
+                <button onclick="toggleAno(this)" class="w-full ${COLOR_ANIO[indice] || COLOR_ANIO[3]} text-white px-6 py-4 border-b-2 border-oro-500 flex justify-between items-center text-left focus:outline-none transition-colors">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-chevron-right text-oro-400 icono-flecha transition-transform duration-200"></i>
+                        <h3 class="font-bold font-serif text-lg text-oro-200">${esc(anio.nombre)}</h3>
+                    </div>
+                    <span class="text-xs bg-black/30 border border-oro-400/30 px-3 py-1 rounded-full">${cantidad}</span>
+                </button>
+                <div class="contenido-ano hidden overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm tabla-mesas">
+                        <thead>
+                            <tr class="bg-gris-50 border-b border-gris-200 text-xs font-bold text-gris-600 uppercase">
+                                <th class="p-4">Materia / Asignatura</th>
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Hora</th>
+                                <th class="p-4">Tribunal (Presidente · Vocales)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gris-200 text-gris-700">${filas}</tbody>
+                    </table>
+                </div>
+            </div>`;
+        }
+
+        // Muestra el cartel de estado arriba de las tablas.
+        function mostrarEstado(tipo, llamados = '') {
+            const caja = document.getElementById('estado-mesas');
+            const tarjeta = (icono, titulo, detalle, extra = '') => `
+                <div class="bg-white rounded-2xl border border-gris-200 shadow-sm p-8 text-center text-gris-600">
+                    <i class="${icono} text-3xl text-oro-600 mb-3"></i>
+                    <p class="font-bold text-bordo-950">${titulo}</p>
+                    <p class="text-xs mt-1">${detalle}</p>
+                    ${extra}
+                </div>`;
+
+            if (tipo === 'cargando') {
+                caja.innerHTML = tarjeta('fa-solid fa-spinner fa-spin', 'Cargando mesas de examen...',
+                    'Si el servidor estuvo un rato sin uso, puede tardar hasta un minuto.');
+            } else if (tipo === 'error') {
+                const detalle = RoblesAPI.abiertoComoArchivo()
+                    ? 'Abriste la página como archivo. Usá un servidor local (por ejemplo, Live Server de VS Code).'
+                    : 'No se pudieron cargar los datos. Probá de nuevo en unos minutos.';
+                caja.innerHTML = tarjeta('fa-solid fa-triangle-exclamation', 'Error al cargar las mesas', detalle,
+                    `<button onclick="cargarMesas()" class="mt-4 bg-bordo-800 hover:bg-bordo-900 text-oro-200 font-bold px-5 py-2 rounded-xl text-xs">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Reintentar
+                    </button>`);
+            } else if (tipo === 'sin-mesas') {
+                const turno = llamados ? ` del turno ${RoblesAPI.escaparHTML(llamados)}` : '';
+                caja.innerHTML = tarjeta('fa-regular fa-calendar', `Todavía no se publicaron las mesas${turno}`,
+                    'Volvé a consultar en unos días.');
+            } else {
+                caja.innerHTML = '';
+            }
+        }
 
         function toggleAno(boton) {
             const contenido = boton.nextElementSibling;

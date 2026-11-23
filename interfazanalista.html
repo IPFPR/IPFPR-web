@@ -327,7 +327,8 @@
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Las listas de materias de cada año se cargan desde la API (materias.js). -->
+            <div id="plan-materias" data-id-carrera="1" class="grid lg:grid-cols-3 gap-8">
                 <!-- 1er Año -->
                 <div class="bg-gris-50 rounded-2xl overflow-hidden border border-gris-200 shadow-sm flex flex-col">
                     <div class="bg-bordo-900 text-white p-6 border-b-4 border-oro-500">
@@ -336,16 +337,8 @@
                         <p class="text-gris-300 text-xs mt-1">Fundamentos lógicos, ciencias y arquitectura</p>
                     </div>
                     <div class="p-6 flex-grow">
-                        <ul class="space-y-2.5 text-sm text-slate-700 divide-y divide-gris-200">
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Inglés I</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Ciencia, Tecnología y Sociedad</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Análisis Matemático I</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Álgebra</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-code text-xs text-bordo-800"></i> Algoritmos y Estructuras de Datos I</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Sistemas y Organizaciones</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Arquitectura de Computadoras</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1.5 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Prácticas Profesionalizantes I</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-cross text-xs text-bordo-800"></i> Formación Religiosa I</li>
+                        <ul data-anio="1" class="space-y-2.5 text-sm text-slate-700 divide-y divide-gris-200">
+                            <li class="pt-2 text-gris-500 italic"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando materias...</li>
                         </ul>
                     </div>
                 </div>
@@ -358,16 +351,8 @@
                         <p class="text-gris-300 text-xs mt-1">Bases de datos, ingeniería de software y SO</p>
                     </div>
                     <div class="p-6 flex-grow">
-                        <ul class="space-y-2.5 text-sm text-gris-700 divide-y divide-gris-200">
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Inglés II</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Análisis Matemático II</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Estadística</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-layer-group text-xs text-bordo-800"></i> Ingeniería del Software I</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-code text-xs text-bordo-800"></i> Algoritmos y Estructuras de Datos II</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Sistemas Operativos</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-database text-xs text-bordo-800"></i> Bases de Datos</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1.5 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Prácticas Profesionalizantes II</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-cross text-xs text-bordo-800"></i> Formación Religiosa II</li>
+                        <ul data-anio="2" class="space-y-2.5 text-sm text-gris-700 divide-y divide-gris-200">
+                            <li class="pt-2 text-gris-500 italic"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando materias...</li>
                         </ul>
                     </div>
                 </div>
@@ -380,15 +365,8 @@
                         <p class="text-gris-300 text-xs mt-1">Redes, marcos legales y proyecto profesional</p>
                     </div>
                     <div class="p-6 flex-grow">
-                        <ul class="space-y-2.5 text-sm text-gris-700 divide-y divide-gris-200">
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Inglés III</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Aspectos Legales de la Profesión</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-check text-xs text-oro-600"></i> Seminario de Actualización</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-network-wired text-xs text-bordo-800"></i> Redes y Comunicaciones</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-layer-group text-xs text-bordo-800"></i> Ingeniería del Software II</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-bordo-900"><i class="fa-solid fa-code text-xs text-bordo-800"></i> Algoritmos y Estructuras de Datos III</li>
-                            <li class="pt-2 flex items-center gap-2 font-semibold text-oro-700 bg-oro-50/70 p-1.5 rounded"><i class="fa-solid fa-briefcase text-xs text-oro-600"></i> Prácticas Profesionalizantes III</li>
-                            <li class="pt-2 flex items-center gap-2"><i class="fa-solid fa-cross text-xs text-bordo-800"></i> Formación Religiosa III</li>
+                        <ul data-anio="3" class="space-y-2.5 text-sm text-gris-700 divide-y divide-gris-200">
+                            <li class="pt-2 text-gris-500 italic"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando materias...</li>
                         </ul>
                     </div>
                 </div>
@@ -406,92 +384,9 @@
                 <div class="w-16 h-1 bg-bordo-800 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">AJ</div>
-                    <div class="font-bold text-gris-800 text-sm">Aguiar Julio</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">AA</div>
-                    <div class="font-bold text-gris-800 text-sm">Aizpitarte Agustina</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">DB</div>
-                    <div class="font-bold text-gris-800 text-sm">Dario Bosatta</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">BR</div>
-                    <div class="font-bold text-gris-800 text-sm">Blassi Ramiro</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">CB</div>
-                    <div class="font-bold text-gris-800 text-sm">Capitan Belen</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">CM</div>
-                    <div class="font-bold text-gris-800 text-sm">Caram Miguel</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">DH</div>
-                    <div class="font-bold text-gris-800 text-sm">Del Matte Horacio</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">EM</div>
-                    <div class="font-bold text-gris-800 text-sm">Elias Malvina</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">FM</div>
-                    <div class="font-bold text-gris-800 text-sm">Francisco Mariano</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">LP</div>
-                    <div class="font-bold text-gris-800 text-sm">Lazzaro Pablo</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">LP</div>
-                    <div class="font-bold text-gris-800 text-sm">Lima Pablo</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">ML</div>
-                    <div class="font-bold text-gris-800 text-sm">Masotti Leandro</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MM</div>
-                    <div class="font-bold text-gris-800 text-sm">Membiela Marcos</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">RA</div>
-                    <div class="font-bold text-gris-800 text-sm">Reimondez Alejandro</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">RS</div>
-                    <div class="font-bold text-gris-800 text-sm">Rossi Santiago</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MM</div>
-                    <div class="font-bold text-gris-800 text-sm">Marcial Manzo</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gris-200 text-center shadow-sm hover:border-oro-400 transition-colors">
-                    <div class="w-10 h-10 rounded-full bg-bordo-100 text-bordo-800 font-bold mx-auto mb-2 flex items-center justify-center text-sm">MV</div>
-                    <div class="font-bold text-gris-800 text-sm">Mario Vazquez</div>
-                    <div class="text-xs text-oro-600">Docente</div>
-                </div>
+            <!-- Los docentes se cargan desde la API (docentes.js). -->
+            <div id="grilla-docentes" data-id-carrera="1" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div class="col-span-full text-center text-gris-500 text-sm py-6"><i class="fa-solid fa-spinner fa-spin mr-2 text-oro-600"></i>Cargando docentes...</div>
             </div>
         </div>
     </section>
@@ -630,6 +525,13 @@
     <a href="https://wa.me/5492245410225" target="_blank" rel="noopener" class="wsp-float" aria-label="Escribinos por WhatsApp" title="Escribinos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- MÓDULO DE LA API (lo usan docentes.js y materias.js) -->
+    <script src="api.js"></script>
+    <!-- EQUIPO DOCENTE DESDE LA API -->
+    <script src="docentes.js"></script>
+    <!-- PLAN DE ESTUDIOS DESDE LA API -->
+    <script src="materias.js"></script>
 
 </body>
 
