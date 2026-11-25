@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="images/escudo_instituto.png" alt="Escudo del Instituto" width="110">
+<img src="public/assets/img/escudo_instituto.png" alt="Escudo del Instituto" width="110">
 
 # Sitio web del Instituto Robles · Nivel Superior
 
 Sitio institucional del **Instituto Parroquial Francisco de Paula Robles** (Dolores, Buenos Aires):
 carreras, planes de estudio, mesas de examen, preinscripción, biblioteca y autoridades.
 
-**[Ver el sitio publicado → ipfpr-web.vercel.app](https://ipfpr-web.vercel.app)**
+**[Ver el sitio publicado → www.institutosparroquiales.com](https://www.institutosparroquiales.com)** · dirección alternativa: [ipfpr-web.vercel.app](https://ipfpr-web.vercel.app)
 
 ![Estado](https://img.shields.io/badge/estado-publicado-success)
 ![Versión](https://img.shields.io/badge/versión-1.0-821C20)
@@ -35,19 +35,21 @@ Un sitio estático de nueve páginas que reúne la información del Nivel Superi
 
 ## Qué tiene el sitio
 
-| Página | Archivo | Contenido |
+| Página | Dirección | Contenido |
 |---|---|---|
-| Inicio | `index.html` | Presentación, oferta académica, acceso a preinscripción y mapa |
-| Análisis de Sistemas | `interfazanalista.html` | Materias por año, docentes y plan de estudios (Res. 6790/19) |
-| Psicopedagogía | `interfazpsicopedagogia.html` | Materias por año, docentes y plan de estudios (Res. 2460/11) |
-| Educación Inicial | `interfazedinicial.html` | Materias por año, docentes y plan de estudios (Res. 4154/07) |
-| Mesas de examen | `mesasexamen.html` | 90 mesas del turno de diciembre de 2026, con buscador por materia o docente, selector de carrera y ordenamiento |
-| Contacto | `contacto.html` | Dirección, teléfonos, correo, horario, accesos a WhatsApp y correo, redes y mapa |
-| Preinscripción | `preinscripciones.html` | Documentación requerida, correo de envío y horario de entrega presencial |
-| Biblioteca | `biblioteca.html` | Información y contacto de la biblioteca |
-| Directivos | `directivos.html` | Autoridades con nombre y cargo |
+| Inicio | `/` | Presentación, oferta académica, acceso a preinscripción y mapa |
+| Análisis de Sistemas | `/interfazanalista.html` | Materias por año, docentes y plan de estudios (Res. 6790/19) |
+| Psicopedagogía | `/interfazpsicopedagogia.html` | Materias por año, docentes y plan de estudios (Res. 2460/11) |
+| Educación Inicial | `/interfazedinicial.html` | Materias por año, docentes y plan de estudios (Res. 4154/07) |
+| Mesas de examen | `/mesasexamen.html` | 93 mesas del turno de diciembre de 2026, con buscador por materia o docente (con botón para borrar la búsqueda), selector de carrera y ordenamiento |
+| Contacto | `/contacto.html` | Dirección, teléfono, correo, horario, accesos a WhatsApp y correo, redes y mapa |
+| Preinscripción | `/preinscripciones.html` | Documentación requerida, correo de envío y horario de entrega presencial |
+| Biblioteca | `/biblioteca.html` | Información y contacto de la biblioteca |
+| Directivos | `/directivos.html` | Autoridades con nombre y cargo |
 
-Todas las páginas comparten el mismo menú y un botón flotante de WhatsApp, se adaptan a celulares y usan la misma identidad visual (bordó y dorado).
+Cada dirección corresponde a un archivo con el mismo nombre dentro de `public/`. La carpeta no aparece en la dirección.
+
+Todas las páginas comparten el mismo menú, el escudo como ícono y un botón flotante de WhatsApp abajo a la derecha, se adaptan a celulares y usan la misma identidad visual (bordó y dorado).
 
 ## Tecnología
 
@@ -65,22 +67,23 @@ No hay base de datos, servidor propio ni paso de compilación. El fundamento de 
 
 ```text
 IPFPR-web/
-├── index.html                    Inicio
-├── interfazanalista.html         Tecnicatura Superior en Análisis de Sistemas
-├── interfazpsicopedagogia.html   Tecnicatura Superior en Psicopedagogía
-├── interfazedinicial.html        Profesorado de Educación Inicial
-├── mesasexamen.html              Mesas de examen
-├── contacto.html                 Contacto
-├── preinscripciones.html         Preinscripción
-├── biblioteca.html               Biblioteca
-├── directivos.html               Directivos
-├── styles.css                    Hoja de estilos compartida
-├── images/                       Logo y escudo
-├── planes_de_estudio/            Un PDF por carrera
-│   ├── analistas/
-│   ├── inicial/
-│   └── psicopedagogia/
-├── docs/                         Documentación del proyecto
+├── public/                           Todo lo que se publica
+│   ├── index.html                    Inicio
+│   ├── biblioteca.html               Biblioteca
+│   ├── contacto.html                 Contacto
+│   ├── directivos.html               Directivos
+│   ├── interfazanalista.html         Análisis de Sistemas
+│   ├── interfazedinicial.html        Educación Inicial
+│   ├── interfazpsicopedagogia.html   Psicopedagogía
+│   ├── mesasexamen.html              Mesas de examen
+│   ├── preinscripciones.html         Preinscripción
+│   ├── favicon.ico                   Escudo como ícono (16, 32 y 48 px)
+│   └── assets/
+│       ├── css/styles.css            Hoja de estilos compartida
+│       ├── img/                      Logo y escudo
+│       │   └── iconos/               Escudo en 48, 96 y 192 px, y 180 px para iPhone
+│       └── planes-de-estudio/        Un PDF por carrera
+├── docs/                             Documentación del proyecto (no se publica)
 │   ├── informe-tecnico-final.md
 │   ├── resumen-ejecutivo.md
 │   ├── registro-de-decisiones.md
@@ -88,7 +91,7 @@ IPFPR-web/
 └── README.md
 ```
 
-Las páginas están en la raíz a propósito: Vercel publica la carpeta tal cual y moverlas cambiaría todas las direcciones.
+Se publica solo la carpeta `public/` (D-08): no hay que cambiarle el nombre. Mover o renombrar un archivo de adentro cambia su dirección, y la anterior deja de funcionar.
 
 ## Verlo en su computadora
 
@@ -99,9 +102,10 @@ git clone https://github.com/IPFPR/IPFPR-web.git
 cd IPFPR-web
 ```
 
-Abra `index.html` con doble clic. Si prefiere un servidor local:
+Abra `public/index.html` con doble clic. Si prefiere un servidor local:
 
 ```bash
+cd public
 python -m http.server 8000
 # y abra http://localhost:8000
 ```
@@ -114,12 +118,18 @@ Hace falta conexión a internet: los estilos, las fuentes y los íconos se carga
 flowchart LR
     A[Rama propia] -->|pull request| B[Revisión de otro integrante]
     B -->|merge| C[main]
-    C -->|automático, 1 a 2 min| D[ipfpr-web.vercel.app]
+    C -->|automático, 1 a 2 min| D[www.institutosparroquiales.com]
 ```
 
 Todo lo que entra a `main` sale publicado. Por eso **nadie integra lo que escribió**. Vercel genera una vista previa por cada rama: quien revisa la abre antes de aprobar.
 
 Para volver atrás: revertir el commit en GitHub, o promover un despliegue anterior desde el panel de Vercel.
+
+### Dominio y Google
+
+- **Dominio:** `www.institutosparroquiales.com`, y el sitio sigue respondiendo también en `ipfpr-web.vercel.app`. Vence el **03/04/2027**: si no se renueva, la dirección deja de funcionar.
+- **Google Search Console:** el sitio está verificado desde el 25/11/2026 con la etiqueta `google-site-verification` de `public/index.html`. **No hay que borrarla:** si se quita, se pierde el acceso.
+- **Ícono en los resultados de Google:** sale de `public/favicon.ico` y de `public/assets/img/iconos/`, enlazados en las nueve páginas. Conviene no cambiarles el nombre. Google lo actualiza por su cuenta y puede tardar semanas.
 
 ## Cómo contribuir
 
@@ -145,8 +155,9 @@ Después, abra un pull request en GitHub y pida revisión.
 
 **Antes de pedir revisión, tenga en cuenta**
 
-- El menú, el pie y el botón de WhatsApp están copiados en las nueve páginas. Un enlace nuevo se agrega en las nueve.
-- Las mesas son filas de tabla dentro de `mesasexamen.html`. La fecha va como `dd/mm/aaaa` o el orden por fecha deja de funcionar.
+- El menú, el pie, los enlaces del ícono y el botón de WhatsApp están copiados en las nueve páginas. Un enlace nuevo se agrega en las nueve. La posición del botón se cambia una sola vez, en `.wsp-float` de `styles.css`.
+- Los enlaces entre páginas llevan el nombre del archivo (`contacto.html`). Las imágenes y los estilos van con ruta relativa (`assets/...`). Un script nuevo va en `public/assets/js/`: lo que queda fuera de `public/` no se publica.
+- Las mesas son filas de tabla dentro de `public/mesasexamen.html`. La fecha va como `dd/mm/aaaa` o el orden por fecha deja de funcionar.
 - El año de inscripción está escrito a mano en `index.html` y `preinscripciones.html`.
 
 ## Estado y pendientes
@@ -156,7 +167,8 @@ Versión **1.0** (noviembre de 2026). Publicado y en uso. Pendientes conocidos:
 | Pendiente | Detalle |
 |---|---|
 | Formularios de consulta de las carreras | Muestran un aviso de envío y no envían nada |
-| Nombre institucional y casillas de correo | Hay variantes entre páginas; falta que el Instituto confirme las oficiales |
+| Nombre institucional, correos y teléfonos | Hay variantes entre páginas; falta que el Instituto confirme los oficiales |
+| Dominio y Search Console | Confirmar quién renueva el dominio y sumar una cuenta del Instituto como propietaria en Search Console |
 | Menú único | Hoy está repetido en nueve archivos |
 | Preinscripción en línea | El formulario está comentado en `preinscripciones.html` hasta que funcione. Para activarlo hacen falta aviso de privacidad y consentimiento (Ley 25.326) y una casilla oficial |
 
@@ -177,4 +189,4 @@ Tecnicatura Superior en Análisis de Sistemas · Prácticas Profesionalizantes I
 
 Los textos, el escudo, el logo y los planes de estudio pertenecen al Instituto Parroquial Francisco de Paula Robles. El código es un trabajo académico del equipo. El sitio no recoge datos personales.
 
-**Instituto:** Aristóbulo del Valle 350, Dolores, Buenos Aires · institutoparroquialadm@hotmail.com
+**Instituto:** Aristóbulo del Valle 350, Dolores, Buenos Aires · roblessuperior@gmail.com
