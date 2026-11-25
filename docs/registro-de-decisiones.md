@@ -1,12 +1,12 @@
 # Registro de decisiones técnicas
 
-Sitio web del Instituto Robles (Nivel Superior) · TP9, parte B · 16/11/2026 · actualizado el 18/11/2026
+Sitio web del Instituto Robles (Nivel Superior) · TP9, parte B · 16/11/2026 · actualizado el 25/11/2026
 
 Para: quien herede el mantenimiento del sitio y necesite saber por qué está hecho así. Es el mismo contenido de la sección 15 del [informe técnico final](informe-tecnico-final.md). Las referencias a defectos (DEF), pendientes (P) y riesgos (R) remiten a ese informe.
 
 **Estados posibles:** vigente · revisada · se revertiría.
 
-Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fechas salen del historial y el fundamento es el que el equipo sostiene hoy. D-07 se registró el mismo día. **D-02 es la que hoy se revertiría**; D-06 se revisó.
+Ocho decisiones. Las seis primeras no se registraron cuando se tomaron: las fechas salen del historial y el fundamento es el que el equipo sostiene hoy. D-07 y D-08 se registraron el mismo día. **D-02 es la que hoy se revertiría**; D-06 se revisó.
 
 | # | Decisión | Fecha | Estado |
 |---|---|---|---|
@@ -17,6 +17,7 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 | D-05 | Desactivar la preinscripción en línea hasta que funcione | 26/10/2026 | Vigente |
 | D-06 | Construir sin diagnóstico ni alcance escritos | 01/07/2026 | Revisada |
 | D-07 | Página de contacto sin formulario, con WhatsApp, correo y teléfono | 18/11/2026 | Vigente |
+| D-08 | Sitio en la carpeta `public/`, con las mismas direcciones | 25/11/2026 | Vigente |
 
 ### D-01 · Sitio estático, sin base de datos ni servidor
 
@@ -47,11 +48,11 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 
 | Campo | Contenido |
 |---|---|
-| Decisión | Guardar cada mesa como una fila de tabla dentro de `mesasexamen.html`, con buscador y ordenamiento en JavaScript |
+| Decisión | Guardar cada mesa como una fila de tabla dentro de `mesasexamen.html` (hoy en `public/`), con buscador y ordenamiento en JavaScript |
 | Fecha | 30/09/2026 (prototipo) y 07/10/2026 (buscador y filtros) |
 | Contexto | Hacía falta mostrar las mesas por carrera y año, con búsqueda, sin base de datos (D-01) |
 | Alternativas consideradas | (a) Archivo de datos JSON o CSV leído por JavaScript. (b) Planilla de Google publicada e incrustada. (c) Publicar el PDF del Instituto |
-| Fundamento | Un solo archivo, sin pasos intermedios, que funciona aunque falle cualquier servicio externo. Con unas 90 filas por turno el tamaño es manejable |
+| Fundamento | Un solo archivo, sin pasos intermedios, que funciona aunque falle cualquier servicio externo. Con poco más de 90 filas por turno el tamaño es manejable |
 | Consecuencias | A favor: simple y sin dependencias. Se resigna: que cargue las mesas una persona no técnica sin ayuda; por eso existe la guía rápida. Cargar un turno son unas dos horas. La alternativa (b) queda como mejora si el Instituto prefiere editar una planilla |
 | Estado | Vigente |
 
@@ -65,7 +66,7 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 | Alternativas consideradas | (a) GitHub Pages. (b) Netlify. (c) Alojamiento pago con dominio propio |
 | Fundamento | Se conecta al repositorio en minutos, publica solo, da una vista previa por rama y permite volver a un despliegue anterior. Un integrante ya lo conocía |
 | Consecuencias | A favor: publicación inmediata y gratuita. Se resigna: control previo, porque todo lo que entra a `main` sale publicado (así estuvieron en línea un formulario sin terminar y fechas de mesa de prueba). El plan gratuito está pensado para uso personal no comercial y la cuenta es de un integrante |
-| Estado | Vigente, con condición: confirmar el plan y traspasar la cuenta. Si el plan no admite uso institucional, se pasa a GitHub Pages |
+| Estado | Vigente, con condición: confirmar el plan y traspasar la cuenta. Si el plan no admite uso institucional, se pasa a GitHub Pages. Al 25/11 el sitio responde además en el dominio `www.institutosparroquiales.com`; falta confirmar quién lo renueva |
 
 ### D-05 · Desactivar la preinscripción en línea hasta que funcione
 
@@ -95,10 +96,22 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 
 | Campo | Contenido |
 |---|---|
-| Decisión | Crear `contacto.html` con dirección, teléfonos, correo, horario, redes y mapa, y con enlaces directos a WhatsApp y al correo, sin formulario. Sumar un botón flotante de WhatsApp en todas las páginas |
+| Decisión | Crear `contacto.html` con dirección, teléfono, correo, horario, redes y mapa, y con enlaces directos a WhatsApp y al correo, sin formulario. Sumar un botón flotante de WhatsApp en todas las páginas |
 | Fecha | 18/11/2026 |
 | Contexto | Cinco enlaces de "Contacto" esperaban esta sección (DEF-10, P1). Los formularios de consulta de las carreras muestran un aviso y no envían nada (DEF-11) |
 | Alternativas consideradas | (a) Reactivar la sección oculta de `directivos.html`, que trae un formulario que no envía. (b) Un formulario conectado a un servicio externo como FormSubmit. (c) Una página propia con enlaces directos a los canales que el Instituto ya usa |
 | Fundamento | El mismo criterio de D-05: no se publica lo que no funciona. Un enlace a WhatsApp o al correo siempre llega, y el sitio sigue sin recoger datos personales |
-| Consecuencias | A favor: la consulta llega por un canal que alguien ya atiende y no hay nada que mantener. Se resigna: reunir las consultas en una sola casilla. Depende de que el número de WhatsApp y el correo sean los oficiales (DEF-12, P3). El menú pasó a estar copiado en nueve archivos (D-02) |
+| Consecuencias | A favor: la consulta llega por un canal que alguien ya atiende y no hay nada que mantener. Se resigna: reunir las consultas en una sola casilla. Depende de que el número de WhatsApp y el correo sean los oficiales (DEF-12, P3). El menú pasó a estar copiado en nueve archivos (D-02). El 19/11 se actualizaron el teléfono y el correo, pero no en todos los pies (DEF-12) |
+| Estado | Vigente |
+
+### D-08 · Sitio en la carpeta `public/`, con las mismas direcciones
+
+| Campo | Contenido |
+|---|---|
+| Decisión | Reunir lo que se publica en `public/`, con las páginas en el primer nivel y estilos, imágenes, íconos y planes en `assets/`. Las páginas conservan su nombre y su dirección |
+| Fecha | 25/11/2026 |
+| Contexto | Las páginas, imágenes y planes convivían con el README en la raíz. Vercel publicaba la raíz entera, incluida la carpeta `docs/` |
+| Alternativas consideradas | (a) Dejar todo en la raíz. (b) Dejar las páginas en la raíz y agrupar solo estilos, imágenes y planes. (c) Una carpeta `public/` con todo el sitio |
+| Fundamento | Con (c) el repositorio separa el sitio de la documentación y no hay paso de compilación. `public` es el nombre de carpeta que Vercel publica por defecto: no hay que configurar nada |
+| Consecuencias | A favor: no cambia la dirección de ninguna página, se abren con doble clic en la computadora y `docs/` deja de ser pública en el sitio. Se resigna: las direcciones directas anteriores de las imágenes y de los planes en PDF dejan de funcionar (los enlaces del sitio ya apuntan a las nuevas), y pasar a GitHub Pages (D-04) exige indicarle la carpeta `public/` |
 | Estado | Vigente |

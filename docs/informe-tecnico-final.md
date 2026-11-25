@@ -7,8 +7,8 @@
 | **Equipo** | Valentino Plescia (project manager, QA) · Germán Lauria (programador junior, PM 2.0, tester) · Tiago Bertoglio (analista funcional) · Anastasia Oldoni (diseñadora UX/UI) |
 | **Cliente** | Docente de la cátedra, en nombre del Instituto |
 | **Repositorio** | <https://github.com/IPFPR/IPFPR-web> (organización <https://github.com/IPFPR>) |
-| **Sitio publicado** | <https://ipfpr-web.vercel.app> |
-| **Versión** | 4.2 · 18/11/2026 · la versión 4.1 (16/11, día de la defensa) describía `main` en el commit `7836d0b`; esta suma los cambios posteriores del [Anexo F](#anexo-f-cambios-posteriores-a-la-defensa) |
+| **Sitio publicado** | <https://www.institutosparroquiales.com> (también en <https://ipfpr-web.vercel.app>) |
+| **Versión** | 4.4 · 25/11/2026 · describe `main` en el commit `363ffef` (PR #32) más la reorganización de la rama `mejoras-3` (C22 a C24). La versión 4.1 (16/11, día de la defensa) describía el commit `7836d0b`; la 4.2 (18/11) y esta suman los cambios posteriores del [Anexo F](#anexo-f-cambios-posteriores-a-la-defensa) |
 
 Documentos que acompañan a este informe: [resumen ejecutivo](resumen-ejecutivo.md), [registro de decisiones](registro-de-decisiones.md) y [guía rápida](guia-rapida.md).
 
@@ -42,24 +42,25 @@ Documentos que acompañan a este informe: [resumen ejecutivo](resumen-ejecutivo.
 
 *Se entrega también como documento separado de una página: [resumen-ejecutivo.md](resumen-ejecutivo.md).*
 
-**Recomendación.** Adoptar el sitio como canal oficial de información del Nivel Superior para el ciclo 2027. Está publicado desde el 19/10/2026, tiene nueve páginas y ya muestra las 90 mesas del turno de diciembre. Al Instituto no le cuesta dinero. Para que siga sirviendo dentro de un año hace falta una sola cosa que el equipo no puede resolver: que el Instituto designe a la persona que lo actualiza.
+**Recomendación.** Adoptar el sitio como canal oficial de información del Nivel Superior para el ciclo 2027. Está publicado desde el 19/10/2026, tiene nueve páginas, responde en el dominio institutosparroquiales.com y ya muestra las 93 mesas del turno de diciembre. El alojamiento no le cuesta dinero al Instituto. Para que siga sirviendo dentro de un año hace falta una sola cosa que el equipo no puede resolver: que el Instituto designe a la persona que lo actualiza.
 
 **Decisiones que se piden a la dirección.**
 
 1. Designar a la persona que actualiza el sitio (unas 10 horas por año, con la guía rápida de una página).
 2. Autorizar el cierre de los pendientes: 8 horas de correcciones y traspaso, a cargo del equipo.
 3. Decidir si la preinscripción pasa a hacerse en línea. Hoy la página informa los requisitos y pide enviar la documentación por correo y entregarla en persona. El formulario en línea está construido en parte y desactivado hasta que funcione; para activarlo hace falta un aviso de privacidad, el consentimiento del aspirante (Ley 25.326) y una casilla oficial.
-4. Confirmar qué casillas de correo son oficiales y a nombre de quién quedan las cuentas de GitHub y Vercel.
+4. Confirmar qué casillas de correo y teléfonos son oficiales y a nombre de quién quedan las cuentas de GitHub, Vercel y Google Search Console.
+5. Confirmar quién renueva el dominio, que vence el 03/04/2027.
 
 **Por qué.** El sitio resuelve lo que se pidió: información de las tres carreras con sus planes de estudio, biblioteca, autoridades, requisitos de preinscripción, mesas de examen con buscador y, desde el 18/11, una página de contacto con acceso directo a WhatsApp. Su punto débil es operativo: cada dato se cambia editando un archivo. Ya se vio con las mesas: las fechas que había eran de prueba, se retiraron el 02/11 para no publicar datos falsos, y las reales, que llegaron el 15/11, las cargó un integrante del equipo y no el Instituto.
 
-**Costo.** Dinero: $0 (alojamiento gratuito). Trabajo ya hecho: 156 horas del equipo, sin costo para el Instituto. Pendientes: 8 horas obligatorias y 12 opcionales. La sección de contacto, que estaba pendiente, se terminó el 18/11. Mantenimiento: 10 horas por año de una persona del Instituto.
+**Costo.** Dinero: $0 (alojamiento gratuito), sin contar la renovación anual del dominio, que existe desde 2020 y cuyo costo falta confirmar. Trabajo ya hecho: 156 horas del equipo, sin costo para el Instituto. Pendientes: 8 horas obligatorias y 12 opcionales. La sección de contacto, que estaba pendiente, se terminó el 18/11. Mantenimiento: 10 horas por año de una persona del Instituto.
 
 **Alternativas evaluadas.** (A) Mantener el sitio actual con una guía de actualización: recomendada. (B) Pasar a un gestor de contenidos: se edita sin tocar archivos, pero exige servidor pago y rehacer el trabajo. (C) No adoptarlo: la información vuelve a circular solo por redes y en persona.
 
 **Riesgos principales.** (1) Que nadie actualice el sitio. (2) Que se publiquen datos sin validación escrita del Instituto. (3) Que un cambio con errores salga publicado, porque cada cambio aprobado se publica solo. Los tres tienen plan en la sección 11.
 
-**Lo que salió mal.** Se construyó antes de planificar: no hubo diagnóstico, alcance escrito ni estimación previa. Durante dos semanas el sitio mostró fechas de mesa de prueba. Los formularios de consulta de las tres carreras muestran un aviso de envío y no envían nada. Quedan cinco defectos abiertos, todos identificados y con horas asignadas.
+**Lo que salió mal.** Se construyó antes de planificar: no hubo diagnóstico, alcance escrito ni estimación previa. Durante dos semanas el sitio mostró fechas de mesa de prueba. Los formularios de consulta de las tres carreras muestran un aviso de envío y no envían nada. Quedan cinco defectos abiertos, todos identificados y asignados a una tarea pendiente.
 
 **Límite de este análisis.** No hubo entrevistas con el Instituto. Si la dirección no designa un responsable, la recomendación cambia a la alternativa B.
 
@@ -76,7 +77,7 @@ Fuente: textos del sitio y pedido del docente. No hubo relevamiento formal (secc
 | Ubicación | Aristóbulo del Valle 350, Dolores, Provincia de Buenos Aires | Verificado en el sitio |
 | Oferta | Tecnicatura Superior en Análisis de Sistemas · Tecnicatura Superior en Psicopedagogía · Profesorado de Educación Inicial | Verificado en el sitio |
 | Atención presencial | 18:00 a 22:00 h (entrega de documentación de preinscripción) | Verificado en el sitio |
-| Canales | Teléfono, correo, Facebook, Instagram y WhatsApp (botón flotante en todas las páginas desde el 18/11) | Verificado en el sitio |
+| Canales | Teléfono, correo, Facebook, Instagram y WhatsApp (botón flotante en todas las páginas desde el 18/11, abajo a la derecha desde el 25/11) | Verificado en el sitio |
 | Usuarios del sitio | Aspirantes, estudiantes, docentes y familias | Supuesto |
 | Quien decide | Dirección del Instituto. Durante el proyecto la representó el docente de la cátedra | Verificado |
 | Quien actualizará el sitio | Sin designar | Pendiente (R5) |
@@ -89,16 +90,17 @@ Fuente: textos del sitio y pedido del docente. No hubo relevamiento formal (secc
 
 > **Limitación declarada.** El TP1 no se hizo en su momento. No hubo observación del trabajo en el Instituto ni entrevistas. Este diagnóstico se escribió al cierre y se apoya en lo que se puede comprobar: el código, el sitio publicado y el historial del repositorio. Las causas organizacionales son hipótesis que el Instituto tiene que confirmar (Anexo B).
 
-### Hallazgos verificados al 16/11/2026, actualizados al 18/11
+### Hallazgos verificados al 16/11/2026, actualizados al 25/11
 
-- El sitio es estático: nueve páginas HTML, una hoja de estilos compartida y JavaScript propio, sin base de datos. Se publica en Vercel desde la rama `main`.
-- **Mesas de examen:** las fechas cargadas en septiembre eran de prueba y se retiraron el 02/11. Hoy hay 90 mesas reales del turno de diciembre de 2026 (22 de Análisis de Sistemas, 35 de Psicopedagogía y 33 de Educación Inicial), del 30/11 al 22/12, con materia, fecha, curso y docente. Tiene buscador por materia o docente, selector de carrera y ordenamiento. No publica horario.
+- El sitio es estático: nueve páginas HTML, una hoja de estilos compartida y JavaScript propio, sin base de datos. Está en la carpeta `public/` desde el 25/11 (D-08); los archivos conservan su nombre y las páginas su dirección. Se publica en Vercel desde la rama `main` y responde en `www.institutosparroquiales.com` y en `ipfpr-web.vercel.app`.
+- **Mesas de examen:** las fechas cargadas en septiembre eran de prueba y se retiraron el 02/11. Hoy hay 93 mesas reales del turno de diciembre de 2026 (22 de Análisis de Sistemas, 38 de Psicopedagogía y 33 de Educación Inicial), del 30/11 al 22/12, con materia, fecha, curso y docente. Eran 90 hasta el 19/11, cuando la mesa de Formación Religiosa de Psicopedagogía se separó en una por año. Tiene buscador por materia o docente con botón para borrar, selector de carrera y ordenamiento. Análisis de Sistemas y Educación Inicial muestran apellido y nombre de casi todos los docentes; Psicopedagogía, solo el apellido. No publica horario.
 - **Preinscripción:** la página informa la documentación requerida, pide enviarla a una casilla de correo y completar el trámite en persona. El formulario en línea (unos 40 campos, cuatro adjuntos, envío por el servicio externo FormSubmit) está desactivado desde el 26/10/2026 porque todavía no funciona y se pidió retirarlo; su código se conserva como comentario para terminarlo más adelante.
 - **Formularios de consulta de las tres carreras:** al enviarlos muestran "¡Gracias por tu consulta! La administración se comunicará a la brevedad" y no envían nada.
 - **Directivos:** nueve personas con nombre y cargo. Su sección de contacto está oculta desde el 04/11/2026 y quedó reemplazada por la página de contacto.
-- **Contacto:** página propia desde el 18/11/2026 (`contacto.html`), con dirección, teléfonos, correo, horario, redes, mapa y botones a WhatsApp y al correo. No tiene formulario (D-07). Los cinco enlaces de "Contacto" que esperaban esta sección apuntan a ella.
-- **Menú:** está escrito a mano dentro de cada una de las nueve páginas. Se unificó el 28/10/2026, con versión para celulares; "Contacto" se agregó el 18/11.
-- **Correos:** el sitio muestra cuatro casillas distintas según la página (administración, carreras, preinscripción y biblioteca).
+- **Contacto:** página propia desde el 18/11/2026 (`contacto.html`), con dirección, teléfono, correo, horario, redes, mapa y botones a WhatsApp y al correo. No tiene formulario (D-07). Los cinco enlaces de "Contacto" que esperaban esta sección apuntan a ella.
+- **Menú:** está escrito a mano dentro de cada una de las nueve páginas. Se unificó el 28/10/2026, con versión para celulares; "Contacto" se agregó el 18/11. El 19/11 se corrigió en el inicio y las tres carreras un bloque invisible que impedía pulsar "Contacto" (DEF-16).
+- **Correos y teléfonos:** el sitio muestra cuatro casillas distintas según la página. Desde el 19/11 la de contacto, inicio, mesas y carreras es `roblessuperior@gmail.com`; la anterior de administración quedó en el pie de Preinscripción, que además pide enviar la documentación a otra casilla, y Biblioteca usa una personal. El teléfono 02245-44-7466 se quitó de la página de contacto, del inicio y de mesas, pero sigue en los pies de Contacto, Preinscripción y Psicopedagogía (DEF-12).
+- **Google:** el sitio está en el índice y verificado en Search Console desde el 25/11. El escudo está publicado como ícono en los tamaños que pide Google; el buscador todavía muestra un ícono genérico hasta que lo vuelva a rastrear.
 - **Servicios externos:** Vercel, Tailwind (CDN), Google Fonts, Font Awesome, Google Maps y enlaces a WhatsApp, Facebook e Instagram.
 
 ### Síntomas, problemas y causas
@@ -110,7 +112,7 @@ Fuente: textos del sitio y pedido del docente. No hubo relevamiento formal (secc
 | Cinco enlaces de "Contacto" llevaban a una sección oculta (corregido el 18/11) | Hasta entonces, el usuario pulsaba "Contacto" y no pasaba nada | Decisión del equipo: se dejaron apuntando a la sección de contacto que se iba a construir, para no tener que agregarlos después |
 | Menús distintos y enlaces rotos entre páginas (corregido el 28/10) | La navegación dejó de ser confiable mientras el sitio crecía | El menú se copia a mano en cada página (D-02) |
 | "Oferta Académica 2026" y "Ciclo Lectivo 2026" junto a "Inscripciones 2027" | Información que parece contradictoria | El año está escrito a mano en varios lugares |
-| Cuatro casillas de correo y tres variantes del nombre institucional | El usuario no sabe cuál es el canal oficial | No hubo un referente que definiera los datos institucionales |
+| Cuatro casillas de correo, dos teléfonos según la página y tres variantes del nombre institucional | El usuario no sabe cuál es el canal oficial | No hubo un referente que definiera los datos institucionales |
 | El formulario de preinscripción se publicó el 21/10 sin terminar y sin aviso de privacidad | Un formulario que no funcionaba, y que terminado recogería datos personales | Se publicó como prototipo; cada integración a `main` sale a producción |
 
 La causa que se repite es una sola: **el pedido fue informal y nunca hubo en el Instituto una persona que definiera el contenido, lo validara y se hiciera cargo de mantenerlo.**
@@ -141,7 +143,7 @@ Que el Instituto cuente con un sitio web actualizado y de aspecto profesional pa
 
 ### Alcance incluido
 
-| Incluye | Cómo se verifica | ¿Se cumple al 18/11? |
+| Incluye | Cómo se verifica | ¿Se cumple al 25/11? |
 |---|---|---|
 | Inicio con presentación, oferta académica, acceso a preinscripción y mapa | Cada botón y enlace abre una página o sección que existe | Sí |
 | Una página por carrera con materias, docentes y plan de estudios en PDF | El PDF se abre desde el sitio publicado | Sí |
@@ -149,7 +151,7 @@ Que el Instituto cuente con un sitio web actualizado y de aspecto profesional pa
 | Mesas de examen con buscador, selector de carrera y ordenamiento | Buscar "Inglés" muestra solo esas mesas; las fechas son del turno vigente | Sí |
 | Preinscripción con requisitos y forma de entrega | La página dice qué documentación presentar, a qué correo y en qué horario | Sí |
 | Directivos | Nombre y cargo de cada autoridad | Sí, falta validación escrita (R6) |
-| Contacto | Cada enlace "Contacto" abre `contacto.html`; los botones abren WhatsApp y el correo | Sí, desde el 18/11; falta probarlo en celular |
+| Contacto | Cada enlace "Contacto" abre `contacto.html`; los botones abren WhatsApp y el correo | Sí, desde el 18/11; desde el 19/11 también al pulsarlo en el menú del inicio y las carreras (DEF-16). Falta probarlo en un celular real |
 | Diseño adaptable a celulares | A 360 px de ancho hay menú desplegable y no hay desplazamiento horizontal | Sí |
 | Repositorio con README y documentación en texto | Un tercero entiende el proyecto leyendo el README | Sí, desde esta entrega |
 
@@ -158,7 +160,7 @@ Que el Instituto cuente con un sitio web actualizado y de aspecto profesional pa
 - Inscripción en línea con base de datos o panel de administración.
 - Preinscripción por formulario en línea: construida en parte, desactivada hasta que funcione y conservada en el código para una etapa siguiente (D-05).
 - Consultas por formulario: hoy no funcionan y se decide entre ocultarlas o conectarlas (P2).
-- Dominio propio.
+- Dominio propio: quedó fuera del alcance original. Al 25/11 el sitio responde en `www.institutosparroquiales.com`, registrado desde el 03/04/2020 (dato público del registro de dominios).
 - Mantenimiento del sitio por parte del equipo después de la entrega.
 - Horario y aula de cada mesa, y turnos anteriores.
 
@@ -248,8 +250,8 @@ El equipo no eligió una metodología al inicio. Lo que hizo corresponde a un **
 | Duración | 20 semanas (01/07 al 16/11/2026) | Historial |
 | Commits | 69: 39 de trabajo y 30 fusiones | Historial |
 | Pull requests | 26 | Historial |
-| Defectos registrados | 15: 9 cerrados, 5 abiertos y 1 aceptado por decisión del equipo (al 18/11) | Anexo A |
-| Densidad de defectos | 15 ÷ 64 PF = 0,23 por PF | Calculado |
+| Defectos registrados | 17: 11 cerrados, 5 abiertos y 1 aceptado por decisión del equipo (al 25/11) | Anexo A |
+| Densidad de defectos | 17 ÷ 64 PF = 0,27 por PF | Calculado |
 | Páginas terminadas sobre previstas | 8 de 8 | Sección 8 |
 
 ## 6. Estimación: descomposición, tres valores, COCOMO y contraste
@@ -282,7 +284,7 @@ E = (O + 4M + P) ÷ 6, en horas. P1 (habilitar la sección de contacto, 1,1 h) s
 | # | Tarea pendiente | Defectos | O | M | P | E |
 |---|---|---|---|---|---|---|
 | P2 | Formularios de consulta: ocultarlos o conectarlos a una casilla | DEF-11 | 1 | 2 | 4 | 2,2 |
-| P3 | Unificar nombre institucional, años y casillas de correo | DEF-04, 05, 12 | 0,5 | 1 | 3 | 1,3 |
+| P3 | Unificar nombre institucional, años, casillas de correo y teléfonos | DEF-04, 05, 12 | 0,5 | 1 | 3 | 1,3 |
 | P4 | Mover los scripts dentro de `<body>` y borrar comentarios obsoletos | DEF-14 | 0,5 | 1 | 2 | 1,1 |
 | P7 | Capacitar a la persona del Instituto y traspasar las cuentas | — | 2 | 3 | 6 | 3,3 |
 | | **Subtotal obligatorio** | | | | | **8** |
@@ -323,7 +325,7 @@ Corresponde el modo orgánico: equipo chico, problema conocido, sin restriccione
 |---|---|---|
 | **Técnica** | Tecnología simple, sin servidor ni base de datos. El sitio existe y funciona. Depende de servicios externos gratuitos (R2). | Viable |
 | **Operativa** | Es la dimensión crítica. Alguien del Instituto tiene que editar un archivo tres veces por año (mesas) y una vez por año (inscripción). La guía rápida lo reduce a 5 o 10 minutos por cambio, pero la persona no está designada. | **Condicionada** a designar responsable |
-| **Económica** | $0 de alojamiento. El trabajo fue académico y no se cobra. El plan gratuito de Vercel (Hobby) está pensado para uso personal no comercial; si no admite un sitio institucional, el plan Pro cuesta USD 20 por mes (precio publicado por Vercel, consultado el 11/11/2026) y la alternativa gratuita es GitHub Pages. | Viable |
+| **Económica** | $0 de alojamiento. El trabajo fue académico y no se cobra. El plan gratuito de Vercel (Hobby) está pensado para uso personal no comercial; si no admite un sitio institucional, el plan Pro cuesta USD 20 por mes (precio publicado por Vercel, consultado el 11/11/2026) y la alternativa gratuita es GitHub Pages. La renovación anual del dominio no está incluida: falta confirmar quién la paga y cuánto cuesta. | Viable |
 | **Temporal** | El sitio se publicó el 19/10 y las mesas reales se cargaron el 15/11, quince días antes de la primera mesa (30/11). Llega a tiempo para el turno de diciembre y para la preinscripción 2027. | Viable |
 | **Legal** | Hoy el sitio no recoge datos personales: el formulario está desactivado. Publica nombres de nueve directivos y de los docentes de los tribunales, sin autorización escrita. Cuando se active el formulario, aplica la Ley 25.326: aviso de privacidad y consentimiento. | Viable con autorización escrita |
 
@@ -337,10 +339,11 @@ Valor hora de referencia: **USD 10**. Es un supuesto del equipo para poder compa
 | Pendientes obligatorios (P2 a P4 y P7) | Una vez | 8 | USD 80 | No: los hace el equipo |
 | Pendientes opcionales (P5 y P6) | Una vez | 12 | USD 120 | A definir |
 | Alojamiento | Recurrente | — | USD 0 por año (USD 240 si hiciera falta el plan Pro) | No, salvo plan Pro |
+| Dominio `institutosparroquiales.com` | Recurrente | — | Sin dato: no figura en los totales | A confirmar; vence el 03/04/2027 |
 | Mantenimiento de contenido | Recurrente | 10 por año | USD 100 por año | Sí: tiempo de su personal |
 | Tiempo del Instituto para validar y capacitarse | Una vez | 3 | USD 30 | Sí: costo de oportunidad |
 
-**Costo total valorizado:** 156 + 20 = 176 h = USD 1.760. **Desembolso del Instituto:** USD 0.
+**Costo total valorizado:** 156 + 20 = 176 h = USD 1.760. **Desembolso del Instituto:** USD 0, sin contar la renovación del dominio.
 
 ### Alternativas
 
@@ -363,7 +366,7 @@ Valor hora de referencia: **USD 10**. Es un supuesto del equipo para poder compa
 
 ### Estado de las páginas
 
-La columna "Último cambio" es al 16/11 en `main`. El 18/11 se modificaron las nueve páginas en la rama `docsentrega` (Anexo F).
+La columna "Último cambio" es al 16/11 en `main`. Las nueve páginas volvieron a modificarse el 18/11 (PR #29) y el 25/11 (PR #32), y seis de ellas también el 19/11 (PR #30 y #31): Inicio, las tres carreras, Mesas y Contacto (Anexo F).
 
 | Página | Primer commit | Último cambio | Estado | Pendiente |
 |---|---|---|---|---|
@@ -373,9 +376,9 @@ La columna "Último cambio" es al 16/11 en `main`. El 18/11 se modificaron las n
 | Psicopedagogía | 08/09 | 04/11 | Publicada | DEF-11 |
 | Biblioteca | 28/09 | 28/10 | Publicada | DEF-12 |
 | Mesas de examen | 30/09 | 15/11 | Publicada, con las fechas reales del turno de diciembre | — |
-| Preinscripción | 09/10 | 04/11 | Publicada; formulario desactivado hasta que funcione | — |
+| Preinscripción | 09/10 | 04/11 | Publicada; formulario desactivado hasta que funcione | DEF-12 |
 | Directivos | 13/10 | 04/11 | Publicada; su contacto lo reemplaza la página de contacto | DEF-15 |
-| Contacto (`contacto.html`) | 18/11 | 18/11 | Lista; falta integrarla a `main` | — |
+| Contacto (`contacto.html`) | 18/11 | 25/11 | Publicada desde el 18/11 (PR #29) | DEF-12 |
 
 ### Hitos y entregables
 
@@ -392,11 +395,14 @@ La columna "Último cambio" es al 16/11 en `main`. El 18/11 se modificaron las n
 | H9 | Preinscripción | `preinscripciones.html` | 21/10 | Hecho; formulario desactivado el 26/10 hasta que funcione | Tiago, Anastasia |
 | H10 | Navegación unificada | Mismo menú en ocho páginas y menú para celulares | 28/10 | Hecho | Germán |
 | H11 | Turno de diciembre | 90 mesas con las fechas reales | 16/11 | Hecho (PR #26) | Tiago; revisó Valentino |
-| H12 | Documentación en el repositorio | Carpeta `docs/` y README nuevo | 16/11 | Antes de la defensa | Tiago y Valentino |
-| H13 | Línea base de producto | Etiqueta `v1.0` | 16/11 | Antes de la defensa | Valentino |
-| H14 | Defensa oral | Presentación | 16/11 | Hoy | Los cuatro |
-| H15 | Pendientes obligatorios y traspaso | P2 a P4 y P7 cerrados | Después de la defensa, antes del 30/11 | Planificado | Germán y Tiago |
-| H16 | Página de contacto y botón de WhatsApp | `contacto.html`, P1 cerrado | 18/11 | Hecho; falta integrar a `main` | Anastasia |
+| H12 | Documentación en el repositorio | Carpeta `docs/` y README nuevo | 16/11 | Hecho el 17/11 (PR #28, commit de Anastasia) | Tiago y Valentino |
+| H13 | Línea base de producto | Etiqueta `v1.0` | 16/11 | Hecho el 25/11, nueve días después de lo previsto, sobre el commit de entrega `c5f78f1` | Valentino |
+| H14 | Defensa oral | Presentación | 16/11 | Hecho | Los cuatro |
+| H15 | Pendientes obligatorios y traspaso | P2 a P4 y P7 cerrados | Después de la defensa, antes del 30/11 | Al 25/11: P2 y P4 abiertos, P3 empezado (correo y teléfono, 19/11) y P7 sin registro | Germán y Tiago |
+| H16 | Página de contacto y botón de WhatsApp | `contacto.html`, P1 cerrado | 18/11 | Hecho (PR #29) | Anastasia |
+| H17 | Ajustes de mesas y de navegación | Buscador con botón de borrar, 93 mesas, menú corregido | 19/11 | Hecho (PR #30 y #31) | Tiago, Anastasia |
+| H18 | Ícono para Google y Search Console | `favicon.ico`, íconos por tamaño, etiqueta de verificación y botón de WhatsApp a la derecha | 25/11 | Hecho (PR #32); falta que Google muestre el escudo | Valentino; revisó Germán |
+| H19 | Repositorio ordenado en carpetas | Carpeta `public/` con `assets/` adentro | 25/11 | Hecho en la rama `mejoras-3`; falta integrar a `main` | Valentino |
 
 ## 9. Cronograma: Gantt, PERT y camino crítico
 
@@ -528,11 +534,11 @@ R9 tiene impacto catastrófico: se informa a la dirección aunque su probabilida
 
 | Riesgo | Reducción | Supervisión | Gestión si ocurre | Responsable |
 |---|---|---|---|---|
-| **R5** Sin responsable | Pedir a la dirección una designación por escrito. Entregar la guía rápida y una hora de práctica. | ¿Hay una persona designada? Alerta: no la hay al día de la defensa. | Dejar constancia escrita, ofrecer la alternativa B y publicar en la página de mesas la fecha de última actualización. | Valentino |
+| **R5** Sin responsable | Pedir a la dirección una designación por escrito. Entregar la guía rápida y una hora de práctica. | ¿Hay una persona designada? Alerta: no la hay al día de la defensa (sigue sin haberla registrada al 25/11). | Dejar constancia escrita, ofrecer la alternativa B y publicar en la página de mesas la fecha de última actualización. | Valentino |
 | **R6** Datos sin validar | Antes de publicar, pedir confirmación escrita de mesas, requisitos y directivos. | Datos con validación escrita sobre datos publicados. Alerta: hoy es 0 de 3. | Retirar el dato dudoso hasta confirmarlo. | Tiago |
 | **R8** Sin referente | Pedir un referente con nombre y un medio de contacto. Usar las preguntas del Anexo B. | Días sin respuesta a una consulta. Alerta: más de 7. | Escalar al docente y registrar la decisión que se tomó sin validación. | Valentino |
 | **R7** Persona única | Agregar un segundo administrador en Vercel y en la organización de GitHub. El README describe la publicación. | Cantidad de personas con acceso a cada cuenta. Alerta: 1. | El sitio sigue publicado aunque nadie lo administre; se recupera el acceso desde la organización de GitHub. | Germán |
-| **R10** Cambio sin revisión | Regla: nadie integra lo que escribió. Protección de la rama `main` con un revisor obligatorio. | Pull requests integrados por su autor. Hasta el #25: cerca de la mitad. El #26 ya tuvo revisor. | Volver al despliegue anterior desde Vercel o revertir el commit. | Valentino |
+| **R10** Cambio sin revisión | Regla: nadie integra lo que escribió. Protección de la rama `main` con un revisor obligatorio. | Pull requests integrados por su autor. Hasta el #25: cerca de la mitad. El #26 tuvo revisor; los #27 a #31 los integró su autor; el #32 tuvo revisor. | Volver al despliegue anterior desde Vercel o revertir el commit. | Valentino |
 
 Los supuestos S1 a S6 de la sección 3 están cubiertos por R6, R8, R1, R2, R9 y R5.
 
@@ -544,7 +550,7 @@ Modelo construido a partir de lo que el sitio muestra. No lo validó nadie del I
 |---|---|---|
 | Carrera | Propuesta de formación que ofrece el Instituto | nombre, tipo (tecnicatura o profesorado), resolución del plan, PDF del plan |
 | Materia | Unidad curricular de una carrera, ubicada en un año | nombre, año |
-| Docente | Persona que dicta una materia o integra un tribunal | apellido |
+| Docente | Persona que dicta una materia o integra un tribunal | apellido y, en dos de las tres carreras, nombre |
 | Mesa de examen | Fecha en la que se rinde el final de una materia | fecha, curso, turno |
 | Directivo | Persona con un cargo de conducción o administración | nombre, cargo |
 | Requisito de preinscripción | Documento que el aspirante tiene que presentar | descripción |
@@ -586,7 +592,7 @@ Preinscripción dejó de ser una clase con datos del aspirante: el sitio ya no l
 
 ### Preguntas que el modelado hizo aparecer
 
-1. La mesa muestra uno o dos apellidos. ¿Es el tribunal completo o solo quien preside?
+1. La mesa muestra uno o dos docentes. ¿Es el tribunal completo o solo quien preside?
 2. Las mesas no publican horario ni aula. ¿El Instituto quiere que figuren?
 3. Hay materias con el mismo nombre en más de una carrera (Formación Religiosa, Pedagogía y Filosofía, por ejemplo). ¿Comparten mesa o son mesas distintas?
 4. ¿Los requisitos de preinscripción son los mismos para las tres carreras?
@@ -599,11 +605,11 @@ Preinscripción dejó de ser una clase con datos del aspirante: el sitio ya no l
 
 | Categoría | Elementos |
 |---|---|
-| Código | `index.html`, `interfazanalista.html`, `interfazedinicial.html`, `interfazpsicopedagogia.html`, `biblioteca.html`, `mesasexamen.html`, `contacto.html`, `preinscripciones.html`, `directivos.html`, `styles.css` |
-| Recursos | `images/` (logo y escudo) · `planes_de_estudio/` (un PDF por carrera) |
+| Código | En `public/`: `index.html`, `biblioteca.html`, `mesasexamen.html`, `contacto.html`, `preinscripciones.html`, `directivos.html`, `interfazanalista.html`, `interfazedinicial.html`, `interfazpsicopedagogia.html` · en `public/assets/`: `css/styles.css` |
+| Recursos | `public/assets/img/` (logo, escudo e íconos) · `public/favicon.ico` · `public/assets/planes-de-estudio/` (un PDF por carrera) |
 | Documentación | `README.md` · `docs/informe-tecnico-final.md` · `docs/resumen-ejecutivo.md` · `docs/registro-de-decisiones.md` · `docs/guia-rapida.md` |
 | Modelos | Diagramas de clases, Gantt y red de tareas, en texto (Mermaid) dentro del informe |
-| Publicación | Proyecto de Vercel conectado a la rama `main` |
+| Publicación | Proyecto de Vercel conectado a la rama `main` · dominio `www.institutosparroquiales.com` · propiedad en Google Search Console |
 
 ### Cómo se trabajó (verificado en el historial)
 
@@ -612,7 +618,9 @@ Preinscripción dejó de ser una clase con datos del aspirante: el sitio ya no l
 - El repositorio nació en una cuenta personal y pasó a la organización IPFPR el 19/10/2026: los pull requests #1 a #14 figuran en la cuenta anterior y del #15 en adelante en la organización.
 - Cada integración a `main` se publica sola en Vercel.
 - Cerca de la mitad de los pull requests los integró su propio autor. El #26, el último, lo escribió Tiago y lo integró Valentino.
-- No hubo etiquetas hasta esta entrega.
+- La etiqueta `v1.0`, prevista para la entrega, se creó el 25/11 sobre el commit que integró `docs/` (H13).
+- Después de la defensa, desde la noche del 16/11 hasta el 25/11: seis pull requests más (#27 a #32) y 17 commits (9 de trabajo y 8 fusiones). Total al 25/11: 86 commits (48 de trabajo y 38 fusiones) y 32 pull requests. Los números de las secciones 2, 4, 5, 6, 10 y 16 se dejan al 16/11.
+- De esos seis, cinco (#27 a #31) los integró su propio autor, contra la regla 2 de la lista que sigue. El #32 lo escribió Valentino y lo integró Germán.
 
 ### Reglas de trabajo desde esta entrega
 
@@ -628,7 +636,7 @@ Preinscripción dejó de ser una clase con datos del aspirante: el sitio ya no l
 |---|---|---|---|
 | Funcional | Alcance | No existió: el alcance no se escribió antes de construir | — |
 | De producto, primera publicación | Sitio publicado | Integración del 19/10/2026 (PR #17, commit `0c0690c`) | Docente, en clase, sin constancia escrita |
-| **De producto, entrega** | Ocho páginas con el turno de diciembre más la documentación | Etiqueta `v1.0`, sobre el commit que integra `docs/` | Equipo |
+| **De producto, entrega** | Ocho páginas con el turno de diciembre más la documentación | Etiqueta `v1.0`, sobre el commit que integra `docs/`: `c5f78f1` (PR #28). Creada el 25/11 | Equipo |
 
 ### Registro de cambios
 
@@ -644,6 +652,8 @@ No se llevó registro mientras ocurrían. Se reconstruyó desde el historial; qu
 | C6 | 04/11 | Botón de preinscripción solo en inicio y carreras; contacto de directivos oculto, con los enlaces reservados para la sección futura | `f200ddd` · #25 | DEF-10, aceptado |
 | C7 | 15/11 | 90 mesas con las fechas reales del turno de diciembre; la columna Horario pasó a ser Curso | `970ed96` · #26 | Cerró DEF-13 |
 
+Los cambios posteriores a la defensa (C8 a C24) están en el Anexo F.
+
 ### Auditoría de configuración
 
 | Fecha | Qué se auditó | Resultado |
@@ -651,6 +661,8 @@ No se llevó registro mientras ocurrían. Se reconstruyó desde el historial; qu
 | 11/11/2026 | Ocho páginas contra el registro de defectos | 5 cerrados y 8 abiertos |
 | 16/11/2026 | Ocho páginas en `main` (`7836d0b`) contra el registro y contra este informe | 8 cerrados, 5 abiertos y 2 aceptados. Se corrigieron errores de la versión 3.0 del informe (Anexo D) |
 | 18/11/2026 | Nueve páginas en la rama `docsentrega` contra el registro, el README y este informe | 9 cerrados, 5 abiertos y 1 aceptado. Se encontraron y corrigieron dos enlaces de Directivos que seguían apuntando a la sección oculta (Anexo F) |
+| 25/11/2026 | Nueve páginas en `main` (`363ffef`), sitio publicado y cinco documentos | 10 cerrados, 6 abiertos y 1 aceptado. Dos defectos nuevos: DEF-16, ya corregido, y DEF-17. Se comprobó en el sitio publicado que los íconos, la etiqueta de Google y el botón a la derecha están en línea |
+| 25/11/2026 | Rama `mejoras-3`, después de reordenar las carpetas (D-08) | 11 cerrados, 5 abiertos y 1 aceptado: se corrigió DEF-17. Todos los enlaces internos, imágenes, estilos y planes apuntan a archivos que existen, y las nueve páginas se abren bien desde la computadora. Las direcciones de las páginas no cambian. Falta comprobarlo en el sitio publicado |
 
 ## 14. Plan de entrega, capacitación y mantenimiento
 
@@ -681,8 +693,10 @@ Antes de cada publicación de mesas, requisitos o directivos: (1) se compara el 
 | Propiedad de la organización IPFPR en GitHub | A traspasar a una cuenta del Instituto |
 | Proyecto de Vercel (hoy a nombre de Germán Lauria) | A traspasar o a sumar un segundo administrador |
 | Documentación y guía rápida | En `docs/` |
+| Dominio `institutosparroquiales.com` | Falta confirmar titular y quién lo renueva; vence el 03/04/2027 |
+| Google Search Console | Verificado el 25/11 con una cuenta del equipo; falta sumar una cuenta del Instituto como propietaria. Depende de no borrar la etiqueta de `public/index.html` |
 | Defectos abiertos | Cinco, más uno aceptado, en el Anexo A |
-| Puntos frágiles | Menú, pie y botón de WhatsApp repetidos en nueve archivos; mesas dentro del HTML; dependencia de servicios externos |
+| Puntos frágiles | Menú, pie, enlaces del ícono y botón de WhatsApp repetidos en nueve archivos; mesas dentro del HTML; dependencia de servicios externos; la carpeta `public/` no puede cambiar de nombre |
 
 ### Mantenimiento esperado
 
@@ -700,7 +714,7 @@ Casi todo será **actualización de contenido**, no corrección de errores.
 
 *Se entrega también como documento separado: [registro-de-decisiones.md](registro-de-decisiones.md).*
 
-Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fechas salen del historial y el fundamento es el que el equipo sostiene hoy. D-07 se registró el mismo día. **D-02 es la que hoy se revertiría**; D-06 se revisó.
+Ocho decisiones. Las seis primeras no se registraron cuando se tomaron: las fechas salen del historial y el fundamento es el que el equipo sostiene hoy. D-07 y D-08 se registraron el mismo día. **D-02 es la que hoy se revertiría**; D-06 se revisó.
 
 | # | Decisión | Fecha | Estado |
 |---|---|---|---|
@@ -711,6 +725,7 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 | D-05 | Desactivar la preinscripción en línea hasta que funcione | 26/10/2026 | Vigente |
 | D-06 | Construir sin diagnóstico ni alcance escritos | 01/07/2026 | Revisada |
 | D-07 | Página de contacto sin formulario, con WhatsApp, correo y teléfono | 18/11/2026 | Vigente |
+| D-08 | Sitio en la carpeta `public/`, con las mismas direcciones | 25/11/2026 | Vigente |
 
 ### D-01 · Sitio estático, sin base de datos ni servidor
 
@@ -741,11 +756,11 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 
 | Campo | Contenido |
 |---|---|
-| Decisión | Guardar cada mesa como una fila de tabla dentro de `mesasexamen.html`, con buscador y ordenamiento en JavaScript |
+| Decisión | Guardar cada mesa como una fila de tabla dentro de `mesasexamen.html` (hoy en `public/`), con buscador y ordenamiento en JavaScript |
 | Fecha | 30/09/2026 (prototipo) y 07/10/2026 (buscador y filtros) |
 | Contexto | Hacía falta mostrar las mesas por carrera y año, con búsqueda, sin base de datos (D-01) |
 | Alternativas consideradas | (a) Archivo de datos JSON o CSV leído por JavaScript. (b) Planilla de Google publicada e incrustada. (c) Publicar el PDF del Instituto |
-| Fundamento | Un solo archivo, sin pasos intermedios, que funciona aunque falle cualquier servicio externo. Con unas 90 filas por turno el tamaño es manejable |
+| Fundamento | Un solo archivo, sin pasos intermedios, que funciona aunque falle cualquier servicio externo. Con poco más de 90 filas por turno el tamaño es manejable |
 | Consecuencias | A favor: simple y sin dependencias. Se resigna: que cargue las mesas una persona no técnica sin ayuda; por eso existe la guía rápida. Cargar un turno son unas dos horas. La alternativa (b) queda como mejora si el Instituto prefiere editar una planilla |
 | Estado | Vigente |
 
@@ -759,7 +774,7 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 | Alternativas consideradas | (a) GitHub Pages. (b) Netlify. (c) Alojamiento pago con dominio propio |
 | Fundamento | Se conecta al repositorio en minutos, publica solo, da una vista previa por rama y permite volver a un despliegue anterior. Un integrante ya lo conocía |
 | Consecuencias | A favor: publicación inmediata y gratuita. Se resigna: control previo, porque todo lo que entra a `main` sale publicado (así estuvieron en línea un formulario sin terminar y fechas de mesa de prueba). El plan gratuito está pensado para uso personal no comercial y la cuenta es de un integrante |
-| Estado | Vigente, con condición: confirmar el plan y traspasar la cuenta. Si el plan no admite uso institucional, se pasa a GitHub Pages |
+| Estado | Vigente, con condición: confirmar el plan y traspasar la cuenta. Si el plan no admite uso institucional, se pasa a GitHub Pages. Al 25/11 el sitio responde además en el dominio `www.institutosparroquiales.com`; falta confirmar quién lo renueva |
 
 ### D-05 · Desactivar la preinscripción en línea hasta que funcione
 
@@ -789,12 +804,24 @@ Siete decisiones. Las seis primeras no se registraron cuando se tomaron: las fec
 
 | Campo | Contenido |
 |---|---|
-| Decisión | Crear `contacto.html` con dirección, teléfonos, correo, horario, redes y mapa, y con enlaces directos a WhatsApp y al correo, sin formulario. Sumar un botón flotante de WhatsApp en todas las páginas |
+| Decisión | Crear `contacto.html` con dirección, teléfono, correo, horario, redes y mapa, y con enlaces directos a WhatsApp y al correo, sin formulario. Sumar un botón flotante de WhatsApp en todas las páginas |
 | Fecha | 18/11/2026 |
 | Contexto | Cinco enlaces de "Contacto" esperaban esta sección (DEF-10, P1). Los formularios de consulta de las carreras muestran un aviso y no envían nada (DEF-11) |
 | Alternativas consideradas | (a) Reactivar la sección oculta de `directivos.html`, que trae un formulario que no envía. (b) Un formulario conectado a un servicio externo como FormSubmit. (c) Una página propia con enlaces directos a los canales que el Instituto ya usa |
 | Fundamento | El mismo criterio de D-05: no se publica lo que no funciona. Un enlace a WhatsApp o al correo siempre llega, y el sitio sigue sin recoger datos personales |
-| Consecuencias | A favor: la consulta llega por un canal que alguien ya atiende y no hay nada que mantener. Se resigna: reunir las consultas en una sola casilla. Depende de que el número de WhatsApp y el correo sean los oficiales (DEF-12, P3). El menú pasó a estar copiado en nueve archivos (D-02) |
+| Consecuencias | A favor: la consulta llega por un canal que alguien ya atiende y no hay nada que mantener. Se resigna: reunir las consultas en una sola casilla. Depende de que el número de WhatsApp y el correo sean los oficiales (DEF-12, P3). El menú pasó a estar copiado en nueve archivos (D-02). El 19/11 se actualizaron el teléfono y el correo, pero no en todos los pies (DEF-12) |
+| Estado | Vigente |
+
+### D-08 · Sitio en la carpeta `public/`, con las mismas direcciones
+
+| Campo | Contenido |
+|---|---|
+| Decisión | Reunir lo que se publica en `public/`, con las páginas en el primer nivel y estilos, imágenes, íconos y planes en `assets/`. Las páginas conservan su nombre y su dirección |
+| Fecha | 25/11/2026 |
+| Contexto | Las páginas, imágenes y planes convivían con el README en la raíz. Vercel publicaba la raíz entera, incluida la carpeta `docs/` |
+| Alternativas consideradas | (a) Dejar todo en la raíz. (b) Dejar las páginas en la raíz y agrupar solo estilos, imágenes y planes. (c) Una carpeta `public/` con todo el sitio |
+| Fundamento | Con (c) el repositorio separa el sitio de la documentación y no hay paso de compilación. `public` es el nombre de carpeta que Vercel publica por defecto: no hay que configurar nada |
+| Consecuencias | A favor: no cambia la dirección de ninguna página, se abren con doble clic en la computadora y `docs/` deja de ser pública en el sitio. Se resigna: las direcciones directas anteriores de las imágenes y de los planes en PDF dejan de funcionar (los enlaces del sitio ya apuntan a las nuevas), y pasar a GitHub Pages (D-04) exige indicarle la carpeta `public/` |
 | Estado | Vigente |
 
 ## 16. Desvíos: qué se planificó, qué ocurrió y por qué
@@ -848,7 +875,7 @@ Mesas, directivos y preinscripción no estaban en el pedido inicial de "actualiz
 | R9 · Incumplimiento con datos personales | No | El formulario estuvo publicado cinco días sin funcionar y se desactivó (D-05). No hay registro de solicitudes recibidas |
 | R7 · Persona única | No | Sigue latente: Vercel depende de un integrante |
 | R2 · Falla de un servicio externo | No | Sin caídas registradas |
-| R1 · Archivos sin subir | No | `images/` y `planes_de_estudio/` están en el repositorio |
+| R1 · Archivos sin subir | No | Las imágenes y los planes están en el repositorio (hoy en `public/assets/`) |
 | R4 · Documentación incompleta | No, por poco | Se entrega completa, pero concentrada en el cierre y sin holgura: la defensa quedó fijada para el 16/11 (sección 9) |
 
 ### 16.5 Tareas que se extendieron
@@ -864,8 +891,8 @@ Sin estimación, se mide el tiempo entre el primer y el último commit de cada p
 
 ## 17. Conclusiones
 
-1. **El sitio cumple el pedido.** Ocho páginas publicadas desde el 19/10/2026, más la de contacto del 18/11, con las 90 mesas del turno de diciembre cargadas quince días antes de la primera.
-2. **Recomendamos adoptarlo** (alternativa A). No le cuesta dinero al Instituto y le pide 10 horas por año de una persona.
+1. **El sitio cumple el pedido.** Ocho páginas publicadas desde el 19/10/2026, más la de contacto del 18/11, con las mesas del turno de diciembre cargadas quince días antes de la primera (90 el 15/11; 93 desde el 19/11).
+2. **Recomendamos adoptarlo** (alternativa A). El alojamiento no le cuesta dinero al Instituto, la renovación del dominio está por confirmar, y le pide 10 horas por año de una persona.
 3. **La condición es designar a esa persona.** Sin responsable, el sitio queda vencido en el primer turno de exámenes de 2027. En diciembre las fechas reales las cargó el equipo, no el Instituto.
 4. **El proceso fue al revés.** Se construyó primero y se analizó después. Costó dos semanas de fechas de prueba publicadas, un formulario publicado sin terminar y un tercio de la construcción en alcance que nadie registró.
 5. **La decisión que revertimos es el menú copiado a mano.** Ahorró minutos al principio y costó 14 horas después.
@@ -877,7 +904,7 @@ Sin estimación, se mide el tiempo entre el primer y el último commit de cada p
 
 ## Anexo A. Registro de defectos
 
-Estado al 18/11/2026: verificado sobre `main` (`7836d0b`) el 16/11 y sobre la rama `docsentrega` el 18/11. Severidad: cuánto daña. Prioridad: qué tan pronto se corrige.
+Estado al 25/11/2026: verificado sobre `main` (`7836d0b`) el 16/11, sobre la rama `docsentrega` el 18/11 y sobre `main` (`363ffef`) el 25/11. Severidad: cuánto daña. Prioridad: qué tan pronto se corrige.
 
 | ID | Descripción y cómo reproducirlo | Sev. | Prior. | Estado |
 |---|---|---|---|---|
@@ -892,12 +919,14 @@ Estado al 18/11/2026: verificado sobre `main` (`7836d0b`) el 16/11 y sobre la ra
 | DEF-09 | Formulario con datos personales sin aviso de privacidad ni consentimiento, con anti-spam apagado | Grave | Alta | Cerrado mientras el formulario esté desactivado. Se corrige en P6 |
 | DEF-10 | **Enlaces de contacto sin destino.** En Directivos, pulsar "Ir a Contacto" no hacía nada. Lo mismo con "Contacto de Administración" en el pie de Directivos, Inicio, Mesas y Preinscripción. Era a propósito: los enlaces esperaban la sección de contacto prevista | Leve | Media | Cerrado el 18/11: apuntan a `contacto.html` (P1) |
 | DEF-11 | **Formularios de consulta que no envían.** En cualquiera de las tres carreras, completar y enviar: aparece "¡Gracias por tu consulta!" y no se envía nada | Grave | Alta | Abierto · P2 |
-| DEF-12 | **Casillas sin confirmar.** El sitio muestra cuatro correos distintos; el de Biblioteca es una casilla personal | Leve | Media | Abierto · P3 |
+| DEF-12 | **Casillas y teléfonos sin confirmar.** El sitio muestra cuatro correos distintos; el de Biblioteca es una casilla personal. El cambio del 19/11 quedó incompleto: el pie de Preinscripción conserva el correo anterior, y los pies de Contacto, Preinscripción y Psicopedagogía, el teléfono 02245-44-7466 | Leve | Media | Abierto · P3 |
 | DEF-13 | **Mesas con fechas de prueba y después sin fecha.** Del 19/10 al 02/11 el sitio publicado mostró fechas que no eran reales; del 02/11 al 15/11, "-" en todas las filas | Grave | Alta | Cerrado el 16/11 con las fechas reales (PR #26) |
 | DEF-14 | **Scripts después de `</body>`** en las ocho páginas originales (`contacto.html` ya los tiene dentro). Los navegadores lo toleran; no es HTML válido | Leve | Baja | Abierto · P4 |
 | DEF-15 | **Código desactivado dentro de archivos publicados.** El formulario (con su casilla de destino) en `preinscripciones.html` y la sección de contacto en `directivos.html` están como comentario y se ven con "Ver código fuente". El formulario se conserva a propósito para terminarlo más adelante; la sección de contacto ya no hace falta porque existe `contacto.html` | Leve | Baja | Aceptado · la sección de Directivos se borra en P4; el formulario se resuelve en P6 |
+| DEF-16 | **Contacto no se podía pulsar.** En el inicio y las tres carreras, un bloque invisible del encabezado tapaba "Contacto" en el menú | Moderado | Alta | Cerrado el 19/11 (PR #30) |
+| DEF-17 | **Numeración errónea.** En Mesas, Psicopedagogía, 4.º año, decía "Formación Religiosa IIII" en lugar de IV | Leve | Media | Cerrado el 25/11 en la rama `mejoras-3` |
 
-**Resumen:** 15 defectos: 9 cerrados, 5 abiertos (DEF-04, 05, 11, 12 y 14) y 1 aceptado por decisión del equipo (DEF-15). Ninguno se detectó en la etapa en que se introdujo: todos aparecieron en revisiones posteriores, porque no hubo pruebas planificadas.
+**Resumen:** 17 defectos: 11 cerrados, 5 abiertos (DEF-04, 05, 11, 12 y 14) y 1 aceptado por decisión del equipo (DEF-15). Ninguno se detectó en la etapa en que se introdujo: todos aparecieron en revisiones posteriores, porque no hubo pruebas planificadas.
 
 ## Anexo B. Preguntas para el Instituto
 
@@ -911,23 +940,26 @@ No hubo entrevistas. Estas son las preguntas que el equipo lleva a la primera re
 6. ¿Quieren recibir preinscripciones en línea? Si es así, ¿quién guarda esos datos y por cuánto tiempo?
 7. ¿Cuándo empieza y termina la preinscripción 2027?
 8. ¿A nombre de quién quedan las cuentas de GitHub y Vercel?
-9. ¿El horario de atención general es de 18:00 a 22:00 h? ¿El WhatsApp 02245-15-410225 es el canal oficial de consultas?
+9. ¿El horario de atención general es de 18:00 a 22:00 h? ¿El WhatsApp 02245-15-410225 es el canal oficial de consultas? ¿Sigue vigente el teléfono 02245-44-7466?
+10. ¿Quién es titular del dominio `institutosparroquiales.com`, quién lo renueva antes del 03/04/2027 y qué cuenta de Google del Instituto se suma a Search Console?
 
 ## Anexo C. Lista de verificación previa a la entrega
 
-| Verificación | Resultado al 18/11 | Cómo se verificó |
+| Verificación | Resultado al 25/11 | Cómo se verificó |
 |---|---|---|
-| Los enlaces del menú existen en las nueve páginas | Sí | Revisión del código en la rama `docsentrega` |
+| Los enlaces del menú existen en las nueve páginas | Sí | Revisión del código en la rama `docsentrega`, 18/11 |
 | No quedan enlaces a `mesas_examenes.html` ni a la sección oculta `#contacto` de Directivos | Sí | Búsqueda en el código |
-| Los tres planes de estudio en PDF están enlazados y en el repositorio | Sí | Código y carpeta `planes_de_estudio/` |
+| Los tres planes de estudio en PDF están enlazados y en el repositorio | Sí | Código y carpeta `public/assets/planes-de-estudio/` |
 | Nombres de archivo y enlaces coinciden en mayúsculas y minúsculas | Sí | Búsqueda en el código |
-| Las 90 mesas tienen las fechas reales, en formato válido, y ninguna cae en fin de semana ni en el feriado del 8/12 | Sí | Revisión automática de las fechas |
+| Las 93 mesas tienen las fechas reales, en formato válido, y ninguna cae en fin de semana ni en el feriado del 8/12 | Sí | Revisión automática de las fechas |
 | El sitio no recoge datos personales | Sí | El único formulario con envío está desactivado |
 | Todos los enlaces del pie tienen destino | Sí, desde el 18/11 | DEF-10 cerrado |
 | Los formularios visibles envían lo que prometen | **No** | DEF-11 |
 | Mesas, requisitos y directivos validados por escrito | **No** | R6 |
 | Está definido quién actualiza y a nombre de quién está cada cuenta | **No** | R5 y R7 |
-| El sitio se ve bien a 360 px de ancho en el sitio publicado | Sí para las ocho páginas originales; **falta probar** `contacto.html` y el botón de WhatsApp | Prueba manual en un celular sobre el sitio publicado, 16/11 |
+| El sitio se ve bien a 360 px de ancho en el sitio publicado | Sí para las ocho páginas originales; **falta probar en un celular real** `contacto.html` y el botón de WhatsApp | Prueba manual en un celular sobre el sitio publicado, 16/11. El botón se revisó el 25/11 en las nueve páginas, en Edge a 375 px de ancho y sobre los archivos locales |
+| El escudo está publicado como ícono y Google puede leerlo | Sí; **todavía no aparece** en los resultados de Google | Pedido a `favicon.ico` y a los cuatro PNG del sitio publicado: responden 200, 25/11 |
+| El sitio se publica desde `public/` con las mismas direcciones de páginas | **Falta probar** en el sitio publicado, al integrar la rama | Enlaces comprobados en el código y páginas abiertas en Edge, sobre los archivos locales, 25/11 |
 | El README explica qué es, cómo se trabaja y dónde está publicado | Sí | README de esta entrega |
 | La documentación describe el sitio tal como está hoy | Sí | Anexos D y F |
 
@@ -947,33 +979,68 @@ Auditoría del 16/11/2026 sobre el README, el informe (versión 3.0), el resumen
 
 | Dato | Valor | Secciones donde aparece |
 |---|---|---|
-| Páginas | 9 (8 al 16/11) | Resumen, 2, 3, 5, 8, 17, Anexo F |
-| Mesas cargadas | 90 (22 + 35 + 33) | Resumen, 2, 5, 8, 13, 17 |
+| Páginas | 9 (8 al 16/11; 9 publicadas desde el 18/11) | Resumen, 2, 3, 5, 8, 17, Anexo F |
+| Mesas cargadas | 93 (22 + 38 + 33) al 25/11; 90 (22 + 35 + 33) al 16/11 | Resumen, 2 y 17 (25/11) · 5, 8 y 13 (16/11) |
 | Esfuerzo realizado | 156 h (126 + 30) | Resumen, 5, 6, 7, 16, 17 |
 | Horas del cierre | 30 h = suma de la red de tareas | 6 (tarea 10), 9 |
 | Pendiente | 20 h (8 obligatorias + 12 opcionales) | Resumen, 6, 7, 17, Anexo F |
 | Mantenimiento | 10 h por año | Resumen, 6, 7, 14, 17 |
 | Costo valorizado | 176 h × USD 10 = USD 1.760 | 7 |
 | Tamaño | 64 PF | 5, 6 |
-| Commits y pull requests | 69 (39 + 30) y 26 | 2, 5, 10, 13, 16 |
-| Defectos | 15: 9 cerrados, 5 abiertos, 1 aceptado | 5, 13, 17, Anexos A y F |
+| Commits y pull requests | 69 (39 + 30) y 26 al 16/11; 86 (48 + 38) y 32 al 25/11 | 2, 5, 10, 13, 16 (16/11) · 13 y Anexo F (25/11) |
+| Defectos | 17: 11 cerrados, 5 abiertos, 1 aceptado | 5, 13, 17, Anexos A y F |
 | Riesgos y supuestos | S1 a S6 cubiertos por R6, R8, R1, R2, R9, R5 | 3, 11 |
 | Cierre y defensa | 11/11 al 16/11 = 4 días hábiles; defensa el 16/11 | 8, 9, 16 |
 | Decisión que se revertiría | D-02 | 15, 17 |
 
 ## Anexo F. Cambios posteriores a la defensa
 
-Cambios del 18/11/2026, en la rama `docsentrega`, pendientes de integrar a `main` por pull request. Las secciones 5, 6.1, 9, 10 y 16 siguen describiendo el proyecto al 16/11: las horas de estos cambios no se registraron y quedan por reconstruir.
+Cambios del 18/11 al 25/11/2026. C8 a C21 están integrados a `main` y publicados (PR #29 a #32); C22 a C24 están en la rama `mejoras-3`, pendientes de integrar. Los archivos de C8 a C21 figuran con la ubicación que tenían entonces. Las secciones 5, 6.1, 9, 10 y 16 siguen describiendo el proyecto al 16/11: las horas de estos cambios no se registraron y quedan por reconstruir.
+
+**18/11 · PR #29** (Anastasia)
 
 | # | Cambio | Archivos | Efecto |
 |---|---|---|---|
 | C8 | Página de contacto: dirección, teléfonos, correo, horario, redes y mapa, con botones a WhatsApp y al correo y sin formulario (D-07) | `contacto.html` (nuevo) | Cierra P1 |
 | C9 | "Contacto" en el menú de escritorio y de celular, después de "Mesas de Exámenes", en las nueve páginas. Los enlaces "Contacto de Administración" del pie y el botón "Ir a Contacto" de Directivos apuntan a `contacto.html` | Las nueve páginas | Cierra DEF-10 |
-| C10 | Botón flotante de WhatsApp abajo a la derecha, también en celular, con el número del pie (02245-15-410225) | Las nueve páginas y `styles.css` (clase `.wsp-float`) | Amplía el alcance |
+| C10 | Botón flotante de WhatsApp abajo a la derecha (a la izquierda hasta el 25/11, ver C19), también en celular, con el número del pie (02245-15-410225) | Las nueve páginas y `styles.css` (clase `.wsp-float`) | Amplía el alcance |
 | C11 | El pie dice "DIEGEP 4174" en lugar de "DIPREGEP Oficial", igual que la página de preinscripción | Las ocho páginas originales | Unifica un dato institucional |
 | C12 | Créditos del equipo, con teléfono, en el pie | Las nueve páginas | Amplía el alcance |
 | C13 | El escudo del Instituto como ícono de la pestaña del navegador (favicon) | Las nueve páginas | Amplía el alcance |
 
-**Lo que falta verificar.** `contacto.html` y el botón de WhatsApp no se probaron todavía en un celular ni en el sitio publicado. El horario de la página de contacto (18:00 a 22:00 h) sale de la página de preinscripción, donde es el horario de entrega de documentación: falta que el Instituto confirme que es también el de atención general (Anexo B, pregunta 9).
+**19/11 · PR #30** (Tiago)
 
-**Efecto en los números.** Pendiente obligatorio: de 9 h a 8 h (sin P1). Pendiente total: de 21 h a 20 h. Defectos: 9 cerrados, 5 abiertos y 1 aceptado. Páginas: 9. El conteo de puntos función de la sección 5 no se rehízo: la página de contacto sumaría una salida simple.
+| # | Cambio | Archivos | Efecto |
+|---|---|---|---|
+| C14 | Buscador de mesas con una cruz para borrar lo escrito; se limpia solo al cambiar de carrera. Columnas de fecha, curso y docente centradas | `mesasexamen.html` (commit `309f8b2`, 18/11) | Mejora de uso |
+| C15 | Nombres completos de materias y docentes en Análisis de Sistemas y Educación Inicial | `mesasexamen.html` (commit `309f8b2`, 18/11) | Corrige contenido |
+| C16 | Encabezado corregido: un bloque invisible tapaba "Contacto" en el menú | `index.html` y las tres carreras (commit `f60f3de`) | Cierra DEF-16 |
+
+**19/11 · PR #31** (Anastasia)
+
+| # | Cambio | Archivos | Efecto |
+|---|---|---|---|
+| C17 | Correo `roblessuperior@gmail.com` en lugar de la casilla de administración, y solo el teléfono 02245-15-410225 | `contacto.html`, `index.html` y `mesasexamen.html` (commit `d2b0fec`) | Avanza P3; quedaron pies sin actualizar (DEF-12) |
+| C18 | La mesa de Formación Religiosa I, II, III de Psicopedagogía (17/12) pasó a ser una por año, y se sumó la de 4.º | `mesasexamen.html` (commit `d83ca11`) | De 90 a 93 mesas; introdujo DEF-17 |
+
+**25/11 · PR #32** (Valentino; integró Germán)
+
+| # | Cambio | Archivos | Efecto |
+|---|---|---|---|
+| C19 | Botón flotante de WhatsApp de la izquierda a la derecha, en escritorio y celular | `styles.css` (clase `.wsp-float`) | Mejora de uso |
+| C20 | Escudo como ícono en tamaños para buscadores: `favicon.ico` (16, 32 y 48 px), PNG de 48, 96 y 192 px y uno de 180 px para iPhone, con fondo blanco. Antes había un solo PNG de 594 px (347 KB) y `/favicon.ico` daba 404 | `favicon.ico`, cuatro archivos en `images/` y las nueve páginas | Para que Google muestre el escudo en los resultados |
+| C21 | Etiqueta de verificación de Google Search Console; propiedad verificada el mismo día | `index.html` | Permite pedir a Google que vuelva a rastrear el sitio |
+
+**25/11 · rama `mejoras-3`** (Valentino; pendiente de integrar)
+
+| # | Cambio | Archivos | Efecto |
+|---|---|---|---|
+| C22 | "Formación Religiosa IIII" pasó a "Formación Religiosa IV" | `public/mesasexamen.html` | Cierra DEF-17 |
+| C23 | El sitio pasó a `public/`, con `assets/` adentro (estilos, imágenes, íconos y planes). Las páginas conservan su dirección; cambian las de las imágenes y los planes en PDF. `docs/` deja de publicarse | Todos los archivos del sitio | Ordena el repositorio (D-08) |
+| C24 | Etiqueta `v1.0` sobre el commit de entrega `c5f78f1` | Historial de Git | Cierra H13 |
+
+**Dominio.** Al 25/11 el sitio responde en `www.institutosparroquiales.com`. Está registrado desde el 03/04/2020 y vence el 03/04/2027, según el registro público de dominios. La fecha en que se conectó a Vercel no quedó anotada.
+
+**Lo que falta verificar.** `contacto.html` y el botón de WhatsApp no se probaron todavía en un celular real. Falta que Google muestre el escudo: depende de su próximo rastreo y puede tardar semanas. El horario de la página de contacto (18:00 a 22:00 h) sale de la página de preinscripción, donde es el horario de entrega de documentación: falta que el Instituto confirme que es también el de atención general (Anexo B, pregunta 9).
+
+**Efecto en los números.** Pendiente obligatorio: de 9 h a 8 h (sin P1). Pendiente total: de 21 h a 20 h; P3 está empezado, pero no se reestimó. Defectos: 11 cerrados, 5 abiertos y 1 aceptado. Páginas: 9. Mesas: 93. Commits: 86. Pull requests: 32. El conteo de puntos función de la sección 5 no se rehízo: la página de contacto sumaría una salida simple.
