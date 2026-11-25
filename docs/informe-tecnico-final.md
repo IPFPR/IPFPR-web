@@ -969,7 +969,7 @@ Cambios del 18/11/2026, en la rama `docsentrega`, pendientes de integrar a `main
 |---|---|---|---|
 | C8 | Página de contacto: dirección, teléfonos, correo, horario, redes y mapa, con botones a WhatsApp y al correo y sin formulario (D-07) | `contacto.html` (nuevo) | Cierra P1 |
 | C9 | "Contacto" en el menú de escritorio y de celular, después de "Mesas de Exámenes", en las nueve páginas. Los enlaces "Contacto de Administración" del pie y el botón "Ir a Contacto" de Directivos apuntan a `contacto.html` | Las nueve páginas | Cierra DEF-10 |
-| C10 | Botón flotante de WhatsApp abajo a la izquierda, también en celular, con el número del pie (02245-15-410225) | Las nueve páginas y `styles.css` (clase `.wsp-float`) | Amplía el alcance |
+| C10 | Botón flotante de WhatsApp abajo a la derecha, también en celular, con el número del pie (02245-15-410225) | Las nueve páginas y `styles.css` (clase `.wsp-float`) | Amplía el alcance |
 | C11 | El pie dice "DIEGEP 4174" en lugar de "DIPREGEP Oficial", igual que la página de preinscripción | Las ocho páginas originales | Unifica un dato institucional |
 | C12 | Créditos del equipo, con teléfono, en el pie | Las nueve páginas | Amplía el alcance |
 | C13 | El escudo del Instituto como ícono de la pestaña del navegador (favicon) | Las nueve páginas | Amplía el alcance |

@@ -104,10 +104,10 @@ ul {
 }
 
 
-/* Botón flotante de WhatsApp (abajo a la izquierda, en todas las páginas) */
+/* Botón flotante de WhatsApp (abajo a la derecha, en todas las páginas) */
 .wsp-float {
     position: fixed;
-    left: 1.25rem;
+    right: 1.25rem;
     bottom: 1.25rem;
     z-index: 60;
     width: 56px;
@@ -132,7 +132,7 @@ ul {
 
 @media (max-width: 640px) {
     .wsp-float {
-        left: 1rem;
+        right: 1rem;
         bottom: 1rem;
         width: 50px;
         height: 50px;
